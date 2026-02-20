@@ -14,7 +14,39 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+body[data-theme="default"] {
+  --primaria: #FF3100;
+  --secundaria: #49BAEA;
+  --areanav: transparent;
+  --navmenu: #000000;
+  --menu: #ffffff;
+  --menu-hover: var(--primaria);
+  --menu-ativo: var(--secundaria);
+  --rodape: #000000;
+  --titulos: #000000;
+  --fundo: var(--secundaria);
+  --texto: #333333;
+  --link: var(--primaria);
+  --link-hover: #000000;
+}
+
+body[data-theme="dark"] {
+  --primaria: #ff5500;
+  --secundaria: #49BAEA;
+  --areanav: transparent;
+  --navmenu: #F1F1F1;
+  --menu: #000000;
+  --menu-hover: var(--primaria);
+  --menu-ativo: var(--secundaria);
+  --rodape: #333333;
+  --titulos: #CCCCCC;
+  --fundo: #333333;
+  --texto: #CCCCCC;
+  --link: var(--primaria);
+  --link-hover: var(--secundaria);
+}
+
+body[data-theme="default"] {
   font-family: "Roboto", sans-serif;
   font-size: 1.25rem;
   font-style: normal;
@@ -22,51 +54,41 @@ body {
   background-color: var(--fundo);
 }
 
-body[data-theme="default"] {
-  --primaria: #FF3100;
-  --secundaria: #49BAEA;
-  --areanav: transparent;
-  --menu: #ffffff;
-  --menu-hover: var(--secundaria);
-  --menu-ativo: var(--primaria);
-  --rodape: #000000;
-  --titulos: #000000;
-  --fundo: #F1F1F1;
-  --texto: #333;
-  --link: var(--primaria);
-  --link-hover: #000000;
-}
-
-body[data-theme="dark"] {
-  --primaria: #FF3100;
-  --secundaria: #49BAEA;
-  --areanav: transparent;
-  --menu: #ffffff;
-  --menu-hover: var(--secundaria);
-  --menu-ativo: var(--primaria);
-  --rodape: #000000;
-  --titulos: #000000;
-  --fundo: #F1F1F1;
-  --texto: #333;
-  --link: var(--primaria);
-  --link-hover: #000000;
-}
-
 @media (max-width: 767.98px) {
-  body {
+  body[data-theme="default"] {
     font-size: 1.125rem;
   }
 }
 
 body[data-theme="default"] #home {
   background-image: url(../img/banner.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto;
+}
+
+body[data-theme="default"] #servicos,
+body[data-theme="default"] #portfolio {
+  background-color: #ffffff;
+}
+
+body[data-theme="default"] footer {
+  background-color: var(--rodape);
+}
+
+body[data-theme="dark"] {
+  color: var(--texto);
+  background-color: #000000;
 }
 
 body[data-theme="dark"] #home {
-  background-image: conic-gradient(at 80% 50%, #274e3c, #2c4439, #5a4e28, #161818, #27333e);
+  background-image: url(../img/banner-dark.jpg);
+}
+
+body[data-theme="dark"] #servicos,
+body[data-theme="dark"] #portfolio {
+  background-color: var(--fundo);
+}
+
+body[data-theme="dark"] footer {
+  background-color: var(--rodape);
 }
 
 .primaria {
@@ -213,7 +235,7 @@ nav.menu-fundo {
     margin: 0 auto;
     padding: 0 15px;
     border-radius: 100px;
-    background-color: #000000;
+    background-color: var(--navmenu);
   }
 }
 
@@ -287,7 +309,6 @@ figure:hover {
   padding-top: 124px;
   padding-left: 0px;
   padding-right: 0px;
-  background-image: url(../img/banner.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto;
@@ -386,7 +407,7 @@ figure:hover {
 
 .banner-titulos p {
   font-weight: 600;
-  color: #333333;
+  color: var(--texto);
 }
 
 .banner-titulos img {
@@ -452,15 +473,11 @@ figure:hover {
 
 .tags .tag {
   font-size: 0.875rem;
+  color: #000000;
   padding: 3px 10px;
   margin: 5px;
   border-radius: 7px;
   background-color: #CCCCCC;
-}
-
-#servicos,
-#portfolio {
-  background-color: #ffffff;
 }
 
 .contatos {
@@ -469,14 +486,10 @@ figure:hover {
 }
 
 .contatos a {
-  color: #000000;
+  color: var(--link);
   display: flex;
   align-items: center;
   align-self: flex-start;
-}
-
-.contatos a:hover {
-  color: var(--primaria);
 }
 
 textarea {
@@ -488,8 +501,40 @@ textarea {
   border-color: #CCCCCC !important;
 }
 
-footer {
-  background-color: var(--rodape);
+.owl-carousel .carrossel {
+  color: #ffffff;
+  height: 380px;
+  margin: 0 15px;
+  background-color: #000000;
+}
+
+.owl-carousel .owl-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.owl-carousel .owl-prev,
+.owl-carousel .owl-next {
+  font-family: bootstrap-icons !important;
+  font-size: 28px !important;
+  color: var(--navmenu) !important;
+  line-height: 50px !important;
+  padding: 5px !important;
+  margin: 0 10px;
+}
+
+.owl-carousel .owl-prev span,
+.owl-carousel .owl-next span {
+  display: none;
+}
+
+.owl-carousel .owl-prev::before {
+  content: "\F129";
+}
+
+.owl-carousel .owl-next::before {
+  content: "\F133";
 }
 
 footer .footer {

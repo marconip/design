@@ -13,55 +13,80 @@ body {
         --primaria: #FF3100;
         --secundaria: #49BAEA;
         --areanav: transparent;
+        --navmenu: $escuro;
         --menu: $claro;
-        --menu-hover: var(--secundaria);
-        --menu-ativo: var(--primaria);
+        --menu-hover: var(--primaria);
+        --menu-ativo: var(--secundaria);
         --rodape: $escuro;
         --titulos: $escuro;
-        --fundo: $cinza-claro;
-        --texto: #333;
+        --fundo: var(--secundaria);
+        --texto: $cinza-escuro;
         --link: var(--primaria);
         --link-hover: $escuro;
     }
 
     &[data-theme="dark"] {
-        --primaria: #FF3100;
+        --primaria: #ff5500;
         --secundaria: #49BAEA;
         --areanav: transparent;
-        --menu: $claro;
-        --menu-hover: var(--secundaria);
-        --menu-ativo: var(--primaria);
-        --rodape: $escuro;
-        --titulos: $escuro;
-        --fundo: $cinza-claro;
-        --texto: #333;
+        --navmenu: $cinza-claro;
+        --menu: $escuro;
+        --menu-hover: var(--primaria);
+        --menu-ativo: var(--secundaria);
+        --rodape: $cinza-escuro;
+        --titulos: $cinza-medio;
+        --fundo: $cinza-escuro;
+        --texto: $cinza-medio;
         --link: var(--primaria);
-        --link-hover: $escuro;
+        --link-hover: var(--secundaria);
     }
 
-    font-family: "Roboto",
-    sans-serif;
-    font-size: $s20;
-    font-style: normal;
-    color: var(--texto);
-    background-color: var(--fundo);
 
-    @include media(sm-abaixo) {
-        font-size: $s18;
-    }
-
+    //TEMA DEFAULT
     &[data-theme="default"] {
+
+        font-family: "Roboto",
+            sans-serif;
+        font-size: $s20;
+        font-style: normal;
+        color: var(--texto);
+        background-color: var(--fundo);
+
+        @include media(sm-abaixo) {
+            font-size: $s18;
+        }
+
         #home {
             background-image: url(../img/banner.jpg);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: auto;
+        }
+
+        #servicos,
+        #portfolio {
+            background-color: $claro;
+        }
+
+        footer {
+            background-color: var(--rodape);
         }
     }
 
+    //TEMA DARK
     &[data-theme="dark"] {
+
+        color: var(--texto);
+        background-color: $escuro;
+
         #home {
-            background-image: conic-gradient(at 80% 50%, #274e3c, #2c4439, #5a4e28, #161818, #27333e);
+            background-image: url(../img/banner-dark.jpg);
+        }
+
+        #servicos,
+        #portfolio {
+            background-color: var(--fundo);
+        }
+
+        footer {
+            background-color: var(--rodape);
         }
     }
 }
@@ -209,7 +234,7 @@ nav {
         margin: 0 auto;
         padding: 0 15px;
         border-radius: 100px;
-        background-color: $escuro;
+        background-color: var(--navmenu);
     }
 
     .nav-link {
@@ -284,7 +309,6 @@ figure {
     padding-top: 124px;
     padding-left: 0px;
     padding-right: 0px;
-    background-image: url(../img/banner.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
@@ -350,7 +374,7 @@ figure {
 
     p {
         font-weight: 600;
-        color: $cinza-escuro;
+        color: var(--texto)
     }
 
     img {
@@ -406,6 +430,7 @@ figure {
 
     .tag {
         font-size: $s14;
+        color: $escuro;
         padding: 3px 10px;
         margin: 5px;
         border-radius: 7px;
@@ -413,25 +438,17 @@ figure {
     }
 }
 
-#servicos,
-#portfolio {
-    background-color: $claro;
-}
-
 .contatos {
     display: flex;
     flex-direction: column;
 
     a {
-        color: $escuro;
+        color: var(--link);
         display: flex;
         align-items: center;
         align-self: flex-start;
-
-        &:hover {
-            color: var(--primaria);
-        }
     }
+
 }
 
 textarea {
@@ -443,8 +460,49 @@ textarea {
     border-color: $cinza-medio !important;
 }
 
+.owl-carousel {
+
+    .carrossel {
+        color: $claro;
+        height: 380px;
+        margin: 0 15px;
+        background-color: $escuro;
+    }
+
+    .owl-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .owl-prev,
+    .owl-next {
+        font-family: bootstrap-icons !important;
+        font-size: 28px!important;
+        color: var(--navmenu)!important;
+        line-height: 50px!important;
+        padding: 5px!important;
+        margin: 0 10px;
+
+        span {
+            display: none;
+        }
+    }
+
+    .owl-prev {
+        &::before {
+            content: "\F129";
+        }
+    }
+
+    .owl-next {
+        &::before {
+            content: "\F133";
+        }
+    }
+}
+
 footer {
-    background-color: var(--rodape);
 
     .footer {
         padding: 30px 20px;

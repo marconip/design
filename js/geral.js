@@ -15,6 +15,11 @@ window.onload = function () {
     if (window.scrollY <= 300) {
         document.querySelector("nav").classList.add("menu-fundo");
     }
+
+    //troca logo do tema
+    if (document.querySelector("body").dataset.theme == "dark") {
+        document.querySelector(".logo").src = "./img/marconidesign-dark.svg";
+    }
 };
 
 
@@ -26,7 +31,7 @@ window.onscroll = () => {
         let offset = sec.offsetTop - 200;
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
-        
+
         if (top >= offset && top < offset + height) {
             menuLink.forEach(n => n.classList.remove('active'))
             document.querySelector('.nav-link[href*=' + id + ']').classList.add('active');
@@ -109,6 +114,46 @@ botSubir.onclick = function () {
     window.scrollTo(0, 0);
     menuLink.forEach(n => n.classList.remove('active'));
 };
+
+
+//MASCARA TELEFONE COM JQUERY.MASK
+$('.cpf').mask('000.000.000-00');
+$('.cep').mask('00000-000');
+$('.tel').mask('(00) 00000-0000');
+$('.cel').mask('00 0 0000 0000');
+
+function mascara(t, mask) {
+    var i = t.value.length;
+    var saida = mask.substring(1, 0);
+    var texto = mask.substring(i)
+    if (texto.substring(0, 1) != saida) {
+        t.value += texto.substring(0, 1);
+    }
+};
+
+
+/////OWL CAROUSEL
+$('.owl-carousel').owlCarousel({
+    autoplay: true,
+    autoplayTimeout: 5000,
+    autoplayHoverPause: true,
+    loop: true,
+    nav: true,
+    dots:false,
+    margin: 10,
+    responsiveClass: true,
+    responsive: {
+        0: {
+            items: 1,
+        },
+        768: {
+            items: 3,
+        },
+        1200: {
+            items: 4,
+        }
+    }
+});
 
 
 ///////////MOSTRA LARGURA TELA QUANDO MUDA DE TAMANHO
