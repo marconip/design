@@ -238,7 +238,7 @@
                     </p>
                 </div>
                 <div class="col-12 col-lg-6">
-                    <form method="post" action="send-email.php" class="formulario mt-5">
+                    <!-- <form method="post" action="send-email.php" class="formulario mt-5">
                         <div class="mb-3">
                             <label for="name" class="form-label">Nome <small>(Primeiro e último)</small></label>
                             <input type="text" name="name" id="name" class="form-control" required>
@@ -259,7 +259,14 @@
                             <textarea name="message" id="message" class="form-control" required></textarea>
                         </div>
                         <button class="btn btn-sm-w100"><i class="bi bi-send"></i>&nbsp Enviar Mensagem</button>
+                    </form> -->
+                    <form action="https://formsubmit.co/seu-email@dominio.com" method="POST">
+                        <input type="text" name="name" placeholder="Nome" required>
+                        <input type="email" name="email" placeholder="E-mail" required>
+                        <textarea name="message" placeholder="Mensagem"></textarea>
+                        <button type="submit" class="btn btn-sm-w100">Enviar</button>
                     </form>
+
                 </div>
             </div>
         </div>
