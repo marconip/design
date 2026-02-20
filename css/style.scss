@@ -261,6 +261,7 @@ nav {
 .subir {
     font-size: $s40;
     position: fixed;
+    z-index: 1;
     bottom: 60px;
     right: 15px;
     color: var(--primaria);
