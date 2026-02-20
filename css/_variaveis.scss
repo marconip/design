@@ -1,0 +1,96 @@
+﻿//Cores
+$alerta: #FFC107 !default;
+$perigo: #DC3545 !default;
+$sucesso: #198754 !default;
+
+$escuro: #000000;
+$cinza-escuro: #333333 !default;
+$cinza-medio: #CCCCCC !default;
+$cinza-claro: #F1F1F1 !default;
+$claro: #ffffff;
+
+$default-fundo-claro: #dfe4eb;
+$dark-fundo-claro: #333333;
+$girl-fundo-claro: #ffffff;
+
+
+//Responsive breakpoints
+//xxs
+$minicelular-acima: 425px;
+$minicelular-abaixo: 424.98px;
+
+//xs
+$celular-acima: 576px;
+$celular-abaixo: 575.98px;
+
+//sm md
+$mobile-acima: 768px;
+$mobile-abaixo: 767.98px;
+
+//md
+$tablet-acima: 992px;
+$tablet-abaixo: 991.98px;
+
+//lg
+$desktop-acima: 1200px;
+$desktop-abaixo: 1199.98px;
+
+//xl xxl
+$grandedesktop-acima: 1400px;
+$grandedesktop-abaixo: 1399.98px;
+
+//ul
+$ultradesktop-acima: 1700px;
+
+//xul
+$extraultradesktop-acima: 1900px;
+
+
+//Tamanho px em rem
+$s1: 0.063rem;
+$s2: 0.125rem;
+$s3: 0.188rem;
+$s4: 0.25rem;
+$s5: 0.313rem;
+$s6: 0.375rem;
+$s7: 0.4375rem;
+$s8: 0.5rem;
+$s9: 0.5625rem;
+$s10: 0.625rem;
+$s11: 0.6875rem;
+$s12: 0.75rem;
+$s13: 0.8125rem;
+$s14: 0.875rem;
+$s15: 0.9375rem;
+$s16: 1rem;
+$s17: 1.0625rem;
+$s18: 1.125rem;
+$s19: 1.1875rem;
+$s20: 1.25rem;
+$s21: 1.3125rem;
+$s22: 1.375rem;
+$s23: 1.4375rem;
+$s24: 1.5rem;
+$s25: 1.5625rem;
+$s26: 1.625rem;
+$s27: 1.6875;
+$s28: 1.75rem;
+$s29: 1.8125rem;
+$s30: 1.875rem;
+$s35: 2.1875rem;
+$s40: 2.5rem;
+$s45: 2.8125rem;
+$s50: 3.125rem;
+$s55: 3.4375rem;
+$s60: 3.75rem;
+$s65: 4.0625rem;
+$s70: 4.375rem;
+$s75: 4.6875rem;
+$s80: 5rem;
+$s85: 5.3125rem;
+$s90: 5.625rem;
+$s95: 5.9375rem;
+$s100: 6.25rem;
+//Se precisar de mais numero é só multiplicar ou somar
+//ex. SCSS: font-size: $s50 * 2;   CSS: font-size: 6.25rem (=100px)
+//ex. SCSS: font-size: $s50 + $s2; CSS: font-size: 3.25rem (=52px)

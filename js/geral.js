@@ -1,0 +1,125 @@
+//TOOLTIP BOOTSTRAP
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+});
+
+
+//RODAPE DATA ANO
+const anoAtual = new Date().getFullYear();
+document.querySelector(".dataano").innerHTML = anoAtual;
+
+
+//MENU FUNDO REMOVE AO CARREGAR PÁGINA
+window.onload = function () {
+    if (window.scrollY <= 300) {
+        document.querySelector("nav").classList.add("menu-fundo");
+    }
+};
+
+
+//MENU NA ROLAGEM MUDA ATIVO (sem click menu)
+let sections = document.querySelectorAll('section');
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 200;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+        
+        if (top >= offset && top < offset + height) {
+            menuLink.forEach(n => n.classList.remove('active'))
+            document.querySelector('.nav-link[href*=' + id + ']').classList.add('active');
+        };
+        //quando na primeira secção
+        if (top <= 300) {
+            menuLink.forEach(n => n.classList.remove('active'));
+            document.querySelector("nav").classList.add("menu-fundo");
+        } else {
+            document.querySelector("nav").classList.remove("menu-fundo");
+        }
+    });
+};
+
+
+//MENU (EXIBE/ESCONDE) FIXAR NO TOPO QUANDO SCROLL PARA CIMA
+let prevScrollPos = window.pageYOffset;
+
+window.addEventListener('scroll', function () {
+    //atual posição de rolagem
+    const currentScrollPos = window.pageYOffset;
+
+    if (prevScrollPos > currentScrollPos) {
+        //scrolled up
+        document.querySelector('nav').classList.remove("menu-updown");
+        document.querySelector('nav').classList.add("menu-updown-show");
+
+        //esconde menu quando mouse sai do hover
+        const navegacao = document.querySelector("nav");
+        navegacao.addEventListener("mouseenter", function (event) {
+            document.querySelector("nav").classList.add("menu-updown-show");
+            document.querySelector("nav").classList.remove("menu-updown");
+        })
+        navegacao.addEventListener("mouseleave", function (event) {
+            if (window.scrollY > 300) {
+                document.querySelector("nav").classList.remove("menu-updown-show");
+                document.querySelector("nav").classList.add("menu-updown");
+            }
+        })
+
+    } else {
+        //scrolled down
+        document.querySelector('nav').classList.remove("menu-updown-show");
+        document.querySelector('nav').classList.add("menu-updown");
+    }
+    //atualizar posição de rolagem anterior
+    prevScrollPos = currentScrollPos;
+});
+
+
+//MENU CLICADO ADICIONA CLASSE NO MENU 
+var menuLink = document.querySelectorAll(".nav-link");
+var urlAncora = window.location.hash.substring(1);
+
+function linkAction() {
+    menuLink.forEach(n => n.classList.remove('active'))
+    this.classList.add('active');
+    //fecha menu mobile
+    document.querySelector(".navbar-collapse").classList.remove("show")
+    //remove url id
+    setTimeout(() => {
+        history.replaceState(null, document.title, window.location.pathname + window.location.search);
+    }, 600);
+}
+menuLink.forEach(n => n.addEventListener('click', linkAction));
+
+
+//IR PARA O TOPO, REMOVE DA URL O TITULO DO MENU
+let botSubir = document.querySelector(".subir");
+window.addEventListener("scroll", (event) => {
+    //sumir e aparecer
+    let scroll = this.scrollY;
+    if (scroll >= 1000) {
+        botSubir.classList.add("aparecer")
+    } else {
+        botSubir.classList.remove("aparecer");
+    }
+});
+botSubir.onclick = function () {
+    window.scrollTo(0, 0);
+    menuLink.forEach(n => n.classList.remove('active'));
+};
+
+
+///////////MOSTRA LARGURA TELA QUANDO MUDA DE TAMANHO
+/* function logWindowWidth() {
+  const windowWidth = window.innerWidth;
+  console.log('Largura Tela atual: ' + windowWidth + 'px');
+}
+logWindowWidth();
+window.addEventListener('resize', logWindowWidth); 
+
+////////CAMINHO URL COM E SEM ID
+console.log("Current Path:", window.location.pathname);
+console.log("Current Hash/ID Link:", window.location.hash);
+*/

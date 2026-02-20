@@ -1,0 +1,134 @@
+﻿@mixin media($medias...) {
+    @each $media in $medias {
+
+        //↑ Dispositivos small (telefone com 576px ou mais)↑
+        @if $media==sm-acima {
+            @media (min-width: $celular-acima) {
+                @content;
+            }
+        }
+
+        //↑ Dispositivos medios (tablet com 768px ou mais)↑
+        @if $media==md-acima {
+            @media (min-width: $mobile-acima) {
+                @content;
+            }
+        }
+
+        //↑ Dispositivos large (desktop com 992px ou mais)↑
+        @if $media==lg-acima {
+            @media (min-width: $tablet-acima) {
+                @content;
+            }
+        }
+
+        //↑ Dispositivos extra large (desktop grande com 1200px ou mais)↑
+        @if $media==xl-acima {
+            @media (min-width: $desktop-acima) {
+                @content;
+            }
+        }
+
+        //↑ Dispositivos extra extra large (desktop muito grande com 1400px ou mais)↑
+        @if $media==xxl-acima {
+            @media (min-width: $grandedesktop-acima) {
+                @content;
+            }
+        }
+
+        //↑ Dispositivos extra extra large (desktop muito grande com 1400px ou mais)↑
+        @if $media==ul-acima {
+            @media (min-width: $ultradesktop-acima) {
+                @content;
+            }
+        }
+
+        //↑ Dispositivos ultra extra extra large (desktop muito grande com 1400px ou mais)↑
+        @if $media==xul-acima {
+            @media (min-width: $extraultradesktop-acima) {
+                @content;
+            }
+        }
+
+        //↓ Dispositivos extra extra small (telefone com 424px ou menos)↓
+        @if $media==xxs-abaixo {
+            @media (max-width: $minicelular-abaixo) {
+                @content;
+            }
+        }
+
+        //↓ Dispositivos extra small (telefone com 575px ou menos)↓
+        @if $media==xs-abaixo {
+            @media (max-width: $celular-abaixo) {
+                @content;
+            }
+        }
+
+        //↓ Dispositivos small (telefone com 767px ou menos)↓
+        @if $media==sm-abaixo {
+            @media (max-width: $mobile-abaixo) {
+                @content;
+            }
+        }
+
+        //↓ Dispositivos medios (tablet com 991px ou menos)↓
+        @if $media==md-abaixo {
+            @media (max-width: $tablet-abaixo) {
+                @content;
+            }
+        }
+
+        //↓ Dispositivos large (desktop com 1199px ou menos)↓
+        @if $media==lg-abaixo {
+            @media (max-width: $desktop-abaixo) {
+                @content;
+            }
+        }
+
+        //↓ Dispositivos extra extra large (desktop com 1399px ou menos)↓
+        @if $media==xxl-abaixo {
+            @media (max-width: $grandedesktop-abaixo) {
+                @content;
+            }
+        }
+
+        // Dispositivos small (telefone entre 425px e 767px)
+        @if $media==sm {
+            @media (min-width: $minicelular-acima) and (max-width: $mobile-abaixo) {
+                @content;
+            }
+        }
+
+        // Dispositivos medios (tablet entre 768px e 991px)
+        @if $media==md {
+            @media (min-width: $mobile-acima) and (max-width: $tablet-abaixo) {
+                @content;
+            }
+        }
+
+        // Dispositivos large (desktop entre 992px e 1199px)
+        @if $media==lg {
+            @media (min-width: $tablet-acima) and (max-width: $desktop-abaixo) {
+                @content;
+            }
+        }
+
+        // Dispositivos extra large (desktop entre 1200px e 1399px)
+        @if $media==xl {
+            @media (min-width: $desktop-acima) and (max-width: $grandedesktop-abaixo) {
+                @content;
+            }
+        }
+    }
+}
+
+/* esse conteudo pode incluir 1 ou mais formatos de media, exemplo:
+h1 {
+    font-size: 40px;
+    @include media(xs-abaixo) {
+        font-size: 30px;
+    }
+    @include media(xs-abaixo, md, xl-acima) {
+        font-size: 30px;
+    }
+} */
