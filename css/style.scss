@@ -17,12 +17,12 @@ body {
         --menu: $claro;
         --menu-hover: var(--primaria);
         --menu-ativo: var(--secundaria);
-        --rodape: $escuro;
         --titulos: $escuro;
-        --fundo: var(--secundaria);
         --texto: $cinza-escuro;
         --link: var(--primaria);
         --link-hover: $escuro;
+        --fundo: $claro;
+        --rodape: $escuro;
     }
 
     &[data-theme="dark"] {
@@ -33,61 +33,65 @@ body {
         --menu: $escuro;
         --menu-hover: var(--primaria);
         --menu-ativo: var(--secundaria);
-        --rodape: $cinza-escuro;
-        --titulos: $cinza-medio;
-        --fundo: $cinza-escuro;
+        --titulos: $cinza-claro;
         --texto: $cinza-medio;
         --link: var(--primaria);
         --link-hover: var(--secundaria);
-    }
-
-
-    //TEMA DEFAULT
-    &[data-theme="default"] {
-
-        font-family: "Roboto",
-            sans-serif;
-        font-size: $s20;
-        font-style: normal;
-        color: var(--texto);
-        background-color: var(--fundo);
-
-        @include media(sm-abaixo) {
-            font-size: $s18;
-        }
-
-        #home {
-            background-image: url(../img/banner.jpg);
-        }
-
-        #servicos,
-        #portfolio {
-            background-color: $claro;
-        }
-
-        footer {
-            background-color: var(--rodape);
-        }
+        --fundo: $cinza-escuro;
+        --rodape: $cinza-escuro;
     }
 
     //TEMA DARK
     &[data-theme="dark"] {
 
         color: var(--texto);
-        background-color: $escuro;
+        background-color: $cinza-escuro;
 
         #home {
             background-image: url(../img/banner-dark.jpg);
         }
 
-        #servicos,
-        #portfolio {
-            background-color: var(--fundo);
+        #sobre {
+            background-color: $escuro;
+        }
+
+        #contatos {
+            background-color: $escuro;
         }
 
         footer {
             background-color: var(--rodape);
         }
+    }
+}
+
+body {
+    font-family: "Roboto",
+        sans-serif;
+    font-size: $s20;
+    font-style: normal;
+    color: var(--texto);
+    background-color: var(--fundo);
+
+    @include media(sm-abaixo) {
+        font-size: $s18;
+    }
+}
+
+#home {
+    background-image: url(../img/banner.jpg);
+}
+
+#sobre {
+    background-color: $cinza-claro;
+}
+
+#contatos {
+    color: $cinza-medio;
+    background-color: $cinza-escuro;
+
+    h3 {
+        color: $cinza-claro;
     }
 }
 
@@ -479,10 +483,10 @@ textarea {
     .owl-prev,
     .owl-next {
         font-family: bootstrap-icons !important;
-        font-size: 28px!important;
-        color: var(--navmenu)!important;
-        line-height: 50px!important;
-        padding: 5px!important;
+        font-size: 28px !important;
+        color: var(--navmenu) !important;
+        line-height: 50px !important;
+        padding: 5px !important;
         margin: 0 10px;
 
         span {
@@ -504,6 +508,7 @@ textarea {
 }
 
 footer {
+    background-color: var(--rodape);
 
     .footer {
         padding: 30px 20px;

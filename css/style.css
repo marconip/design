@@ -22,12 +22,12 @@ body[data-theme="default"] {
   --menu: #ffffff;
   --menu-hover: var(--primaria);
   --menu-ativo: var(--secundaria);
-  --rodape: #000000;
   --titulos: #000000;
-  --fundo: var(--secundaria);
   --texto: #333333;
   --link: var(--primaria);
   --link-hover: #000000;
+  --fundo: #ffffff;
+  --rodape: #000000;
 }
 
 body[data-theme="dark"] {
@@ -38,15 +38,36 @@ body[data-theme="dark"] {
   --menu: #000000;
   --menu-hover: var(--primaria);
   --menu-ativo: var(--secundaria);
-  --rodape: #333333;
-  --titulos: #CCCCCC;
-  --fundo: #333333;
+  --titulos: #F1F1F1;
   --texto: #CCCCCC;
   --link: var(--primaria);
   --link-hover: var(--secundaria);
+  --fundo: #333333;
+  --rodape: #333333;
 }
 
-body[data-theme="default"] {
+body[data-theme="dark"] {
+  color: var(--texto);
+  background-color: #333333;
+}
+
+body[data-theme="dark"] #home {
+  background-image: url(../img/banner-dark.jpg);
+}
+
+body[data-theme="dark"] #sobre {
+  background-color: #000000;
+}
+
+body[data-theme="dark"] #contatos {
+  background-color: #000000;
+}
+
+body[data-theme="dark"] footer {
+  background-color: var(--rodape);
+}
+
+body {
   font-family: "Roboto", sans-serif;
   font-size: 1.25rem;
   font-style: normal;
@@ -55,40 +76,26 @@ body[data-theme="default"] {
 }
 
 @media (max-width: 767.98px) {
-  body[data-theme="default"] {
+  body {
     font-size: 1.125rem;
   }
 }
 
-body[data-theme="default"] #home {
+#home {
   background-image: url(../img/banner.jpg);
 }
 
-body[data-theme="default"] #servicos,
-body[data-theme="default"] #portfolio {
-  background-color: #ffffff;
+#sobre {
+  background-color: #F1F1F1;
 }
 
-body[data-theme="default"] footer {
-  background-color: var(--rodape);
+#contatos {
+  color: #CCCCCC;
+  background-color: #333333;
 }
 
-body[data-theme="dark"] {
-  color: var(--texto);
-  background-color: #000000;
-}
-
-body[data-theme="dark"] #home {
-  background-image: url(../img/banner-dark.jpg);
-}
-
-body[data-theme="dark"] #servicos,
-body[data-theme="dark"] #portfolio {
-  background-color: var(--fundo);
-}
-
-body[data-theme="dark"] footer {
-  background-color: var(--rodape);
+#contatos h3 {
+  color: #F1F1F1;
 }
 
 .primaria {
@@ -536,6 +543,10 @@ textarea {
 
 .owl-carousel .owl-next::before {
   content: "\F133";
+}
+
+footer {
+  background-color: var(--rodape);
 }
 
 footer .footer {
