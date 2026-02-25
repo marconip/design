@@ -62,6 +62,14 @@ body {
         footer {
             background-color: var(--rodape);
         }
+
+        .btn {
+
+            &:hover,
+            &:active {
+                border-color: var(--secundaria);
+            }
+        }
     }
 }
 
@@ -142,6 +150,11 @@ h4 {
     margin-bottom: 60px;
 }
 
+h5 {
+    font-size: $s24;
+    font-weight: 400;
+}
+
 a {
     color: var(--link);
     text-decoration: none;
@@ -169,15 +182,17 @@ p {
     color: $claro !important;
     padding-left: 20px;
     padding-right: 20px;
+    border-color: transparent;
     border-radius: 100px;
     background-color: var(--primaria);
 
     &:hover,
+    &:active,
     &:active {
         text-decoration: none;
         color: $claro !important;
-        border-color: var(--secundaria);
-        background-color: $escuro;
+        border-color: transparent;
+        background-color: $escuro !important;
     }
 }
 
@@ -237,8 +252,12 @@ nav {
     @include media(md-acima) {
         margin: 0 auto;
         padding: 0 15px;
+        border: 1px solid;
+        border-color: rgba(0, 0, 0, 0.5);
         border-radius: 100px;
-        background-color: var(--navmenu);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        background: rgba(0, 0, 0, 0.7);
     }
 
     .nav-link {
@@ -266,21 +285,21 @@ nav {
     font-size: $s40;
     position: fixed;
     z-index: 1;
-    bottom: 60px;
+    bottom: 65px;
     right: 15px;
     color: var(--primaria);
     text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     transition: .32s;
     opacity: 0;
-}
 
-.subir:hover {
-    color: var(--link-hover);
-}
+    &:hover {
+        color: var(--secundaria);
+    }
 
-.subir.aparecer {
-    opacity: 1;
+    &.aparecer {
+        opacity: 1;
+    }
 }
 
 figure {
