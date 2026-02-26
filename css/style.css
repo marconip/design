@@ -15,7 +15,7 @@ html {
 }
 
 body[data-theme="default"] {
-  --primaria: #FF3100;
+  --primaria: #ff4e00;
   --secundaria: #49BAEA;
   --areanav: transparent;
   --navmenu: #000000;
@@ -83,23 +83,6 @@ body {
   body {
     font-size: 1.125rem;
   }
-}
-
-#home {
-  background-image: url(../img/banner.jpg);
-}
-
-#sobre {
-  background-color: #F1F1F1;
-}
-
-#contatos {
-  color: #CCCCCC;
-  background-color: #333333;
-}
-
-#contatos h3 {
-  color: #F1F1F1;
 }
 
 .primaria {
@@ -327,12 +310,16 @@ figure:hover {
   transform-origin: center center;
 }
 
+#home {
+  background-image: url(../img/ban1.jpg);
+}
+
 .banner {
   padding-top: 124px;
   padding-left: 0px;
   padding-right: 0px;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: right;
   background-size: auto;
 }
 
@@ -502,6 +489,25 @@ figure:hover {
   background-color: #CCCCCC;
 }
 
+.foto-perfil {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 100%;
+}
+
+#sobre {
+  background-color: #F1F1F1;
+}
+
+#contatos {
+  color: #CCCCCC;
+  background-color: #333333;
+}
+
+#contatos h3 {
+  color: #F1F1F1;
+}
+
 .contatos {
   display: flex;
   flex-direction: column;
@@ -556,6 +562,14 @@ textarea {
 
 .owl-carousel .owl-next::before {
   content: "\F133";
+}
+
+.owl-carousel .carrossel {
+  border-radius: 18px;
+}
+
+.owl-carousel img {
+  border-radius: 16px;
 }
 
 footer {

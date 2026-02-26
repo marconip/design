@@ -10,7 +10,7 @@ html {
 
 body {
     &[data-theme="default"] {
-        --primaria: #FF3100;
+        --primaria: #ff4e00;
         --secundaria: #49BAEA;
         --areanav: transparent;
         --navmenu: $escuro;
@@ -83,23 +83,6 @@ body {
 
     @include media(sm-abaixo) {
         font-size: $s18;
-    }
-}
-
-#home {
-    background-image: url(../img/banner.jpg);
-}
-
-#sobre {
-    background-color: $cinza-claro;
-}
-
-#contatos {
-    color: $cinza-medio;
-    background-color: $cinza-escuro;
-
-    h3 {
-        color: $cinza-claro;
     }
 }
 
@@ -329,12 +312,16 @@ figure {
     }
 }
 
+#home {
+    background-image: url(../img/ban1.jpg);
+}
+
 .banner {
     padding-top: 124px;
     padding-left: 0px;
     padding-right: 0px;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: right;
     background-size: auto;
 
     @include media(sm-abaixo) {
@@ -462,6 +449,25 @@ figure {
     }
 }
 
+.foto-perfil {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 100%;
+}
+
+#sobre {
+    background-color: $cinza-claro;
+}
+
+#contatos {
+    color: $cinza-medio;
+    background-color: $cinza-escuro;
+
+    h3 {
+        color: $cinza-claro;
+    }
+}
+
 .contatos {
     display: flex;
     flex-direction: column;
@@ -522,6 +528,14 @@ textarea {
         &::before {
             content: "\F133";
         }
+    }
+
+    .carrossel {
+        border-radius: 18px;
+    }
+
+    img {
+        border-radius: 16px;
     }
 }
 
