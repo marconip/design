@@ -105,6 +105,7 @@ h6 {
 
 h1 {
     font-size: $s65;
+    font-weight: 900;
 
     @include media(lg) {
         font-size: $s50;
@@ -209,7 +210,7 @@ nav {
     transition: 1s;
 
     @include media(sm-abaixo) {
-        box-shadow: 0px 6px 6px rgba(0,0,0,0.4)
+        box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.4)
     }
 
     &.menu-fundo {
@@ -422,7 +423,7 @@ figure {
     img {
         width: 100%;
         max-width: 340px;
-        margin-right: 7%;
+        margin-right: 6%;
         filter: drop-shadow(0px 0px 14px var(--primaria));
 
         @include media(sm-abaixo) {
@@ -470,9 +471,36 @@ figure {
     }
 }
 
+.foto-parallax {
+    background-image: url("../img/parallax-perfil.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: -320px center;
+    background-size: contain;
+    border-radius: 100%;
+    margin: 0 auto;
+    width: 470px;
+    height: 470px;
+
+    @include media(lg) {
+        width: 383px;
+        height: 383px;
+    }
+
+    @include media(md-abaixo) {
+        background-position: center;
+        background-size: cover;
+    }
+
+    @include media(sm-abaixo) {
+        width: 340px;
+        height: 340px;
+    }
+}
+
 .foto-perfil {
     width: 100%;
-    max-width: 470px;
+    max-width: 475px;
     border-radius: 100%;
 }
 

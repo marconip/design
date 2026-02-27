@@ -23,7 +23,7 @@ body[data-theme="default"] {
   --menu-hover: var(--secundaria);
   --menu-ativo: #000000;
   --titulos: #000000;
-  --texto: #333333;
+  --texto: #222222;
   --link: var(--primaria);
   --link-hover: #000000;
   --fundo: #ffffff;
@@ -42,13 +42,13 @@ body[data-theme="dark"] {
   --texto: #CCCCCC;
   --link: var(--primaria);
   --link-hover: var(--secundaria);
-  --fundo: #333333;
-  --rodape: #333333;
+  --fundo: #222222;
+  --rodape: #222222;
 }
 
 body[data-theme="dark"] {
   color: var(--texto);
-  background-color: #333333;
+  background-color: #222222;
 }
 
 body[data-theme="dark"] #home {
@@ -104,6 +104,7 @@ h6 {
 
 h1 {
   font-size: 4.0625rem;
+  font-weight: 900;
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -456,7 +457,7 @@ figure:hover {
 .banner-titulos img {
   width: 100%;
   max-width: 340px;
-  margin-right: 7%;
+  margin-right: 6%;
   filter: drop-shadow(0px 0px 14px var(--primaria));
 }
 
@@ -507,9 +508,42 @@ figure:hover {
   background-color: #CCCCCC;
 }
 
+.foto-parallax {
+  background-image: url("../img/parallax-perfil.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: -320px center;
+  background-size: contain;
+  border-radius: 100%;
+  margin: 0 auto;
+  width: 470px;
+  height: 470px;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .foto-parallax {
+    width: 383px;
+    height: 383px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .foto-parallax {
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .foto-parallax {
+    width: 340px;
+    height: 340px;
+  }
+}
+
 .foto-perfil {
   width: 100%;
-  max-width: 470px;
+  max-width: 475px;
   border-radius: 100%;
 }
 
@@ -519,7 +553,7 @@ figure:hover {
 
 #contatos {
   color: #CCCCCC;
-  background-color: #333333;
+  background-color: #222222;
 }
 
 #contatos h3 {
