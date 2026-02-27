@@ -20,8 +20,8 @@ body[data-theme="default"] {
   --areanav: transparent;
   --navmenu: #000000;
   --menu: #ffffff;
-  --menu-hover: var(--primaria);
-  --menu-ativo: var(--secundaria);
+  --menu-hover: var(--secundaria);
+  --menu-ativo: #000000;
   --titulos: #000000;
   --texto: #333333;
   --link: var(--primaria);
@@ -103,7 +103,7 @@ h6 {
 }
 
 h1 {
-  font-size: 3.75rem;
+  font-size: 4.0625rem;
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -115,6 +115,12 @@ h1 {
 @media (max-width: 991.98px) {
   h1 {
     font-size: 3.125rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  h1 {
+    margin-top: 30px;
   }
 }
 
@@ -170,7 +176,7 @@ p a:hover {
   background-color: var(--primaria);
 }
 
-.btn:hover, .btn:active, .btn:active {
+.btn:hover, .btn:active {
   text-decoration: none;
   color: #ffffff !important;
   border-color: transparent;
@@ -187,23 +193,55 @@ hr {
   margin: 1.3rem 0;
 }
 
+.logo {
+  width: 170px;
+}
+
+.botao-nav {
+  font-size: 1.125rem;
+}
+
 @media (max-width: 767.98px) {
-  .botao-topo {
+  .botao-nav {
     display: none;
   }
 }
 
 nav {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.9);
   transition: 1s;
 }
 
-nav.menu-fundo {
-  background-color: var(--areanav);
+@media (max-width: 767.98px) {
+  nav {
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@media (min-width: 576px) {
+  nav.menu-fundo {
+    background-color: var(--areanav);
+  }
 }
 
 .navbar-toggler {
-  background-color: var(--primaria);
+  background-color: #000000;
+}
+
+.navbar-toggler:active, .navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  font-family: bootstrap-icons !important;
+  background-image: none;
+}
+
+.navbar-toggler-icon::before {
+  content: "\F479";
+  font-size: 30px;
+  color: #fff;
 }
 
 @media (max-width: 767.98px) {
@@ -224,12 +262,6 @@ nav.menu-fundo {
   transition: 1s;
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .navbar-nav {
-    font-size: 1rem;
-  }
-}
-
 @media (min-width: 768px) {
   .navbar-nav {
     margin: 0 auto;
@@ -239,13 +271,22 @@ nav.menu-fundo {
     border-radius: 100px;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.55);
   }
 }
 
 .navbar-nav .nav-link {
+  font-size: 1.125rem;
   font-weight: 300;
   color: var(--menu);
+}
+
+@media (max-width: 767.98px) {
+  .navbar-nav .nav-link {
+    font-weight: 600;
+    text-align: center;
+    color: var(--primaria);
+  }
 }
 
 .navbar-nav .nav-link:hover {
@@ -311,21 +352,27 @@ figure:hover {
 }
 
 #home {
-  background-image: url(../img/ban1.jpg);
+  background-image: url(../img/ban0.jpg);
 }
 
 .banner {
-  padding-top: 124px;
+  padding-top: 100px;
   padding-left: 0px;
   padding-right: 0px;
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: top right;
   background-size: auto;
+}
+
+@media (max-width: 991.98px) {
+  .banner {
+    background-position: top center;
+  }
 }
 
 @media (max-width: 767.98px) {
   .banner {
-    padding-top: 102px;
+    background-repeat: repeat;
   }
 }
 
@@ -364,19 +411,7 @@ figure:hover {
 
 @media (min-width: 768px) and (max-width: 991.98px) {
   .banner-titulos h1 {
-    font-size: 1.625rem;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .banner-titulos h1 {
-    font-size: 2.5rem;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  .banner-titulos h1 {
-    font-size: 2.5rem;
+    font-size: 2.8125rem;
   }
 }
 
@@ -415,13 +450,14 @@ figure:hover {
 }
 
 .banner-titulos p {
-  font-weight: 600;
-  color: var(--texto);
+  color: #000000;
 }
 
 .banner-titulos img {
   width: 100%;
-  max-width: 470px;
+  max-width: 340px;
+  margin-right: 7%;
+  filter: drop-shadow(0px 0px 14px var(--primaria));
 }
 
 @media (max-width: 767.98px) {
@@ -430,27 +466,9 @@ figure:hover {
   }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .banner-titulos img {
-    max-width: 350px;
-  }
-}
-
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .banner-titulos img {
     max-width: 32%;
-  }
-}
-
-@media (min-width: 1400px) {
-  .banner-titulos img {
-    max-width: 537px;
-  }
-}
-
-@media (min-width: 1700px) {
-  .banner-titulos img {
-    max-width: 624px;
   }
 }
 
@@ -491,7 +509,7 @@ figure:hover {
 
 .foto-perfil {
   width: 100%;
-  max-width: 500px;
+  max-width: 470px;
   border-radius: 100%;
 }
 

@@ -15,8 +15,8 @@ body {
         --areanav: transparent;
         --navmenu: $escuro;
         --menu: $claro;
-        --menu-hover: var(--primaria);
-        --menu-ativo: var(--secundaria);
+        --menu-hover: var(--secundaria);
+        --menu-ativo: $escuro;
         --titulos: $escuro;
         --texto: $cinza-escuro;
         --link: var(--primaria);
@@ -104,7 +104,7 @@ h6 {
 }
 
 h1 {
-    font-size: $s60;
+    font-size: $s65;
 
     @include media(lg) {
         font-size: $s50;
@@ -112,6 +112,10 @@ h1 {
 
     @include media(md-abaixo) {
         font-size: $s50;
+    }
+
+    @include media(sm-abaixo) {
+        margin-top: 30px;
     }
 }
 
@@ -170,7 +174,6 @@ p {
     background-color: var(--primaria);
 
     &:hover,
-    &:active,
     &:active {
         text-decoration: none;
         color: $claro !important;
@@ -189,23 +192,52 @@ hr {
     margin: 1.3rem 0;
 }
 
-.botao-topo {
+.logo {
+    width: 170px;
+}
+
+.botao-nav {
+    font-size: $s18;
+
     @include media(sm-abaixo) {
         display: none;
     }
 }
 
 nav {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.9);
     transition: 1s;
 
+    @include media(sm-abaixo) {
+        box-shadow: 0px 6px 6px rgba(0,0,0,0.4)
+    }
+
     &.menu-fundo {
-        background-color: var(--areanav);
+        @include media(sm-acima) {
+            background-color: var(--areanav);
+        }
     }
 }
 
 .navbar-toggler {
-    background-color: var(--primaria);
+    background-color: $escuro;
+
+    &:active,
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.navbar-toggler-icon {
+    font-family: bootstrap-icons !important;
+    background-image: none;
+
+    &::before {
+        content: "\F479";
+        font-size: 30px;
+        color: #fff;
+    }
 }
 
 .navbar-collapse {
@@ -228,10 +260,6 @@ nav {
 
 .navbar-nav {
 
-    @include media(md) {
-        font-size: $s16;
-    }
-
     @include media(md-acima) {
         margin: 0 auto;
         padding: 0 15px;
@@ -240,12 +268,19 @@ nav {
         border-radius: 100px;
         -webkit-backdrop-filter: blur(5px);
         backdrop-filter: blur(5px);
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.55);
     }
 
     .nav-link {
+        font-size: $s18;
         font-weight: 300;
         color: var(--menu);
+
+        @include media(sm-abaixo) {
+            font-weight: 600;
+            text-align: center;
+            color: var(--primaria);
+        }
 
         &:hover {
             color: var(--menu-hover);
@@ -313,19 +348,23 @@ figure {
 }
 
 #home {
-    background-image: url(../img/ban1.jpg);
+    background-image: url(../img/ban0.jpg);
 }
 
 .banner {
-    padding-top: 124px;
+    padding-top: 100px;
     padding-left: 0px;
     padding-right: 0px;
     background-repeat: no-repeat;
-    background-position: right;
+    background-position: top right;
     background-size: auto;
 
+    @include media(md-abaixo) {
+        background-position: top center;
+    }
+
     @include media(sm-abaixo) {
-        padding-top: 102px;
+        background-repeat: repeat;
     }
 }
 
@@ -354,15 +393,8 @@ figure {
     }
 
     h1 {
-        @include media(md) {
-            font-size: $s26;
-        }
 
-        @include media(sm-abaixo, lg) {
-            font-size: $s40;
-        }
-
-        @include media(xxl-acima) {
+        @include media(md, xxl-acima) {
             font-size: $s45;
         }
     }
@@ -384,32 +416,21 @@ figure {
     }
 
     p {
-        font-weight: 600;
-        color: var(--texto)
+        color: $escuro;
     }
 
     img {
         width: 100%;
-        max-width: 470px;
+        max-width: 340px;
+        margin-right: 7%;
+        filter: drop-shadow(0px 0px 14px var(--primaria));
 
         @include media(sm-abaixo) {
             max-width: 320px;
         }
 
-        @include media(md) {
-            max-width: 350px;
-        }
-
         @include media(lg) {
             max-width: 32%;
-        }
-
-        @include media(xxl-acima) {
-            max-width: 537px;
-        }
-
-        @include media(ul-acima) {
-            max-width: 624px;
         }
     }
 }
@@ -451,7 +472,7 @@ figure {
 
 .foto-perfil {
     width: 100%;
-    max-width: 500px;
+    max-width: 470px;
     border-radius: 100%;
 }
 

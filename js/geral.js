@@ -76,6 +76,7 @@ window.addEventListener('scroll', function () {
         //scrolled down
         document.querySelector('nav').classList.remove("menu-updown-show");
         document.querySelector('nav').classList.add("menu-updown");
+        document.querySelector(".navbar-collapse").classList.remove("show")
     }
     //atualizar posição de rolagem anterior
     prevScrollPos = currentScrollPos;
