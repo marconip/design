@@ -476,7 +476,7 @@ figure:hover {
 .redes {
   display: flex;
   justify-content: space-around;
-  margin: 40px 0px;
+  margin-top: 30px;
 }
 
 .redes a {
@@ -509,10 +509,10 @@ figure:hover {
 }
 
 .foto-parallax {
-  background-image: url("../img/parallax-perfil.jpg");
+  background-image: url("../img/perfil-parallax.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: -320px center;
+  background-position: -240px center;
   background-size: contain;
   border-radius: 100%;
   margin: 0 auto;
@@ -551,6 +551,12 @@ figure:hover {
   background-color: #F1F1F1;
 }
 
+@media (max-width: 767.98px) {
+  #sobre .sobremim {
+    flex-direction: column-reverse;
+  }
+}
+
 #contatos {
   color: #CCCCCC;
   background-color: #222222;
@@ -560,16 +566,20 @@ figure:hover {
   color: #F1F1F1;
 }
 
-.contatos {
+.oscontatos {
   display: flex;
   flex-direction: column;
 }
 
-.contatos a {
+.oscontatos a {
   color: var(--link);
   display: flex;
   align-items: center;
   align-self: flex-start;
+}
+
+.oscontatos a:hover {
+  color: var(--secundaria);
 }
 
 textarea {

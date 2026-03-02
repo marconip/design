@@ -439,7 +439,7 @@ figure {
 .redes {
     display: flex;
     justify-content: space-around;
-    margin: 40px 0px;
+    margin-top: 30px;
 
     a {
         display: flex;
@@ -472,10 +472,10 @@ figure {
 }
 
 .foto-parallax {
-    background-image: url("../img/parallax-perfil.jpg");
+    background-image: url("../img/perfil-parallax.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: -320px center;
+    background-position: -240px center;
     background-size: contain;
     border-radius: 100%;
     margin: 0 auto;
@@ -506,6 +506,12 @@ figure {
 
 #sobre {
     background-color: $cinza-claro;
+
+    .sobremim {
+        @include media(sm-abaixo) {
+            flex-direction: column-reverse;
+        }
+    }
 }
 
 #contatos {
@@ -517,7 +523,7 @@ figure {
     }
 }
 
-.contatos {
+.oscontatos {
     display: flex;
     flex-direction: column;
 
@@ -526,6 +532,10 @@ figure {
         display: flex;
         align-items: center;
         align-self: flex-start;
+
+        &:hover {
+            color: var(--secundaria);
+        }
     }
 
 }

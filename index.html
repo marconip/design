@@ -39,9 +39,6 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link home" data-ancora="home" href="/bio.html">BIO</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" data-ancora="servicos" href="#servicos">Serviços</a>
                     </li>
                     <li class="nav-item">
@@ -72,7 +69,7 @@
                 <h2>Seu Freelancer Web</h2>
                 <br />
                 <p>
-                    Criação de sites, landing page e blog, 
+                    Criação de sites, landing page e blog,
                     atualizações e manutenções em WordPress.
                 </p>
             </div>
@@ -124,7 +121,7 @@
 
     <section class="container-fluid secao" id="sobre">
         <div class="container-xxl">
-            <div class="row">
+            <div class="row sobremim">
                 <div class="col-12 col-lg-5 text-center">
                     <div class="foto-parallax"></div>
                     <!-- <img src="./img/foto-perfil.jpg" class="foto-perfil" alt="foto perfil"> -->
@@ -172,13 +169,16 @@
                         para o seu negócio.
                     </p>
                     <p>
-                        <b>Formação:</b> Pós-graduação em Design de Produtos Digitais UX-UI. Graduado com Bacharelado em Design Digital.
+                        <b>Formação:</b> Pós-graduação em Design de Produtos Digitais UX-UI. Graduado com Bacharelado em
+                        Design Digital.
                         <br />
-                        Veja mais do meu histórico profissional: 
+                        Veja mais do meu histórico profissional:
                         <a href="https://www.linkedin.com/in/marconipacheco/" target="_blank">Linkedin</a>.
                     </p>
-                    </div>
-                    <div class="col-12">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
                     <h3 class="mb-0 ms-2">Habilidades</h3>
                     <div class="tags">
                         <div class="tag">UX/UI Design</div>
@@ -203,7 +203,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+
     </section>
 
     <section class="container-fluid secao" id="portfolio">
@@ -250,7 +250,7 @@
                     <p class="w-75">
                         Responderei o mais rápido possível!
                     </p>
-                    <p class="contatos">
+                    <p class="oscontatos">
                         <a href="tel:41995501711">
                             <i class="bi bi-phone-vibrate-fill fs-3"></i>&nbsp(41) 995501711
                         </a>
@@ -263,22 +263,19 @@
                         </a>
                     </p>
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 mt-5">
                     <form action="https://formsubmit.co/5956ef8dde41df2625176d1dc03d827e" method="POST">
                         <!-- <form method="post" action="send-email.php" class="formulario"> -->
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nome <small>(Primeiro e último)</small></label>
-                            <input type="text" name="nome" id="name" class="form-control" required>
-                        </div>
                         <div class="row">
                             <div class="col-12 col-lg-6 mb-3">
-                                <label for="telefone" class="form-label">Telefone</label>
-                                <input type="text" name="telefone" id="telefone" class="form-control tel" maxlength="15"
-                                    placeholder="Apenas números com DDD" required>
+                                <label for="name" class="form-label">Nome <small>(Primeiro e último)</small></label>
+                                <input type="text" name="nome" id="name" class="form-control" required>
                             </div>
-                            <div class=" col-12 col-lg-6 mb-3">
-                                <label for="email" class="form-label">E-mail</label>
-                                <input type="email" name="email" id="email" class="form-control" required>
+                            <div class="col-12 col-lg-6 mb-3">
+                                <label for="telefone" class="form-label">Telefone</label>
+                                <input type="text" name="telefone" inputmode="numeric" pattern="[0-9]*" id="telefone"
+                                    class="form-control tel" maxlength="15" placeholder="Apenas números com DDD"
+                                    required>
                             </div>
                         </div>
                         <div class="mb-3">
