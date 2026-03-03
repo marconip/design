@@ -189,6 +189,29 @@ p {
     }
 }
 
+.botoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    @include media(sm-abaixo) {
+        flex-direction: column;
+    }
+
+    .btn {
+        margin-bottom: 20px;
+    }
+}
+
+.btn-preto {
+    background-color: $escuro;
+
+    &:hover,
+    &:active {
+        background-color: var(--primaria) !important;
+    }
+}
+
 hr {
     margin: 1.3rem 0;
 }
@@ -296,8 +319,7 @@ nav {
 
 .secao {
     /* scroll-margin-top: 113px; */
-    min-height: 100vh;
-    padding: 50px 0px;
+    padding: 60px 0px;
 }
 
 .subir {
@@ -552,9 +574,8 @@ textarea {
 .owl-carousel {
 
     .carrossel {
-        color: $claro;
         margin: 0 15px;
-        background-color: $escuro;
+        border-radius: 18px;
     }
 
     .owl-nav {
@@ -587,10 +608,6 @@ textarea {
         &::before {
             content: "\F133";
         }
-    }
-
-    .carrossel {
-        border-radius: 18px;
     }
 
     img {
