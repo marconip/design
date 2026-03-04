@@ -156,6 +156,13 @@ $('.owl-carousel').owlCarousel({
     }
 });
 
+// Obtém a URL atual, remove .html e atualiza a barra de endereços
+if (window.location.href.indexOf(".html") > -1) {
+    const newUrl = window.location.href.replace(".html", "");
+    window.history.replaceState({}, "", newUrl);
+}
+
+
 
 ///////////MOSTRA LARGURA TELA QUANDO MUDA DE TAMANHO
 /* function logWindowWidth() {
