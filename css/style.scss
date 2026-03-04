@@ -33,7 +33,7 @@ body {
         --menu: $escuro;
         --menu-hover: var(--primaria);
         --menu-ativo: var(--secundaria);
-        --titulos: $cinza-claro;
+        --titulos: $escuro;
         --texto: $cinza-medio;
         --link: var(--primaria);
         --link-hover: var(--secundaria);
@@ -48,7 +48,7 @@ body {
         background-color: $cinza-escuro;
 
         #home {
-            background-image: url(../img/banner-dark.jpg);
+            background-image: url(../img/ban-dark.jpg);
         }
 
         #sobre {
@@ -67,9 +67,51 @@ body {
 
             &:hover,
             &:active {
-                border-color: var(--secundaria);
+                border-color: var(--primaria);
             }
         }
+
+        input,
+        textarea {
+            background-color: $cinza-escuro;
+        }
+
+        .form-dark {
+            background-color: $cinza-claro;
+        }
+
+        .navbar-nav {
+            backdrop-filter: blur(2px);
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.55);
+        }
+
+        .banner-titulos {
+            img {
+                filter: drop-shadow(0px 0px 14px $escuro);
+            }
+        }
+
+        h3 {
+            color: $cinza-claro;
+        }
+
+        h4 {
+            color: $cinza-medio;
+        }
+
+        .tag {
+            background-color: $cinza-medio;
+        }
+
+        .temas {
+            color: $escuro;
+
+            &:hover {
+                color: var(--primaria);
+            }
+        }
+
     }
 }
 
@@ -117,6 +159,10 @@ h1 {
 
     @include media(sm-abaixo) {
         margin-top: 30px;
+    }
+
+    b {
+        color: var(--primaria);
     }
 }
 
@@ -220,6 +266,34 @@ hr {
     width: 170px;
 }
 
+.temas {
+    font-size: $s24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 100%;
+    backdrop-filter: blur(2px);
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.55);
+
+    @include media(sm-abaixo) {
+        position: fixed;
+        top: 120px;
+        right: 0px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4)
+    }
+
+    &.temas-esconde {
+        @include media(sm-abaixo) {
+            display: none;
+        }
+    }
+}
+
+
 .botao-nav {
     font-size: $s18;
 
@@ -297,11 +371,10 @@ nav {
 
     .nav-link {
         font-size: $s18;
-        font-weight: 300;
+        font-weight: 400;
         color: var(--menu);
 
         @include media(sm-abaixo) {
-            font-weight: 600;
             text-align: center;
             color: var(--primaria);
         }
@@ -483,14 +556,15 @@ figure {
     align-items: center;
     flex-wrap: wrap;
 
-    .tag {
-        font-size: $s14;
-        color: $escuro;
-        padding: 3px 10px;
-        margin: 5px;
-        border-radius: 7px;
-        background-color: $cinza-medio;
-    }
+}
+
+.tag {
+    font-size: $s14;
+    color: $escuro;
+    padding: 3px 10px;
+    margin: 5px;
+    border-radius: 7px;
+    background-color: $cinza-medio;
 }
 
 .foto-parallax {

@@ -10,17 +10,44 @@ const anoAtual = new Date().getFullYear();
 document.querySelector(".dataano").innerHTML = anoAtual;
 
 
-//MENU FUNDO REMOVE AO CARREGAR PÁGINA
+//MENU FUNDO REMOVE AO CARREGAR PÁGINA + CARREGAMENTO PÁGINA
 window.onload = function () {
     if (window.scrollY <= 300) {
         document.querySelector("nav").classList.add("menu-fundo");
     }
 
-    //troca logo do tema
-    if (document.querySelector("body").dataset.theme == "dark") {
-        document.querySelector(".logo").src = "./img/marconidesign-dark.svg";
+    //troca ícone do tema ao carregar página
+    if (pagina.dataset.theme == "dark") {
+        tema.innerHTML = "<i class='bi bi-cloud-moon-fill'></i>";
     }
 };
+
+//TEMA DARK E DEFAULT
+let tema = document.querySelector('.temas')
+let pagina = document.querySelector("body")
+
+//Recuperar o tema ao carregar a página
+const savedTheme = localStorage.getItem('theme') || 'default';
+pagina.dataset.theme = savedTheme;
+
+//Alternar e Salvar o tema no clique
+tema.addEventListener('click', () => {
+    let currentTheme = pagina.dataset.theme;
+    let newTheme = currentTheme === 'default' ? 'dark' : 'default';
+
+    //Aplica o novo tema no DOM (dataset)
+    pagina.dataset.theme = newTheme;
+
+    //Salva o novo tema no localStorage
+    localStorage.setItem('theme', newTheme);
+
+    //Troca icone de tema
+    if (newTheme == "dark") {
+        tema.innerHTML = "<i class='bi bi-cloud-moon-fill'></i>";
+    } else {
+        tema.innerHTML = "<i class='bi bi-cloud-sun-fill'></i>";
+    }
+});
 
 
 //MENU NA ROLAGEM MUDA ATIVO (sem click menu)
@@ -39,7 +66,7 @@ window.onscroll = () => {
         //quando na primeira secção
         if (top <= 300) {
             menuLink.forEach(n => n.classList.remove('active'));
-            document.querySelector("nav").classList.add("menu-fundo");
+            document.querySelector("nav").classList.add("menu-fundo");            
         } else {
             document.querySelector("nav").classList.remove("menu-fundo");
         }
@@ -55,7 +82,7 @@ window.addEventListener('scroll', function () {
     const currentScrollPos = window.pageYOffset;
 
     if (prevScrollPos > currentScrollPos) {
-        //scrolled up
+        //scrolled subindo
         document.querySelector('nav').classList.remove("menu-updown");
         document.querySelector('nav').classList.add("menu-updown-show");
 
@@ -73,7 +100,7 @@ window.addEventListener('scroll', function () {
         })
 
     } else {
-        //scrolled down
+        //scrolled baixando
         document.querySelector('nav').classList.remove("menu-updown-show");
         document.querySelector('nav').classList.add("menu-updown");
         document.querySelector(".navbar-collapse").classList.remove("show")
@@ -105,16 +132,40 @@ let botSubir = document.querySelector(".subir");
 window.addEventListener("scroll", (event) => {
     //sumir e aparecer
     let scroll = this.scrollY;
-    if (scroll >= 1000) {
+    if (scroll >= 992) {
         botSubir.classList.add("aparecer")
+        tema.classList.add("temas-esconde");
     } else {
-        botSubir.classList.remove("aparecer");
+        botSubir.classList.remove("aparecer")
+        tema.classList.remove("temas-esconde");
     }
 });
 botSubir.onclick = function () {
     window.scrollTo(0, 0);
     menuLink.forEach(n => n.classList.remove('active'));
 };
+
+
+//VALIDAÇÃO DE FORMULÁRIO
+let formNome = document.querySelector('input.nome')
+let formTel = document.querySelector('input.tel')
+let textArea = document.querySelector('textarea')
+
+formNome.addEventListener('focusout', () => {
+    if (formNome.value !== "") {
+        formNome.classList.add("form-dark");
+    }
+});
+formTel.addEventListener('focusout', () => {
+    if (formTel.value !== "") {
+        formTel.classList.add("form-dark");
+    }
+});
+textArea.addEventListener('focusout', () => {
+    if (textArea.value !== "") {
+        textArea.classList.add("form-dark");
+    }
+});
 
 
 //MASCARA TELEFONE COM JQUERY.MASK
