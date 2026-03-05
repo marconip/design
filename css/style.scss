@@ -31,8 +31,8 @@ body {
         --areanav: transparent;
         --navmenu: $cinza-claro;
         --menu: $escuro;
-        --menu-hover: var(--primaria);
-        --menu-ativo: var(--secundaria);
+        --menu-hover: $claro;
+        --menu-ativo: var(--primaria);
         --titulos: $escuro;
         --texto: $cinza-medio;
         --link: var(--primaria);
@@ -84,6 +84,17 @@ body {
             backdrop-filter: blur(2px);
             border-color: rgba(255, 255, 255, 0.5);
             background: rgba(255, 255, 255, 0.55);
+        }
+
+        nav {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7) 0%, rgba(0, 0, 0, 0.7) 40%);
+
+            &.menu-fundo {
+                @include media(sm-acima) {
+                    background-image: none;
+                    background-color: var(--areanav);
+                }
+            }
         }
 
         .banner-titulos {
@@ -303,8 +314,8 @@ hr {
 }
 
 nav {
-    background-color: rgba(255, 255, 255, 0.9);
     transition: 1s;
+    background-color: rgba(255, 255, 255, 0.9);
 
     @include media(sm-abaixo) {
         box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.4)

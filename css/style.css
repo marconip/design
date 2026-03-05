@@ -36,8 +36,8 @@ body[data-theme="dark"] {
   --areanav: transparent;
   --navmenu: #eeeeee;
   --menu: #000000;
-  --menu-hover: var(--primaria);
-  --menu-ativo: var(--secundaria);
+  --menu-hover: #ffffff;
+  --menu-ativo: var(--primaria);
   --titulos: #000000;
   --texto: #CCCCCC;
   --link: var(--primaria);
@@ -84,6 +84,17 @@ body[data-theme="dark"] .navbar-nav {
   backdrop-filter: blur(2px);
   border-color: rgba(255, 255, 255, 0.5);
   background: rgba(255, 255, 255, 0.55);
+}
+
+body[data-theme="dark"] nav {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7) 0%, rgba(0, 0, 0, 0.7) 40%);
+}
+
+@media (min-width: 576px) {
+  body[data-theme="dark"] nav.menu-fundo {
+    background-image: none;
+    background-color: var(--areanav);
+  }
 }
 
 body[data-theme="dark"] .banner-titulos img {
@@ -305,8 +316,8 @@ hr {
 }
 
 nav {
-  background-color: rgba(255, 255, 255, 0.9);
   transition: 1s;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 767.98px) {

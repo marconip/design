@@ -15,7 +15,6 @@ window.onload = function () {
     if (window.scrollY <= 300) {
         document.querySelector("nav").classList.add("menu-fundo");
     }
-
     //troca ícone do tema ao carregar página
     if (pagina.dataset.theme == "dark") {
         tema.innerHTML = "<i class='bi bi-cloud-moon-fill'></i>";
@@ -66,7 +65,7 @@ window.onscroll = () => {
         //quando na primeira secção
         if (top <= 300) {
             menuLink.forEach(n => n.classList.remove('active'));
-            document.querySelector("nav").classList.add("menu-fundo");            
+            document.querySelector("nav").classList.add("menu-fundo");
         } else {
             document.querySelector("nav").classList.remove("menu-fundo");
         }
@@ -103,7 +102,7 @@ window.addEventListener('scroll', function () {
         //scrolled baixando
         document.querySelector('nav').classList.remove("menu-updown-show");
         document.querySelector('nav').classList.add("menu-updown");
-        document.querySelector(".navbar-collapse").classList.remove("show")
+        document.querySelector(".navbar-collapse").classList.remove("show");
     }
     //atualizar posição de rolagem anterior
     prevScrollPos = currentScrollPos;
@@ -112,7 +111,6 @@ window.addEventListener('scroll', function () {
 
 //MENU CLICADO ADICIONA CLASSE NO MENU 
 var menuLink = document.querySelectorAll(".nav-link");
-var urlAncora = window.location.hash.substring(1);
 
 function linkAction() {
     menuLink.forEach(n => n.classList.remove('active'))
@@ -126,6 +124,17 @@ function linkAction() {
 }
 menuLink.forEach(n => n.addEventListener('click', linkAction));
 
+//PEGA URL ATUAL E REMOVE .html E ATUALIZA A BARRA DE ENDEREÇO
+if (window.location.href.indexOf(".html") > -1) {
+    const newUrl = window.location.href.replace(".html", "");
+    window.history.replaceState({}, "", newUrl);
+}
+//REMOVE ID HOME AO CLICK NA LOGO
+document.querySelector(".logo").onclick = function () {
+    setTimeout(() => {
+        history.replaceState(null, document.title, window.location.pathname + window.location.search);
+    }, 600);
+}
 
 //IR PARA O TOPO, REMOVE DA URL O TITULO DO MENU
 let botSubir = document.querySelector(".subir");
@@ -206,13 +215,6 @@ $('.owl-carousel').owlCarousel({
         }
     }
 });
-
-// Obtém a URL atual, remove .html e atualiza a barra de endereços
-if (window.location.href.indexOf(".html") > -1) {
-    const newUrl = window.location.href.replace(".html", "");
-    window.history.replaceState({}, "", newUrl);
-}
-
 
 
 ///////////MOSTRA LARGURA TELA QUANDO MUDA DE TAMANHO
