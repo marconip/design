@@ -84,6 +84,12 @@ body {
             backdrop-filter: blur(2px);
             border-color: rgba(255, 255, 255, 0.5);
             background: rgba(255, 255, 255, 0.55);
+
+            @include media(sm-abaixo) {
+                border-bottom-left-radius: 9px;
+                border-bottom-right-radius: 9px;
+                background: rgba(0, 0, 0, 0.55);
+            }
         }
 
         nav {
@@ -93,6 +99,12 @@ body {
                 @include media(sm-acima) {
                     background-image: none;
                     background-color: var(--areanav);
+                }
+            }
+
+            .nav-link {
+                @include media(sm-abaixo) {
+                    color: $claro;
                 }
             }
         }
@@ -122,7 +134,6 @@ body {
                 color: var(--primaria);
             }
         }
-
     }
 }
 
@@ -136,6 +147,13 @@ body {
 
     @include media(sm-abaixo) {
         font-size: $s18;
+    }
+}
+
+.tooltip {
+    @include media(sm-abaixo) {
+        display: none !important;
+        visibility: hidden !important;
     }
 }
 
@@ -286,6 +304,7 @@ hr {
     height: 40px;
     margin-right: 15px;
     border-radius: 100%;
+    cursor: pointer;
     backdrop-filter: blur(2px);
     border-color: rgba(255, 255, 255, 0.5);
     background: rgba(255, 255, 255, 0.55);
@@ -294,6 +313,7 @@ hr {
         position: fixed;
         top: 120px;
         right: 0px;
+        z-index: -1;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4)
     }
 
