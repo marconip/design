@@ -16,8 +16,10 @@ window.onload = function () {
         document.querySelector("nav").classList.add("menu-fundo");
     }
     //troca ícone do tema ao carregar página
-    if (pagina.dataset.theme == "dark") {
-        tema.innerHTML = "<i class='bi bi-cloud-moon-fill'></i>";
+    if (pagina.dataset.theme == "default") {
+        tema.innerHTML = "<i class='bi bi-cloud-sun-fill'></i>";
+    } else {
+        tema.innerHTML = "<i class='bi bi-cloud-moon-fill'></i>"
     }
 };
 
