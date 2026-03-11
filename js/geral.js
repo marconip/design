@@ -17,9 +17,9 @@ window.onload = function () {
     }
     //troca ícone do tema ao carregar página
     if (pagina.dataset.theme == "default") {
-        tema.innerHTML = "<i class='bi bi-cloud-sun-fill'></i>";
+        tema.innerHTML = "<i class='bi bi-brightness-low-fill'></i>";
     } else {
-        tema.innerHTML = "<i class='bi bi-cloud-moon-fill'></i>"
+        tema.innerHTML = "<i class='bi bi-brightness-low'></i>"
     }
 };
 
@@ -44,9 +44,9 @@ tema.addEventListener('click', () => {
 
     //Troca icone de tema
     if (newTheme == "dark") {
-        tema.innerHTML = "<i class='bi bi-cloud-moon-fill'></i>";
+        tema.innerHTML = "<i class='bi bi-brightness-low'></i>";
     } else {
-        tema.innerHTML = "<i class='bi bi-cloud-sun-fill'></i>";
+        tema.innerHTML = "<i class='bi bi-brightness-low-fill'></i>";
     }
 });
 
