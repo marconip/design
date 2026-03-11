@@ -621,6 +621,37 @@ figure:hover {
   font-size: 0.875rem;
 }
 
+.empresas {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 767.98px) {
+  .empresas {
+    justify-content: center;
+  }
+}
+
+.empresas a {
+  margin-top: 20px;
+  margin-right: 40px;
+}
+
+.empresas a:first-child {
+  margin-left: 10px;
+}
+
+.empresas img {
+  max-height: 42px;
+}
+
+@media (max-width: 767.98px) {
+  .empresas img {
+    max-height: 33px;
+  }
+}
+
 .tags {
   display: flex;
   align-items: center;

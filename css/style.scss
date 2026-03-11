@@ -582,11 +582,37 @@ figure {
     }
 }
 
-.tags {
+.empresas {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 
+    @include media(sm-abaixo) {
+        justify-content: center;
+    }
+
+    a {
+        margin-top: 20px;
+        margin-right: 40px;
+
+        &:first-child {
+            margin-left: 10px;
+        }
+    }
+
+    img {
+        max-height: 42px;
+
+        @include media(sm-abaixo) {
+            max-height: 33px;
+        }
+    }
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .tag {
