@@ -51,11 +51,13 @@ body {
             background-image: url(../img/ban-dark.jpg);
         }
 
-        #sobre {
+        #sobre,
+        #contatos {
             background-color: $escuro;
         }
 
-        #contatos {
+        .modal-secao:nth-child(even) {
+            color: $cinza-claro;
             background-color: $escuro;
         }
 
@@ -69,15 +71,6 @@ body {
             &:active {
                 border-color: var(--primaria);
             }
-        }
-
-        input,
-        textarea {
-            background-color: $cinza-escuro;
-        }
-
-        .form-dark {
-            background-color: $cinza-claro;
         }
 
         .navbar-nav {
@@ -133,6 +126,21 @@ body {
             &:hover {
                 color: var(--primaria);
             }
+        }
+
+        .modal-header,
+        .modal-footer {
+            color: $cinza-claro;
+            background-color: $escuro;
+
+            .btn-close {
+                background-color: $cinza-medio;
+            }
+        }
+
+        .modal-body {
+            color: $cinza-claro;
+            background-color: $cinza-escuro;
         }
     }
 }
@@ -421,6 +429,10 @@ nav {
     }
 }
 
+.modal-secao:nth-child(even) {
+    background-color: $cinza-claro;
+}
+
 .secao {
     /* scroll-margin-top: 113px; */
     padding: 60px 0px;
@@ -674,6 +686,19 @@ figure {
     h3 {
         color: $cinza-claro;
     }
+}
+
+input,
+textarea {
+    background-color: $cinza-escuro!important;
+
+    &:focus {
+        background-color: $cinza-medio!important;
+    }
+}
+
+.form-dark {
+    background-color: $cinza-claro!important;
 }
 
 .oscontatos {

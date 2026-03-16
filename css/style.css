@@ -55,11 +55,13 @@ body[data-theme="dark"] #home {
   background-image: url(../img/ban-dark.jpg);
 }
 
-body[data-theme="dark"] #sobre {
+body[data-theme="dark"] #sobre,
+body[data-theme="dark"] #contatos {
   background-color: #000000;
 }
 
-body[data-theme="dark"] #contatos {
+body[data-theme="dark"] .modal-secao:nth-child(even) {
+  color: #eeeeee;
   background-color: #000000;
 }
 
@@ -69,15 +71,6 @@ body[data-theme="dark"] footer {
 
 body[data-theme="dark"] .btn:hover, body[data-theme="dark"] .btn:active {
   border-color: var(--primaria);
-}
-
-body[data-theme="dark"] input,
-body[data-theme="dark"] textarea {
-  background-color: #222222;
-}
-
-body[data-theme="dark"] .form-dark {
-  background-color: #eeeeee;
 }
 
 body[data-theme="dark"] .navbar-nav {
@@ -133,6 +126,22 @@ body[data-theme="dark"] .temas {
 
 body[data-theme="dark"] .temas:hover {
   color: var(--primaria);
+}
+
+body[data-theme="dark"] .modal-header,
+body[data-theme="dark"] .modal-footer {
+  color: #eeeeee;
+  background-color: #000000;
+}
+
+body[data-theme="dark"] .modal-header .btn-close,
+body[data-theme="dark"] .modal-footer .btn-close {
+  background-color: #CCCCCC;
+}
+
+body[data-theme="dark"] .modal-body {
+  color: #eeeeee;
+  background-color: #222222;
 }
 
 body {
@@ -425,6 +434,10 @@ nav {
 
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
   color: var(--menu-ativo);
+}
+
+.modal-secao:nth-child(even) {
+  background-color: #eeeeee;
 }
 
 .secao {
@@ -723,6 +736,20 @@ figure:hover {
 
 #contatos h3 {
   color: #eeeeee;
+}
+
+input,
+textarea {
+  background-color: #222222 !important;
+}
+
+input:focus,
+textarea:focus {
+  background-color: #CCCCCC !important;
+}
+
+.form-dark {
+  background-color: #eeeeee !important;
 }
 
 .oscontatos {
