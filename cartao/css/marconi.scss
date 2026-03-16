@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 @import "_geral.scss";
 
 body {
@@ -129,6 +128,33 @@ a {
 
     img {
         max-width: 28px;
+    }
+}
+
+/* ↓CSS ZOOM IMG↓ */
+.modal-img {
+    display: none;
+    place-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #121212;
+
+    img {
+        max-width: 80%;
+        height: auto;
+        animation: .6s ease 0s 1 zoom-img;
+
+        @include media(md-acima) {
+            max-width: 400px;
+        }
     }
 }
 

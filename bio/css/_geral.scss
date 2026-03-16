@@ -15,40 +15,6 @@ p {
     margin: 0px;
 }
 
-//↓ Dispositivos small (telefone com 767px ou menos)↓
-@mixin media($medias...) {
-
-    //↓ Dispositivos small (telefone com 767px ou menos)↓
-    @each $media in $medias {
-        @if $media==md-abaixo {
-            @media (max-width: 767px) {
-                @content;
-            }
-        }
-    }
-
-    //↑ Dispositivos medios (tablet com 768px ou mais)↑
-    @each $media in $medias {
-        @if $media==md-acima {
-            @media (min-width: 768px) {
-                @content;
-            }
-        }
-    }
-}
-
-@keyframes zoom-img {
-    from {
-        transform: scale(0);
-    }
-
-    to {
-        transform: scale(1);
-    }
-}
-
-/* ↑CSS ZOOM IMG↑ */
-
 
 //Tamanho px em rem
 $s1: 0.063rem;
@@ -98,3 +64,24 @@ $s100: 6.25rem;
 //Se precisar de mais numero é só multiplicar ou somar
 //ex. SCSS: font-size: $s50 * 2;   CSS: font-size: 6.25rem (=100px)
 //ex. SCSS: font-size: $s50 + $s2; CSS: font-size: 3.25rem (=52px)
+
+
+//↓ Dispositivos small (telefone com 767px ou menos)↓
+@mixin media($medias...) {
+    //↓ Dispositivos small (telefone com 767px ou menos)↓
+    @each $media in $medias {
+        @if $media==md-abaixo {
+            @media (max-width: 767px) {
+                @content;
+            }
+        }
+    }
+    //↑ Dispositivos medios (tablet com 768px ou mais)↑
+    @each $media in $medias {
+        @if $media==md-acima {
+            @media (min-width: 768px) {
+                @content;
+            }
+        }
+    }
+}

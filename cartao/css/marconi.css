@@ -15,29 +15,6 @@ p {
   margin: 0px;
 }
 
-/* ↓CSS ZOOM IMG↓ */
-.modal-img {
-  display: none;
-  place-items: center;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
-  background-color: #121212;
-}
-
-.modal-img img {
-  max-width: 80%;
-  height: auto;
-  animation: .6s ease 0s 1 zoom-img;
-}
-
 @keyframes zoom-img {
   from {
     transform: scale(0);
@@ -176,6 +153,35 @@ a {
 
 .compartilhar img {
   max-width: 28px;
+}
+
+/* ↓CSS ZOOM IMG↓ */
+.modal-img {
+  display: none;
+  place-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #121212;
+}
+
+.modal-img img {
+  max-width: 80%;
+  height: auto;
+  animation: .6s ease 0s 1 zoom-img;
+}
+
+@media (min-width: 768px) {
+  .modal-img img {
+    max-width: 400px;
+  }
 }
 
 footer {

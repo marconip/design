@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "_geral.scss";
+
+body {
+    font-family: "Poppins";
+    font-size: $s16;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom right, #7471ff, #6a0185);
+}
+
+.logo {
+    max-width: 180px;
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: $s30+$s6;
+    font-weight: 600;
+}
+
+b {
+    font-size: $s18;
+    font-weight: 300;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+
+a {
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.corpo {
+    width: 100%;
+    max-width: 330px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include media(md-acima) {
+        max-width: 500px;
+    }
+}
+
+.secao-dupla {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
+    .botao-secao {
+        width: 180px;
+
+        @include media(md-acima) {
+            width: inherit;
+        }
+
+        img {
+            width: 92%;
+        }
+    }
+}
+
+.secao {
+    position: relative;
+    margin-bottom: 20px;
+
+    &:nth-child(odd) {
+        .flutuar {
+            animation: float 4s ease-in-out infinite;
+        }
+    }
+
+    &:nth-child(even) {
+        .flutuar {
+            animation: float-vert 5s ease-in-out infinite;
+        }
+    }
+
+    .flutuar {
+        position: absolute;
+        bottom: 40px;
+        right: -10px;
+        max-width: 100px;
+
+
+        @include media(md-acima) {
+            bottom: 80px;
+            right: -20px;
+            max-width: 130px;
+        }
+    }
+
+    .imagem {
+        width: 100%;
+    }
+
+    .botao {
+        max-width: 360px;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translatex(0px);
+        filter: drop-shadow(0px 0px 0px #111);
+    }
+
+    50% {
+        transform: translatex(-15px);
+        filter: drop-shadow(15px 0px 5px rgba(3, 3, 3, 0.4));
+    }
+
+    100% {
+        transform: translatex(0px);
+        filter: drop-shadow(0px 0px 0px #111);
+    }
+}
+
+@keyframes float-vert {
+    0% {
+        transform: translatey(0px);
+        filter: drop-shadow(0px 0px 0px #111);
+    }
+
+    50% {
+        transform: translatey(-15px);
+        filter: drop-shadow(0px 15px 5px rgba(3, 3, 3, 0.4));
+    }
+
+    100% {
+        transform: translatey(0px);
+        filter: drop-shadow(0px 0px 0px #111);
+    }
+}
+
+footer {
+    font-size: 1rem;
+    font-weight: 200;
+    padding: 6px 0px;
+    background-image: linear-gradient(to right, #3e004f, #6f3cc6, #3e004f, #6f3cc6, #3e004f);
+
+    a {
+        color: #fff;
+    }
+}
