@@ -178,6 +178,7 @@ body[data-lang="en"] .lang-en {
 }
 
 .idiomas {
+  display: none;
   position: fixed;
   z-index: 9999;
 }
