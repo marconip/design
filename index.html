@@ -44,11 +44,16 @@
 
 <!-- TEMAS: default ou dark -->
 
-<body data-theme="">
+<body data-theme="" data-lang="pt">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVGMQ4W5" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+    <div class="idiomas">
+        <button onclick="switchLang('pt')">PT</button>
+        <button onclick="switchLang('en')">EN</button>
+    </div>
 
     <nav class="navbar fixed-top navbar-expand-md">
         <div class="container-xxl">
@@ -63,26 +68,34 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#servicos">Serviços</a>
+                        <a class="nav-link lang-pt" href="#servicos">Serviços</a>
+                        <a class="nav-link lang-en" href="#servicos">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#sobre">Sobre</a>
+                        <a class="nav-link lang-pt" href="#sobre">Sobre</a>
+                        <a class="nav-link lang-en" href="#sobre">About me</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfólio</a>
+                        <a class="nav-link lang-pt" href="#portfolio">Portfólio</a>
+                        <a class="nav-link lang-en" href="#portfolio">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contatos">Contatos</a>
+                        <a class="nav-link lang-pt" href="#contatos">Contatos</a>
+                        <a class="nav-link lang-en" href="#contatos">Contacts</a>
                     </li>
                 </ul>
             </div>
 
-            <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Trocar Aparência" class="temas">
-                <!-- <i class="bi bi-cloud-sun-fill"></i> -->
+            <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Trocar Aparência"
+                class="temas lang-pt">
+            </div>
+            <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Change Appearance"
+                class="temas lang-en">
             </div>
             <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Olá,%20através%20do%20seu%20site%20estou%20entrando%20em%20contato."
                 target="_blank" role="button" class="btn botao-nav">
-                <i class="bi bi-whatsapp"></i>&nbsp Orçamento
+                <span class="lang-pt"><i class="bi bi-whatsapp"></i>&nbsp Orçamento</span>
+                <span class="lang-en"><i class="bi bi-whatsapp"></i>&nbsp Budget</span>
             </a>
         </div>
     </nav>
@@ -90,14 +103,20 @@
     <div class="container-fluid banner" id="home">
         <div class="banner-titulos">
             <div>
-                <h1>Olá! <br />
+                <h1 class="lang-pt">Olá! <br />
                     Sou <b>Marconi</b>, Design Digital
                 </h1>
-                <h2>Seu Freelancer Web</h2>
+                <h1 class="lang-en">Hello! <br />
+                    I'm <b>Marconi</b>, a Digital Designer
+                </h1>
+                <h2 class="lang-pt">Seu Freelancer Web</h2>
+                <h2 class="lang-en">Your Freelancer Web</h2>
                 <br />
-                <p>
-                    Criação de sites, landing page e blog,
-                    atualizações e manutenções em WordPress.
+                <p class="lang-pt">
+                    Criação de sites, landing page e blog, atualizações e manutenções em WordPress.
+                </p>
+                <p class="lang-en">
+                    Website creation, landing page and blog development, updates and maintenance in WordPress.
                 </p>
             </div>
             <img src="./img/banner-foto.png" alt="ferfil-banner">
@@ -108,12 +127,19 @@
         <div class="container-xxl">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="text-center">Serviços</h2>
-                    <h3 class="text-center">
+                    <h2 class="text-center lang-pt">Serviços</h2>
+                    <h2 class="text-center lang-en">Services</h2>
+                    <h3 class="text-center lang-pt">
                         O que posso fazer por você?
                     </h3>
-                    <h4 class="text-center">
+                    <h3 class="text-center lang-en">
+                        What can I do for you?
+                    </h3>
+                    <h4 class="text-center lang-pt">
                         Soluções completas de design digital para transformar sua presença online
+                    </h4>
+                    <h4 class="text-center lang-en">
+                        Complete digital design solutions to transform your online presence.
                     </h4>
                 </div>
 
@@ -140,11 +166,13 @@
             <div class="text-center mt-4 botoes">
                 <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal" target="_blank"
                     role="button" class="btn btn-sm-w100">
-                    <i class="bi bi-feather"></i>&nbsp Ver todos serviços
+                    <span class="lang-pt"><i class="bi bi-feather"></i>&nbsp Ver todos serviços</span>
+                    <span class="lang-en"><i class="bi bi-feather"></i>&nbsp View all services</span>
                 </a>
                 <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Olá,%20através%20do%20seu%20site%20estou%20entrando%20em%20contato."
                     target="_blank" role="button" class="btn btn-preto btn-sm-w100">
-                    <i class="bi bi-whatsapp"></i>&nbsp Quero fazer um serviço
+                    <span class="lang-pt"><i class="bi bi-whatsapp"></i>&nbsp Contratar serviço</span>
+                    <span class="lang-en"><i class="bi bi-whatsapp"></i>&nbsp Hire service</span>
                 </a>
             </div>
         </div>
@@ -159,7 +187,8 @@
                         <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Olá,%20através%20do%20seu%20site%20estou%20entrando%20em%20contato."
                             target="_blank">
                             <img src="./img/i-whatsapp.svg" alt="redes sociais">
-                            <p>Atendimento</p>
+                            <p class="lang-pt">Atendimento</p>
+                            <p class="lang-en">Support</p>
                         </a>
                         <a href="https://www.linkedin.com/in/marconipacheco/" target="_blank">
                             <img src="./img/i-linkedin.svg" alt="redes sociais">
@@ -167,7 +196,8 @@
                         </a>
                         <a href="https://www.behance.net/marconipacheco" target="_blank">
                             <img src="./img/i-behance.svg" alt="redes sociais">
-                            <p>Portfólio</p>
+                            <p class="lang-pt">Portfólio</p>
+                            <p class="lang-en">Portfolio</p>
                         </a>
                         <a href="https://instagram.com/marconiarts" target="_blank">
                             <img src="./img/i-instagram.svg" alt="redes sociais">
@@ -180,37 +210,62 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-7">
-                    <h2>Sobre Mim</h2>
-                    <h3 class="mb-3">
+                    <h2 class="lang-pt">Sobre Mim</h2>
+                    <h2 class="lang-en">About Me</h2>
+                    <h3 class="mb-3 lang-pt">
                         Apaixonado em Interação <br />
                         Humano-Computador
                     </h3>
-                    <h4 class="primaria mb-2">
+                    <h3 class="mb-3 lang-en">
+                        Passionate about <br />
+                        Human-Computer Interaction
+                    </h3>
+                    <h4 class="primaria mb-2 lang-pt">
                         <b>Há 18 anos, desenvolvendo experiências digitais.</b>
                     </h4>
-                    <p>
+                    <h4 class="primaria mb-2 lang-en">
+                        <b>For 18 years, developing digital experiences.</b>
+                    </h4>
+                    <p class="lang-pt">
                         Minha trajetória é marcada pela união entre a visão estratégica do <b>Design UX/UI</b> e a
                         precisão técnica do <b>Desenvolvimento Front-end</b>. Ter atuado em setores como: o bancário, o
                         público e o de agências me deram bagagem necessária para entender o que é um bom design.
-                    </p>
-                    <p>
+
+                        <br /><br />
                         Não entrego apenas telas, entrego soluções. Atuo desde o primeiro contato com o
                         cliente até o código final, garantindo que a essência do projeto não se perca no caminho. Meu
                         foco é criar interfaces que não apenas encantem visualmente, mas que tragam resultados reais
                         para o seu negócio.
-                    </p>
-                    <p>
+                        <br /><br />
                         <b>Formação:</b> Pós-graduação em Design de Produtos Digitais UX-UI. Graduação: Bacharel em
                         Design Digital.
                         <br />
                         Veja mais do meu histórico profissional:
                         <a href="https://www.linkedin.com/in/marconipacheco/" target="_blank">Linkedin</a>.
                     </p>
+                    <p class="lang-en">
+                        My career path is marked by the union between the strategic vision of <b>UX/UI Design</b> and
+                        the technical precision of <b>Front-end Development</b>. Having worked in sectors such as
+                        banking, the public sector, and agencies has given me the necessary background to understand
+                        what constitutes good design.
+                        <br /><br />
+                        I don't just deliver screens, I deliver solutions. I work from the first contact with the client
+                        to the final code, ensuring that the essence of the project is not lost along the way. My focus
+                        is on creating interfaces that not only visually delight, but also bring real results to your
+                        business.
+                        <br /><br />
+                        <b>Education:</b> Postgraduate degree in Digital Product Design UX-UI. Undergraduate degree:
+                        Bachelor's degree in Digital Design.
+                        <br />
+                        See more of my professional background:
+                        <a href="https://www.linkedin.com/in/marconipacheco/" target="_blank">Linkedin</a>.
+                    </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <h3 class="ms-2">Habilidades</h3>
+                    <h3 class="ms-2 lang-pt">Habilidades</h3>
+                    <h3 class="ms-2 lang-en">Skills</h3>
                     <div class="tags">
                         <div class="tag">UX/UI Design</div>
                         <div class="tag">Web Design</div>
@@ -221,7 +276,8 @@
                         <div class="tag">Aplicativos</div>
                         <div class="tag">Mobile</div>
                         <div class="tag">Wireframe</div>
-                        <div class="tag">Protótipos</div>
+                        <div class="tag lang-pt">Protótipos</div>
+                        <div class="tag lang-en">Prototypes</div>
                         <div class="tag">Bootstrap</div>
                         <div class="tag">HTML</div>
                         <div class="tag">CSS</div>
@@ -237,7 +293,8 @@
 
             <div class="row">
                 <div class="col-12">
-                    <h3 class="mt-4 ms-2">Colaborações</h3>
+                    <h3 class="mt-4 ms-2 lang-pt">Colaborações</h3>
+                    <h3 class="mt-4 ms-2 lang-en">Collaborations</h3>
                     <div class="empresas">
                         <a href="https://newmd.com.br/" target="_blank">
                             <img src="./img/empresa-newmd.png" alt="empresa">
@@ -270,10 +327,15 @@
         <div class="container-xxl">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="text-center">Portfólio</h2>
-                    <h3 class="text-center">Projetos recentes </h3>
-                    <h4 class="text-center">
+                    <h2 class="text-center lang-pt">Portfólio</h2>
+                    <h2 class="text-center lang-en">Portfolio</h2>
+                    <h3 class="text-center lang-pt">Projetos recentes </h3>
+                    <h3 class="text-center lang-en">Recent projects </h3>
+                    <h4 class="text-center lang-pt">
                         Confira alguns dos projetos que transformaram a presença digital dos meus clientes
+                    </h4>
+                    <h4 class="text-center lang-en">
+                        Check out some of the projects that have transformed my clients' digital presence.
                     </h4>
                 </div>
                 <div class="col-12">
@@ -308,11 +370,13 @@
             </div>
             <div class="text-center mt-4 botoes">
                 <a href="https://www.behance.net/marconipacheco" target="_blank" role="button" class="btn btn-sm-w100">
-                    <i class="bi bi-image"></i>&nbsp Mais Projetos
+                    <span class="lang-pt"><i class="bi bi-image"></i>&nbsp Ver mais Projetos</span>
+                    <span class="lang-en"><i class="bi bi-image"></i>&nbsp See more Projects</span>
                 </a>
                 <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Olá,%20através%20do%20seu%20site%20estou%20entrando%20em%20contato."
                     target="_blank" role="button" class="btn btn-preto btn-sm-w100">
-                    <i class="bi bi-whatsapp"></i>&nbsp Quero fazer um projeto
+                    <span class="lang-pt"><i class="bi bi-whatsapp"></i>&nbsp Quero fazer um projeto</span>
+                    <span class="lang-en"><i class="bi bi-whatsapp"></i>&nbsp Hire project service</span>
                 </a>
             </div>
         </div>
@@ -322,15 +386,25 @@
         <div class="container-xxl">
             <div class="row">
                 <div class="col-12 col-lg-6">
-                    <h2>Contatos</h2>
-                    <h3 class="mb-5">
+                    <h2 class="lang-pt">Contatos</h2>
+                    <h2 class="lang-en">Contacts</h2>
+                    <h3 class="mb-5 lang-pt">
                         Você tem uma idéia de um projeto incrível?
                     </h3>
-                    <p class="w-75">
-                        Entre em contato comigo através de qualquer um dos canais abaixo ou formulário ao lado.
+                    <h3 class="mb-5 lang-en">
+                        Do you have an idea for an amazing project?
+                    </h3>
+                    <p class="w-75 lang-pt">
+                        Entre em contato comigo através de qualquer um dos meios abaixo ou formulário ao lado.
                     </p>
-                    <p class="w-75">
+                    <p class="w-75 lang-en">
+                        Contact me through any of the methods below or the form on the side.
+                    </p>
+                    <p class="w-75 lang-pt">
                         Responderei o mais rápido possível!
+                    </p>
+                    <p class="w-75 lang-en">
+                        I will respond as soon as possible!
                     </p>
                     <p class="oscontatos">
                         <a href="tel:41995501711">
@@ -338,7 +412,9 @@
                         </a>
                         <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Olá,%20através%20do%20seu%20site%20estou%20entrando%20em%20contato."
                             target="_blank">
-                            <i class="bi bi-whatsapp fs-4"></i>&nbsp Atendimento via Whatsapp
+                            <i class="bi bi-whatsapp fs-4"></i>&nbsp
+                            <span class="lang-pt">Atendimento via Whatsapp</span>
+                            <span class="lang-en">Contact me from WhatsApp</span>
                         </a>
                         <a href="mailto:marconiap82@gmail.com">
                             <i class="bi bi-envelope-fill fs-4"></i>&nbsp marconiap82@gmail.com
@@ -350,23 +426,34 @@
                         <!-- <form method="post" action="send-email.php" class="formulario"> -->
                         <div class="row">
                             <div class="col-12 col-lg-6 mb-3">
-                                <label for="name" class="form-label">Nome <small>(Primeiro e último)</small></label>
+                                <label for="name" class="form-label lang-pt">Nome <small>
+                                        (Primeiro e último)</small></label>
+                                <label for="name" class="form-label lang-en">Name <small>
+                                        (First and last)</small></label>
                                 <input type="text" name="nome" id="name" class="form-control nome" required>
                             </div>
                             <div class="col-12 col-lg-6 mb-3">
-                                <label for="telefone" class="form-label">Telefone <small>(WhatsApp)</small></label>
+                                <label for="telefone" class="form-label lang-pt">Telefone
+                                    <small>(WhatsApp)</small></label>
+                                <label for="telefone" class="form-label lang-en">Telephone
+                                    <small>(WhatsApp)</small></label>
                                 <input type="text" name="telefone" inputmode="numeric" class="form-control tel"
                                     maxlength="15" placeholder="Apenas números com DDD" required>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="message" class="form-label">Em que posso ajudar?</label>
+                            <label for="message" class="form-label lang-pt">Em que posso ajudar?</label>
+                            <label for="message" class="form-label lang-en">How can I help you?</label>
                             <textarea name="messagem" id="message" class="form-control" required></textarea>
                         </div>
                         <input type="hidden" name="_next" value="https://marconidesign.com.br/sent.html">
                         <input type="hidden" name="_subject" value="Email do Site MD">
-                        <button type="submit" class="btn btn-sm-w100"><i class="bi bi-send"></i>&nbsp Enviar
-                            Mensagem</button>
+                        <button type="submit" class="btn btn-sm-w100 lang-pt">
+                            <i class="bi bi-send"></i>&nbsp Enviar Mensagem
+                        </button>
+                        <button type="submit" class="btn btn-sm-w100 lang-en">
+                            <i class="bi bi-send"></i>&nbsp Send Message
+                        </button>
                     </form>
                 </div>
             </div>
@@ -377,10 +464,18 @@
         <div class="container-xxl footer">
             <div class="row align-items-center">
                 <div class="col-12 col-lg-8">
-                    <p>
+                    <p class="lang-pt">
                         © <span class="dataano"></span> Marconi Design - Seu Freelancer Web
                     </p>
-                    <small>"A bênção do Senhor é que enriquece; e não traz consigo dores." Provérbios 10:22</small>
+                    <p class="lang-en">
+                        © <span class="dataano"></span> Marconi Design - Your Freelancer Web
+                    </p>
+                    <small class="lang-pt">
+                        "A bênção do Senhor é que enriquece; e não traz consigo dores." Provérbios 10:22
+                    </small>
+                    <small class="lang-en">
+                        "The blessing of the Lord makes a person rich, and he adds no sorrow with it." Proverbs 10:22
+                    </small>
                 </div>
                 <div class="col-12 col-lg-4">
                     <div class="redes">

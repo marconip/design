@@ -21,6 +21,10 @@ window.onload = function () {
     } else {
         tema.innerHTML = "<i class='bi bi-brightness-low'></i>"
     }
+
+    //idioma Carrega a preferência ao iniciar
+    const savedLang = localStorage.getItem('user_lang') || 'pt';
+    switchLang(savedLang);
 };
 
 //TEMA DARK E DEFAULT
@@ -217,6 +221,17 @@ $('.owl-carousel').owlCarousel({
         }
     }
 });
+
+//TRADUÇÃO IDIOMA
+function switchLang(lang) {
+    // Altera o atributo data-lang na tag <body>
+    document.body.setAttribute('data-lang', lang);
+
+    // Salva a preferência
+    localStorage.setItem('user_lang', lang);
+}
+
+
 
 
 ///////////MOSTRA LARGURA TELA QUANDO MUDA DE TAMANHO

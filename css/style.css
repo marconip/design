@@ -165,6 +165,23 @@ body {
   }
 }
 
+body[data-lang="pt"] .lang-en {
+  display: none;
+}
+
+body[data-lang="en"] .lang-pt {
+  display: none;
+}
+
+body[data-lang="en"] .lang-en {
+  display: block;
+}
+
+.idiomas {
+  position: fixed;
+  z-index: 9999;
+}
+
 .primaria {
   color: var(--primaria) !important;
 }
