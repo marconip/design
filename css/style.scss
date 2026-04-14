@@ -353,6 +353,7 @@ hr {
 
 .botao-nav {
     font-size: $s18;
+    background-color: #25D366;
 
     @include media(sm-abaixo) {
         display: none;
@@ -453,7 +454,7 @@ nav {
 
 .secao {
     /* scroll-margin-top: 113px; */
-    padding: 60px 0px;
+    padding: 80px 0px;
 }
 
 .subir {
@@ -509,7 +510,7 @@ figure {
 }
 
 .banner {
-    padding-top: 100px;
+    padding-top: 130px;
     padding-left: 0px;
     padding-right: 0px;
     background-repeat: no-repeat;
@@ -579,17 +580,25 @@ figure {
     img {
         width: 100%;
         max-width: 340px;
-        margin-right: 6%;
+        margin-right: 7%;
         filter: drop-shadow(0px 0px 14px var(--primaria));
+        position: relative;
+        animation: moveSideToSide 3s ease-in-out infinite alternate;
 
         @include media(sm-abaixo) {
             max-width: 320px;
+            margin-right: -10%;
         }
 
         @include media(lg) {
             max-width: 32%;
         }
     }
+}
+
+@keyframes moveSideToSide {
+  from { right: 0px; }
+  to { right: 60px; }
 }
 
 .redes {
@@ -632,6 +641,7 @@ figure {
 
     img {
         max-height: 42px;
+        max-width: 146px;
 
         @include media(sm-abaixo) {
             max-height: 33px;
@@ -651,7 +661,7 @@ figure {
     padding: 3px 10px;
     margin: 5px;
     border-radius: 7px;
-    background-color: $cinza-medio;
+    background-color: $claro;
 }
 
 .foto-parallax {
@@ -688,7 +698,7 @@ figure {
 }
 
 #sobre {
-    background-color: $cinza-claro;
+    background-color: $cinza-medio;
 
     .sobremim {
         @include media(sm-abaixo) {
