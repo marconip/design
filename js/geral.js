@@ -10,6 +10,27 @@ const anoAtual = new Date().getFullYear();
 document.querySelector(".dataano").innerHTML = anoAtual;
 
 
+//NAV TABS PASSAR AUTOMÁTICO
+document.addEventListener("DOMContentLoaded", () => {
+    const tabs = [...document.querySelectorAll('.nav-tabs .nav-link')];
+    const content = document.querySelector('.tab-content');
+    let timer, getIdx = () => tabs.findIndex(t => t.classList.contains('active'));
+
+    const start = () => timer = timer || setInterval(() => {
+        let next = (getIdx() + 1) % tabs.length;
+        new bootstrap.Tab(tabs[next]).show();
+    }, 3000);
+
+    const stop = () => { clearInterval(timer); timer = null; };
+
+    start();
+    if (content) {
+        content.addEventListener('mouseenter', stop);
+        content.addEventListener('mouseleave', start);
+    }
+});
+
+
 //MENU FUNDO REMOVE AO CARREGAR PÁGINA + CARREGAMENTO PÁGINA
 window.onload = function () {
     if (window.scrollY <= 300) {
@@ -65,12 +86,12 @@ window.onscroll = () => {
         let id = sec.getAttribute('id');
 
         if (top >= offset && top < offset + height) {
-            menuLink.forEach(n => n.classList.remove('active'))
-            document.querySelector('.nav-link[href*=' + id + ']').classList.add('active');
+            menuLink.forEach(n => n.classList.remove('actives'))
+            document.querySelector('.nav-link[href*=' + id + ']').classList.add('actives');
         };
         //quando na primeira secção
         if (top <= 300) {
-            menuLink.forEach(n => n.classList.remove('active'));
+            menuLink.forEach(n => n.classList.remove('actives'));
             document.querySelector("nav").classList.add("menu-fundo");
         } else {
             document.querySelector("nav").classList.remove("menu-fundo");
@@ -119,8 +140,8 @@ window.addEventListener('scroll', function () {
 var menuLink = document.querySelectorAll(".nav-link");
 
 function linkAction() {
-    menuLink.forEach(n => n.classList.remove('active'))
-    this.classList.add('active');
+    menuLink.forEach(n => n.classList.remove('actives'))
+    this.classList.add('actives');
     //fecha menu mobile
     document.querySelector(".navbar-collapse").classList.remove("show")
     //remove url id
@@ -141,24 +162,6 @@ document.querySelector(".logo").onclick = function () {
         history.replaceState(null, document.title, window.location.pathname + window.location.search);
     }, 600);
 }
-
-//IR PARA O TOPO, REMOVE DA URL O TITULO DO MENU
-let botSubir = document.querySelector(".subir");
-window.addEventListener("scroll", (event) => {
-    //sumir e aparecer
-    let scroll = this.scrollY;
-    if (scroll >= 992) {
-        botSubir.classList.add("aparecer")
-        tema.classList.add("temas-esconde");
-    } else {
-        botSubir.classList.remove("aparecer")
-        tema.classList.remove("temas-esconde");
-    }
-});
-botSubir.onclick = function () {
-    window.scrollTo(0, 0);
-    menuLink.forEach(n => n.classList.remove('active'));
-};
 
 
 //VALIDAÇÃO DE FORMULÁRIO

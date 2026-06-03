@@ -68,7 +68,7 @@ body {
         .btn {
 
             &:hover,
-            &:active {
+            &:actives {
                 border-color: var(--primaria);
             }
         }
@@ -99,6 +99,14 @@ body {
                 @include media(sm-abaixo) {
                     color: $claro;
                 }
+            }
+        }
+
+        .nav-link {
+            color: $cinza-claro;
+
+            &.active {
+                font-weight: bold;
             }
         }
 
@@ -276,7 +284,7 @@ p {
     background-color: var(--primaria);
 
     &:hover,
-    &:active {
+    &:actives {
         text-decoration: none;
         color: $claro !important;
         border-color: transparent;
@@ -308,7 +316,7 @@ p {
     background-color: $escuro;
 
     &:hover,
-    &:active {
+    &:actives {
         background-color: var(--primaria) !important;
     }
 }
@@ -350,13 +358,26 @@ hr {
     }
 }
 
-
 .botao-nav {
     font-size: $s18;
     background-color: #25D366;
 
     @include media(sm-abaixo) {
         display: none;
+    }
+}
+
+.nav-tabs {
+    @include media(sm-abaixo) {
+        justify-content: center;
+    }
+
+    .nav-link {
+        color: $cinza-escuro;
+
+        &.active {
+            font-weight: bold;
+        }
     }
 }
 
@@ -378,7 +399,7 @@ nav {
 .navbar-toggler {
     background-color: $escuro;
 
-    &:active,
+    &:actives,
     &:focus {
         outline: none;
         box-shadow: none;
@@ -441,7 +462,7 @@ nav {
             color: var(--menu-hover);
         }
 
-        &.active,
+        &.actives,
         &.show {
             color: var(--menu-ativo);
         }
@@ -597,8 +618,13 @@ figure {
 }
 
 @keyframes moveSideToSide {
-  from { right: 0px; }
-  to { right: 60px; }
+    from {
+        right: 0px;
+    }
+
+    to {
+        right: 60px;
+    }
 }
 
 .redes {
