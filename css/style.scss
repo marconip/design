@@ -364,6 +364,10 @@ hr {
 }
 
 .nav-tabs {
+    @include media(lg-acima) {
+        margin: 0px 40px;
+    }
+
     @include media(sm-abaixo) {
         justify-content: center;
     }
@@ -375,6 +379,12 @@ hr {
             color: var(--primaria);
             font-weight: bold;
         }
+    }
+}
+
+.tab-content {
+    @include media(lg-acima) {
+        margin: 0px 40px;
     }
 }
 
