@@ -104,10 +104,6 @@ body {
 
         .nav-link {
             color: $cinza-claro;
-
-            &.active {
-                font-weight: bold;
-            }
         }
 
         .banner-titulos {
@@ -376,6 +372,7 @@ hr {
         color: $cinza-escuro;
 
         &.active {
+            color: var(--primaria);
             font-weight: bold;
         }
     }
