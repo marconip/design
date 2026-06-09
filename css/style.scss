@@ -160,6 +160,12 @@ body {
     @include media(sm-abaixo) {
         font-size: $s18;
     }
+
+    &.parar-rolagem {
+        overflow: hidden;
+        height: 100%;
+        margin: 0;
+    }
 }
 
 .tooltip {
@@ -279,8 +285,7 @@ p {
     border-radius: 100px;
     background-color: var(--primaria);
 
-    &:hover,
-    &:actives {
+    &:hover {
         text-decoration: none;
         color: $claro !important;
         border-color: transparent;
@@ -311,8 +316,7 @@ p {
 .btn-preto {
     background-color: $escuro;
 
-    &:hover,
-    &:actives {
+    &:hover {
         background-color: var(--primaria) !important;
     }
 }
@@ -365,11 +369,8 @@ hr {
 
 .nav-tabs {
     @include media(lg-acima) {
-        margin: 0px 40px;
-    }
-
-    @include media(sm-abaixo) {
         justify-content: center;
+        margin: 0px 40px;
     }
 
     .nav-link {
@@ -435,11 +436,13 @@ nav {
 .menu-updown {
     top: -113px;
     transition: 1s;
+    z-index: 9 !important;
 }
 
 .menu-updown-show {
     top: 0px;
     transition: 1s;
+    z-index: 9;
 }
 
 .navbar-nav {
@@ -829,6 +832,249 @@ textarea {
 
     img {
         border-radius: 16px;
+    }
+}
+
+.portfolio {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .filter-menu {
+        text-align: center;
+        margin-bottom: 30px;
+
+        li {
+            display: inline-block;
+            color: var(--link);
+            margin-right: 20px;
+            border: 1px dotted transparent;
+            cursor: pointer;
+
+            &:last-child {
+                margin-right: 0px;
+            }
+        }
+
+        :hover {
+            color: var(--link-hover);
+            border-bottom: 1px dotted;
+        }
+
+        .current {
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--secundaria);
+            border-top: 1px dotted;
+            border-bottom: 1px dotted;
+            cursor: default;
+        }
+    }
+
+    .filter-item {
+        li {
+            width: 100%;
+            max-width: 314px;
+            height: 100%;
+            max-height: 225px;
+            overflow: hidden;
+            float: left;
+            margin: 8px;
+            border-radius: 10px;
+            outline: 1px solid $cinza-medio;
+
+            @include media(lg) {
+                max-width: 300px;
+            }
+
+            @include media(lg-abaixo) {
+                max-width: 355px;
+            }
+
+            &.active {
+                transition: all 0.5s ease;
+            }
+
+            &.delete {
+                width: 0%;
+                padding: 0;
+                margin-right: 0px;
+                margin-bottom: 0px;
+                border: 0px;
+                transition: all 0.5s ease;
+
+                h5,
+                p {
+                    display: none;
+                }
+            }
+
+            h6 {
+                color: #fff;
+            }
+
+            img {
+                max-width: 101%;
+                height: auto;
+                margin-top: -41px;
+                cursor: pointer;
+            }
+
+            @include media(lg-acima) {
+                &:hover {
+                    .legenda {
+                        transition: .32s;
+                        top: 0px;
+                    }
+                }
+            }
+
+            .legenda {
+                position: relative;
+                top: 0px;
+                width: 100%;
+                color: $cinza-claro;
+                padding: 10px;
+                transition: .32s;
+                background-color: rgba(0, 0, 0, .8);
+
+                @include media(lg-acima) {
+                    top: -50px;
+                }
+            }
+        }
+    }
+}
+
+/*FILTRO PORTFOLIO ANIMAÇÃO*/
+/* Estado padrão do item (visível e com zoom normal) */
+.filter-item li {
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Estado de sumiço (zoom out e desaparecimento) */
+.filter-item li.zoom-out {
+    transform: scale(0);
+    opacity: 0;
+}
+
+/*FILTRO PORTFOLIO ZOOM CLICK IMAGEM*/
+.modal-imgzoom {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    .box-imagem {
+        max-width: 88%;
+        max-height: 88vh;
+        overflow-x: hidden;
+    }
+
+    .img-ampliada {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .img-caption {
+        color: $claro;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 5px;
+        animation: .6s ease 0s 1 anime-zoom;
+    }
+
+    .close {
+        position: fixed;
+        top: 6px;
+        right: 14px;
+        font-size: $s28;
+        width: 30px;
+        cursor: pointer;
+        animation: .6s ease 0s 1 anime-zoom;
+    }
+
+    .esquerda,
+    .direita {
+        position: fixed;
+        top: 50%;
+        left: 15px;
+        font-size: $s30;
+        margin-top: -40px;
+        width: 30px;
+        cursor: pointer;
+        animation: .6s ease 0s 1 anime-zoom;
+    }
+
+    .direita {
+        left: auto;
+        right: 15px;
+    }
+
+    .close,
+    .esquerda,
+    .direita {
+        color: $cinza-medio;
+
+        &:hover {
+            color: $cinza-claro;
+        }
+    }
+
+    .anime-zoom {
+        animation: .6s ease 0s 1 anime-zoom;
+    }
+
+    @keyframes anime-zoom {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    .anime-entrarDireita {
+        animation: .35s ease 0s 1 anime-entrarDireita;
+    }
+
+    @keyframes anime-entrarDireita {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .anime-entrarEsquerda {
+        animation: .35s ease 0s 1 anime-entrarEsquerda;
+    }
+
+    @keyframes anime-entrarEsquerda {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
     }
 }
 
