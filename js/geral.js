@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const start = () => timer = timer || setInterval(() => {
         let next = (getIdx() + 1) % tabs.length;
         new bootstrap.Tab(tabs[next]).show();
-    }, 3000);
+    }, 99999);
 
     const stop = () => { clearInterval(timer); timer = null; };
 
@@ -89,11 +89,14 @@ qualquerImg.forEach(f => f.addEventListener('click', function () {
     <i class="bi bi-arrow-right-square-fill direita"></i>`;
     document.body.appendChild(div);
 
-    const [img, cap, close, esq, dir] = ['.img-ampliada', '.img-caption', '.close', '.esquerda', '.direita'].map(s => div.querySelector(s));
+    // Selecionado o .box-imagem junto com os outros elementos
+    const [boxImagem, img, cap, close, esq, dir] = ['.box-imagem', '.img-ampliada', '.img-caption', '.close', '.esquerda', '.direita'].map(s => div.querySelector(s));
     const toggleSeta = () => { esq.style.visibility = valor === 0 ? "hidden" : "visible"; dir.style.visibility = valor === imgs.length - 1 ? "hidden" : "visible"; };
 
     toggleSeta();
     setTimeout(() => img.classList.remove("anime-zoom"), 600);
+
+    document.querySelector('.fixed-top').style.top = "-113px";
 
     const fechar = () => {
         div.remove();
@@ -104,13 +107,15 @@ qualquerImg.forEach(f => f.addEventListener('click', function () {
     close.onclick = fechar;
     document.onkeydown = (e) => e.key === 'Escape' && fechar();
 
-    document.querySelector('.menu-updown-show').style.top = "-113px";
-
     const mudarImg = (dir, classe) => {
         valor += dir;
         img.className = `img-ampliada ${classe}`;
         img.src = imgs[valor].src;
         cap.innerHTML = imgs[valor].alt;
+        
+        boxImagem.scrollTop = 0;
+        boxImagem.scrollLeft = 0;
+        
         toggleSeta();
         setTimeout(() => img.classList.remove(classe), 600);
     };
@@ -120,14 +125,13 @@ qualquerImg.forEach(f => f.addEventListener('click', function () {
 }));
 
 
-
 //MENU FUNDO REMOVE AO CARREGAR PÁGINA + CARREGAMENTO PÁGINA
 window.onload = function () {
     if (window.scrollY <= 300) {
         document.querySelector("nav").classList.add("menu-fundo");
     }
     //troca ícone do tema ao carregar página
-    if (pagina.dataset.theme == "default") {
+    if (pagina.dataset.theme == "dark") {
         tema.innerHTML = "<i class='bi bi-brightness-low-fill'></i>";
     } else {
         tema.innerHTML = "<i class='bi bi-brightness-low'></i>"
@@ -143,13 +147,13 @@ let tema = document.querySelector('.temas')
 let pagina = document.querySelector("body")
 
 //Recuperar o tema ao carregar a página
-const savedTheme = localStorage.getItem('theme') || 'default';
+const savedTheme = localStorage.getItem('theme') || 'dark';
 pagina.dataset.theme = savedTheme;
 
 //Alternar e Salvar o tema no clique
 tema.addEventListener('click', () => {
     let currentTheme = pagina.dataset.theme;
-    let newTheme = currentTheme === 'default' ? 'dark' : 'default';
+    let newTheme = currentTheme === 'dark' ? 'default' : 'dark';
 
     //Aplica o novo tema no DOM (dataset)
     pagina.dataset.theme = newTheme;
@@ -158,7 +162,7 @@ tema.addEventListener('click', () => {
     localStorage.setItem('theme', newTheme);
 
     //Troca icone de tema
-    if (newTheme == "dark") {
+    if (newTheme == "default") {
         tema.innerHTML = "<i class='bi bi-brightness-low'></i>";
     } else {
         tema.innerHTML = "<i class='bi bi-brightness-low-fill'></i>";

@@ -106,7 +106,25 @@ body[data-theme="dark"] nav {
 }
 
 body[data-theme="dark"] .nav-link {
-  color: #eeeeee;
+  color: var(--link);
+}
+
+body[data-theme="dark"] .nav-link:hover {
+  color: var(--link-hover);
+}
+
+body[data-theme="dark"] .nav-link.active {
+  font-weight: bold;
+  color: var(--link-hover) !important;
+  border-top: 1px dotted;
+  border-bottom: 1px dotted;
+  border-radius: 0;
+  background-color: transparent;
+  cursor: default;
+}
+
+body[data-theme="dark"] .tab-content h5 {
+  color: #ffffff;
 }
 
 body[data-theme="dark"] .banner-titulos img {
@@ -377,20 +395,33 @@ hr {
   }
 }
 
+.nav-pills {
+  justify-content: center;
+}
+
 @media (min-width: 992px) {
-  .nav-tabs {
-    justify-content: center;
-    margin: 0px 40px;
+  .nav-pills {
+    max-width: 1240px;
+    margin: 0 auto;
   }
 }
 
-.nav-tabs .nav-link {
-  color: #222222;
+.nav-pills .nav-link {
+  color: var(--link);
 }
 
-.nav-tabs .nav-link.active {
-  color: var(--primaria);
+.nav-pills .nav-link:hover {
+  color: var(--link-hover);
+}
+
+.nav-pills .nav-link.active {
   font-weight: bold;
+  color: var(--link-hover) !important;
+  border-top: 1px dotted;
+  border-bottom: 1px dotted;
+  border-radius: 0;
+  background-color: transparent;
+  cursor: default;
 }
 
 @media (min-width: 992px) {
@@ -909,13 +940,12 @@ textarea {
 
 .portfolio .filter-menu :hover {
   color: var(--link-hover);
-  border-bottom: 1px dotted;
 }
 
 .portfolio .filter-menu .current {
-  font-weight: 600;
+  font-weight: bold;
   text-decoration: none;
-  color: var(--secundaria);
+  color: var(--link-hover);
   border-top: 1px dotted;
   border-bottom: 1px dotted;
   cursor: default;
@@ -977,23 +1007,29 @@ textarea {
 @media (min-width: 992px) {
   .portfolio .filter-item li:hover .legenda {
     transition: .32s;
-    top: 0px;
+    top: 188px;
   }
 }
 
 .portfolio .filter-item li .legenda {
   position: relative;
-  top: 0px;
+  top: 188px;
   width: 100%;
   color: #eeeeee;
   padding: 10px;
   transition: .32s;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 @media (min-width: 992px) {
   .portfolio .filter-item li .legenda {
-    top: -50px;
+    top: 228px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .portfolio .filter-item li .legenda {
+    top: 188px;
   }
 }
 

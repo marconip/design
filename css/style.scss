@@ -103,7 +103,27 @@ body {
         }
 
         .nav-link {
-            color: $cinza-claro;
+            color: var(--link);
+
+            &:hover {
+                color: var(--link-hover);
+            }
+
+            &.active {
+                font-weight: bold;
+                color: var(--link-hover) !important;
+                border-top: 1px dotted;
+                border-bottom: 1px dotted;
+                border-radius: 0;
+                background-color: transparent;
+                cursor: default;
+            }
+        }
+
+        .tab-content {
+            h5 {
+                color: $claro;
+            }
         }
 
         .banner-titulos {
@@ -367,18 +387,29 @@ hr {
     }
 }
 
-.nav-tabs {
+.nav-pills {
+    justify-content: center;
+
     @include media(lg-acima) {
-        justify-content: center;
-        margin: 0px 40px;
+        max-width: 1240px;
+        margin: 0 auto;
     }
 
     .nav-link {
-        color: $cinza-escuro;
+        color: var(--link);
+
+        &:hover {
+            color: var(--link-hover);
+        }
 
         &.active {
-            color: var(--primaria);
             font-weight: bold;
+            color: var(--link-hover) !important;
+            border-top: 1px dotted;
+            border-bottom: 1px dotted;
+            border-radius: 0;
+            background-color: transparent;
+            cursor: default;
         }
     }
 }
@@ -862,13 +893,12 @@ textarea {
 
         :hover {
             color: var(--link-hover);
-            border-bottom: 1px dotted;
         }
 
         .current {
-            font-weight: 600;
+            font-weight: bold;
             text-decoration: none;
-            color: var(--secundaria);
+            color: var(--link-hover);
             border-top: 1px dotted;
             border-bottom: 1px dotted;
             cursor: default;
@@ -928,22 +958,26 @@ textarea {
                 &:hover {
                     .legenda {
                         transition: .32s;
-                        top: 0px;
+                        top: 188px;
                     }
                 }
             }
 
             .legenda {
                 position: relative;
-                top: 0px;
+                top: 188px;
                 width: 100%;
                 color: $cinza-claro;
                 padding: 10px;
                 transition: .32s;
-                background-color: rgba(0, 0, 0, .8);
+                background-color: rgba(0, 0, 0, .85);
 
                 @include media(lg-acima) {
-                    top: -50px;
+                    top: 228px;
+                }
+
+                @include media(sm-abaixo) {
+                    top: 188px;
                 }
             }
         }
