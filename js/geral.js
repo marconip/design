@@ -12,14 +12,14 @@ document.querySelector(".dataano").innerHTML = anoAtual;
 
 //NAV TABS PASSAR AUTOMÁTICO
 document.addEventListener("DOMContentLoaded", () => {
-    const tabs = [...document.querySelectorAll('.nav-tabs .nav-link')];
+    const tabs = [...document.querySelectorAll('.nav-pills .nav-link')];
     const content = document.querySelector('.tab-content');
     let timer, getIdx = () => tabs.findIndex(t => t.classList.contains('active'));
 
     const start = () => timer = timer || setInterval(() => {
         let next = (getIdx() + 1) % tabs.length;
         new bootstrap.Tab(tabs[next]).show();
-    }, 99999);
+    }, 3000);
 
     const stop = () => { clearInterval(timer); timer = null; };
 
