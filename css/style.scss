@@ -13,39 +13,33 @@ body {
         --primaria: #ff4e00;
         --secundaria: #49BAEA;
         --areanav: transparent;
-        --navmenu: $escuro;
-        --menu: $claro;
+        --navmenu: #000000;
+        --menu: #ffffff;
         --menu-hover: var(--secundaria);
-        --menu-ativo: $escuro;
-        --titulos: $escuro;
-        --texto: $cinza-escuro;
+        --menu-ativo: #000000;
+        --titulos: #000000;
+        --texto: #222222;
         --link: var(--primaria);
-        --link-hover: $escuro;
-        --fundo: $claro;
-        --rodape: $escuro;
+        --link-hover: #000000;
+        --fundo: #ffffff;
+        --rodape: #000000;
     }
 
     &[data-theme="dark"] {
         --primaria: #ff5500;
         --secundaria: #49BAEA;
         --areanav: transparent;
-        --navmenu: $cinza-claro;
-        --menu: $escuro;
-        --menu-hover: $claro;
+        --navmenu: #eeeeee;
+        --menu: #000000;
+        --menu-hover: #ffffff;
         --menu-ativo: var(--primaria);
-        --titulos: $escuro;
-        --texto: $cinza-medio;
+        --titulos: #000000;
+        --texto: #CCCCCC;
         --link: var(--primaria);
         --link-hover: var(--secundaria);
-        --fundo: $cinza-escuro;
-        --rodape: $cinza-escuro;
-    }
+        --fundo: #222222;
+        --rodape: #222222;
 
-    //TEMA DARK
-    &[data-theme="dark"] {
-
-        color: var(--texto);
-        background-color: $cinza-escuro;
 
         #home {
             background-image: url(../img/ban-dark.jpg);
@@ -775,6 +769,7 @@ figure {
 }
 
 #contatos {
+
     color: $cinza-medio;
     background-color: $cinza-escuro;
 
@@ -790,10 +785,14 @@ textarea {
     &:focus {
         background-color: $cinza-medio !important;
     }
+
+    &.preenchido {
+        background-color: $cinza-claro !important;
+    }
 }
 
-.form-dark {
-    background-color: $cinza-claro !important;
+textarea {
+    min-height: 150px !important;
 }
 
 .oscontatos {
@@ -810,16 +809,6 @@ textarea {
             color: var(--secundaria);
         }
     }
-
-}
-
-textarea {
-    min-height: 100px !important;
-}
-
-input,
-textarea {
-    border-color: $cinza-medio !important;
 }
 
 .owl-carousel {

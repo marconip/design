@@ -10,6 +10,44 @@ const anoAtual = new Date().getFullYear();
 document.querySelector(".dataano").innerHTML = anoAtual;
 
 
+//VALIDAÇÃO DE FORMULÁRIO
+let formNome = document.querySelector('input.nome')
+let formTel = document.querySelector('input.tel')
+let textArea = document.querySelector('textarea')
+
+formNome.addEventListener('focusout', () => {
+    if (formNome.value !== "") {
+        formNome.classList.add("preenchido");
+    }
+});
+formTel.addEventListener('focusout', () => {
+    if (formTel.value !== "") {
+        formTel.classList.add("preenchido");
+    }
+});
+textArea.addEventListener('focusout', () => {
+    if (textArea.value !== "") {
+        textArea.classList.add("preenchido");
+    }
+});
+
+
+//MASCARA TELEFONE COM JQUERY.MASK
+$('.cpf').mask('000.000.000-00');
+$('.cep').mask('00000-000');
+$('.tel').mask('(00) 00000-0000');
+$('.cel').mask('00 0 0000 0000');
+
+function mascara(t, mask) {
+    var i = t.value.length;
+    var saida = mask.substring(1, 0);
+    var texto = mask.substring(i)
+    if (texto.substring(0, 1) != saida) {
+        t.value += texto.substring(0, 1);
+    }
+};
+
+
 //NAV TABS PASSAR AUTOMÁTICO
 document.addEventListener("DOMContentLoaded", () => {
     const tabs = [...document.querySelectorAll('.nav-pills .nav-link')];
@@ -258,45 +296,16 @@ document.querySelector(".logo").onclick = function () {
 }
 
 
-//VALIDAÇÃO DE FORMULÁRIO
-let formNome = document.querySelector('input.nome')
-let formTel = document.querySelector('input.tel')
-let textArea = document.querySelector('textarea')
+//TRADUÇÃO IDIOMA
+function switchLang(lang) {
+    // Altera o atributo data-lang na tag <body>
+    document.body.setAttribute('data-lang', lang);
 
-formNome.addEventListener('focusout', () => {
-    if (formNome.value !== "") {
-        formNome.classList.add("form-dark");
-    }
-});
-formTel.addEventListener('focusout', () => {
-    if (formTel.value !== "") {
-        formTel.classList.add("form-dark");
-    }
-});
-textArea.addEventListener('focusout', () => {
-    if (textArea.value !== "") {
-        textArea.classList.add("form-dark");
-    }
-});
+    // Salva a preferência
+    localStorage.setItem('user_lang', lang);
+}
 
-
-//MASCARA TELEFONE COM JQUERY.MASK
-$('.cpf').mask('000.000.000-00');
-$('.cep').mask('00000-000');
-$('.tel').mask('(00) 00000-0000');
-$('.cel').mask('00 0 0000 0000');
-
-function mascara(t, mask) {
-    var i = t.value.length;
-    var saida = mask.substring(1, 0);
-    var texto = mask.substring(i)
-    if (texto.substring(0, 1) != saida) {
-        t.value += texto.substring(0, 1);
-    }
-};
-
-
-/////OWL CAROUSEL
+/*OWL CAROUSEL
 $('.owl-carousel').owlCarousel({
     autoplay: true,
     autoplayTimeout: 5000,
@@ -318,17 +327,7 @@ $('.owl-carousel').owlCarousel({
         }
     }
 });
-
-//TRADUÇÃO IDIOMA
-function switchLang(lang) {
-    // Altera o atributo data-lang na tag <body>
-    document.body.setAttribute('data-lang', lang);
-
-    // Salva a preferência
-    localStorage.setItem('user_lang', lang);
-}
-
-
+*/
 
 
 ///////////MOSTRA LARGURA TELA QUANDO MUDA DE TAMANHO
