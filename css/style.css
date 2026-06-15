@@ -52,8 +52,7 @@ body[data-theme=dark] #sobre,
 body[data-theme=dark] #contatos {
   background-color: #000000;
 }
-body[data-theme=dark] .modal-secao:nth-child(even) {
-  color: #eeeeee;
+body[data-theme=dark] .modal-secao {
   background-color: #000000;
 }
 body[data-theme=dark] footer {
@@ -464,7 +463,8 @@ nav {
   color: var(--menu-ativo);
 }
 
-.modal-secao:nth-child(even) {
+.modal-secao {
+  min-height: 338px;
   background-color: #eeeeee;
 }
 
@@ -542,7 +542,7 @@ figure:hover {
 .banner-titulos {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
   padding: 0 20px;
 }
@@ -859,6 +859,13 @@ textarea {
     max-width: 355px;
   }
 }
+@media (max-width: 767.98px) {
+  .portfolio .filter-item li {
+    max-width: 47%;
+    max-height: 146px;
+    margin: 4px;
+  }
+}
 .portfolio .filter-item li.active {
   transition: all 0.5s ease;
 }
@@ -883,6 +890,11 @@ textarea {
   margin-top: -41px;
   cursor: pointer;
 }
+@media (max-width: 767.98px) {
+  .portfolio .filter-item li img {
+    margin-top: 0px;
+  }
+}
 @media (min-width: 992px) {
   .portfolio .filter-item li:hover .legenda {
     transition: 0.32s;
@@ -906,6 +918,7 @@ textarea {
 @media (max-width: 767.98px) {
   .portfolio .filter-item li .legenda {
     top: 188px;
+    display: none;
   }
 }
 

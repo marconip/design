@@ -52,6 +52,7 @@ function mascara(t, mask) {
 document.addEventListener("DOMContentLoaded", () => {
     const tabs = [...document.querySelectorAll('.nav-pills .nav-link')];
     const content = document.querySelector('.tab-content');
+    const naveg = document.querySelector('.nav-pills');
     let timer, getIdx = () => tabs.findIndex(t => t.classList.contains('active'));
 
     const start = () => timer = timer || setInterval(() => {
@@ -62,9 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const stop = () => { clearInterval(timer); timer = null; };
 
     start();
-    if (content) {
+    if (content || naveg) {
         content.addEventListener('mouseenter', stop);
         content.addEventListener('mouseleave', start);
+        naveg.addEventListener('mouseenter', stop);
+        naveg.addEventListener('mouseleave', start);
     }
 });
 

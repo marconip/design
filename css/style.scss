@@ -49,9 +49,8 @@ body {
         #contatos {
             background-color: $escuro;
         }
-
-        .modal-secao:nth-child(even) {
-            color: $cinza-claro;
+        
+        .modal-secao {
             background-color: $escuro;
         }
 
@@ -504,7 +503,8 @@ nav {
     }
 }
 
-.modal-secao:nth-child(even) {
+.modal-secao {
+    min-height: 338px;
     background-color: $cinza-claro;
 }
 
@@ -585,7 +585,7 @@ figure {
 .banner-titulos {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     padding: 0 20px;
 
@@ -914,6 +914,12 @@ textarea {
                 max-width: 355px;
             }
 
+            @include media(sm-abaixo) {
+                max-width: 47%;
+                max-height: 146px;
+                margin: 4px;
+            }
+
             &.active {
                 transition: all 0.5s ease;
             }
@@ -941,6 +947,10 @@ textarea {
                 height: auto;
                 margin-top: -41px;
                 cursor: pointer;
+
+                @include media(sm-abaixo) {
+                    margin-top: 0px;
+                }
             }
 
             @include media(lg-acima) {
@@ -967,6 +977,7 @@ textarea {
 
                 @include media(sm-abaixo) {
                     top: 188px;
+                    display: none;
                 }
             }
         }
