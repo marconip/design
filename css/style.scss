@@ -49,7 +49,7 @@ body {
         #contatos {
             background-color: $escuro;
         }
-        
+
         .modal-secao {
             background-color: $escuro;
         }
@@ -197,13 +197,57 @@ body[data-lang="en"] .lang-pt {
 }
 
 body[data-lang="en"] .lang-en {
-    display: block;
+    display: grid-lanes;
 }
 
 .idiomas {
-    display: none;
     position: fixed;
-    z-index: 9999;
+    bottom: 70px;
+    left: -104px;
+    z-index: 9;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: 1s;
+    background-color: var(--fundo);
+
+    &:hover {
+        transition: 1s;
+        left: -5px;
+
+        .idiomas-animado {
+            opacity: 0;
+        }
+    }
+
+    img {
+        width: 32px;
+        height: auto;
+        margin: 4px;
+    }
+
+    .idiomas-animado {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        text-align: center;
+        rotate: -90deg;
+        width: 110px;
+        position: absolute;
+        top: 16px;
+        left: 66px;
+        padding: 5px;
+        border: 1px solid;
+        border-radius: 5px;
+        border-color: $escuro;
+        background-color: var(--fundo);
+        transition: 1s;
+
+        img {
+            width: 20px;
+            height: auto;
+        }
+    }
 }
 
 .primaria {
@@ -343,7 +387,7 @@ hr {
 }
 
 .temas {
-    font-size: $s28;
+    font-size: $s20;
     display: flex;
     align-items: center;
     justify-content: center;

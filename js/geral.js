@@ -153,10 +153,10 @@ qualquerImg.forEach(f => f.addEventListener('click', function () {
         img.className = `img-ampliada ${classe}`;
         img.src = imgs[valor].src;
         cap.innerHTML = imgs[valor].alt;
-        
+
         boxImagem.scrollTop = 0;
         boxImagem.scrollLeft = 0;
-        
+
         toggleSeta();
         setTimeout(() => img.classList.remove(classe), 600);
     };
@@ -170,12 +170,6 @@ qualquerImg.forEach(f => f.addEventListener('click', function () {
 window.onload = function () {
     if (window.scrollY <= 300) {
         document.querySelector("nav").classList.add("menu-fundo");
-    }
-    //troca ícone do tema ao carregar página
-    if (pagina.dataset.theme == "dark") {
-        tema.innerHTML = "<i class='bi bi-brightness-low-fill'></i>";
-    } else {
-        tema.innerHTML = "<i class='bi bi-brightness-low'></i>"
     }
 
     //idioma Carrega a preferência ao iniciar
@@ -201,13 +195,6 @@ tema.addEventListener('click', () => {
 
     //Salva o novo tema no localStorage
     localStorage.setItem('theme', newTheme);
-
-    //Troca icone de tema
-    if (newTheme == "default") {
-        tema.innerHTML = "<i class='bi bi-brightness-low'></i>";
-    } else {
-        tema.innerHTML = "<i class='bi bi-brightness-low-fill'></i>";
-    }
 });
 
 
@@ -300,6 +287,15 @@ document.querySelector(".logo").onclick = function () {
 
 
 //TRADUÇÃO IDIOMA
+// Redireciona com base no idioma do pais (navegador)
+if (userLang.startsWith('pt')) {
+    switchLang('pt')
+} else if (userLang.startsWith('es')) {
+    switchLang('en')
+} else {
+    switchLang('en')
+}
+
 function switchLang(lang) {
     // Altera o atributo data-lang na tag <body>
     document.body.setAttribute('data-lang', lang);
@@ -307,6 +303,10 @@ function switchLang(lang) {
     // Salva a preferência
     localStorage.setItem('user_lang', lang);
 }
+// Pega o idioma padrão do navegador
+const userLang = navigator.language || navigator.userLanguage;
+
+
 
 /*OWL CAROUSEL
 $('.owl-carousel').owlCarousel({

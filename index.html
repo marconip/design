@@ -50,9 +50,19 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <div class="idiomas">
-        <button onclick="switchLang('pt')">PT</button>
-        <button onclick="switchLang('en')">EN</button>
+    <div class="idiomas" style="display: none;">
+        <a href="javascript:void(0)" onclick="switchLang('pt')">
+            <img src="./img/flag-brazil.png" alt="portugues">
+        </a>
+        <a href="javascript:void(0)" onclick="switchLang('en')">
+            <img src="./img/flag-usa.png" alt="ingles">
+        </a>
+        <div class="idiomas-animado">
+            <img src="./img/flag-brazil.png" alt="portugues">
+            <small class="lang-pt">Idioma</small>
+            <small class="lang-en">Language</small>
+            <img src="./img/flag-usa.png" alt="ingles">
+        </div>
     </div>
 
     <nav class="navbar fixed-top navbar-expand-md">
@@ -86,11 +96,11 @@
                 </ul>
             </div>
 
-            <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Trocar Aparência"
-                class="temas lang-pt">
+            <div class="temas lang-pt" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Trocar Aparência">
+                <i class="bi bi-circle-half"></i>
             </div>
-            <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Change Appearance"
-                class="temas lang-en">
+            <div class="temas lang-en" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Change Appearance">
+                <i class="bi bi-circle-half"></i>
             </div>
             <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Olá,%20através%20do%20seu%20site%20estou%20entrando%20em%20contato."
                 target="_blank" role="button" class="btn botao-nav">
