@@ -290,7 +290,7 @@ document.querySelector(".logo").onclick = function () {
 // Redireciona com base no idioma do pais (navegador)
 if (userLang.startsWith('pt')) {
     switchLang('pt')
-} else if (userLang.startsWith('es')) {
+} else if (userLang.startsWith('en')) {
     switchLang('en')
 } else {
     switchLang('en')
