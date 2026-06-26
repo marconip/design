@@ -4,6 +4,37 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 });
 
+//IDIOMA
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Identifica o idioma (checa o cache primeiro, depois o navegador)
+    const savedLang = localStorage.getItem('user_lang');
+    const browserLang = navigator.language || navigator.userLanguage;
+
+    // 2. Define o formato simplificado (ex: 'pt-BR' vira 'pt', 'en-US' vira 'en')
+    const formattedBrowserLang = browserLang.split('-')[0];
+
+    // 3. Define o idioma final (usa o cache ou o do navegador)
+    const finalLang = savedLang || formattedBrowserLang;
+
+    // 4. Troca automaticamente ao carregar a página
+    switchLang(finalLang);
+
+    // 5. Opcional: Ouve cliques em botões de troca manual que tenham o atributo 'data-btn-lang'
+    document.querySelectorAll('[data-btn-lang]').forEach(button => {
+        button.addEventListener('click', () => {
+            const selectedLang = button.getAttribute('data-btn-lang');
+            switchLang(selectedLang);
+        });
+    });
+    //console.log(savedLang + " - " + browserLang)
+});
+
+// Função para aplicar o idioma no HTML e salvar no cache
+function switchLang(lang) {
+    document.body.setAttribute('data-lang', lang);
+    localStorage.setItem('user_lang', lang);
+}
+
 
 //RODAPE DATA ANO
 const anoAtual = new Date().getFullYear();
@@ -198,6 +229,8 @@ tema.addEventListener('click', () => {
 });
 
 
+
+
 //MENU NA ROLAGEM MUDA ATIVO (sem click menu)
 let sections = document.querySelectorAll('section');
 window.onscroll = () => {
@@ -284,28 +317,6 @@ document.querySelector(".logo").onclick = function () {
         history.replaceState(null, document.title, window.location.pathname + window.location.search);
     }, 600);
 }
-
-
-//TRADUÇÃO IDIOMA
-// Redireciona com base no idioma do pais (navegador)
-if (userLang.startsWith('pt')) {
-    switchLang('pt')
-} else if (userLang.startsWith('en')) {
-    switchLang('en')
-} else {
-    switchLang('en')
-}
-
-function switchLang(lang) {
-    // Altera o atributo data-lang na tag <body>
-    document.body.setAttribute('data-lang', lang);
-
-    // Salva a preferência
-    localStorage.setItem('user_lang', lang);
-}
-// Pega o idioma padrão do navegador
-const userLang = navigator.language || navigator.userLanguage;
-
 
 
 /*OWL CAROUSEL
