@@ -200,6 +200,26 @@ body[data-lang="en"] .lang-en {
     display: grid-lanes;
 }
 
+body {
+    &[data-lang="pt"] {
+        .idiomas {
+            a img[alt="pt"] {
+                opacity: .25;
+                cursor: default;
+            }
+        }
+    }
+
+    &[data-lang="en"] {
+        .idiomas {
+            a img[alt="en"] {
+                opacity: .25;
+                cursor: default;
+            }
+        }
+    }
+}
+
 .idiomas {
     position: fixed;
     bottom: 120px;
@@ -208,6 +228,7 @@ body[data-lang="en"] .lang-en {
     border-radius: 5px;
     padding: 10px 15px;
     transition: 1s;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
     background-color: var(--fundo);
 
     &:hover {
@@ -917,25 +938,30 @@ textarea {
             color: var(--link);
             margin-right: 20px;
             border: 1px dotted transparent;
-            cursor: pointer;
 
             &:last-child {
                 margin-right: 0px;
             }
+
+            a:hover {
+                color: var(--link-hover);
+            }
+
+            &.current {
+                font-weight: bold;
+                text-decoration: none;
+                border-top: 1px dotted;
+                border-bottom: 1px dotted;
+                border-top-color: var(--link-hover);
+                border-bottom-color: var(--link-hover);
+
+                a {
+                    color: var(--link-hover);
+                    cursor: default;
+                }
+            }
         }
 
-        :hover {
-            color: var(--link-hover);
-        }
-
-        .current {
-            font-weight: bold;
-            text-decoration: none;
-            color: var(--link-hover);
-            border-top: 1px dotted;
-            border-bottom: 1px dotted;
-            cursor: default;
-        }
     }
 
     .filter-item {
