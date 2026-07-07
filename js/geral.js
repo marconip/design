@@ -208,27 +208,33 @@ window.onload = function () {
     switchLang(savedLang);
 };
 
-//TEMA DARK E DEFAULT
-let tema = document.querySelector('.temas')
-let pagina = document.querySelector("body")
+//TEMA COR DARK E DEFAULT
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const linkTema = document.querySelector(".temas");
 
-//Recuperar o tema ao carregar a página
-const savedTheme = localStorage.getItem('theme') || 'dark';
-pagina.dataset.theme = savedTheme;
+    // 1. Identifica o tema (Prioridade: 1º Cache, 2º Padrão 'dark')
+    const temaSalvo = localStorage.getItem("temaSelecionado");
+    const temaInicial = temaSalvo || "dark";
 
-//Alternar e Salvar o tema no clique
-tema.addEventListener('click', () => {
-    let currentTheme = pagina.dataset.theme;
-    let newTheme = currentTheme === 'dark' ? 'default' : 'dark';
+    // Aplica o tema inicial no body
+    body.setAttribute("data-theme", temaInicial);
 
-    //Aplica o novo tema no DOM (dataset)
-    pagina.dataset.theme = newTheme;
+    // 2. Ouvinte de clique no link <a>
+    if (linkTema) {
+        linkTema.addEventListener("click", (e) => {
+            e.preventDefault(); // Evita qualquer comportamento padrão do link
 
-    //Salva o novo tema no localStorage
-    localStorage.setItem('theme', newTheme);
+            // Alterna entre dark e default
+            const temaAtual = body.getAttribute("data-theme");
+            const novoTema = temaAtual === "dark" ? "default" : "dark";
+
+            // Salva e aplica a alteração
+            body.setAttribute("data-theme", novoTema);
+            localStorage.setItem("temaSelecionado", novoTema);
+        });
+    }
 });
-
-
 
 
 //MENU NA ROLAGEM MUDA ATIVO (sem click menu)
