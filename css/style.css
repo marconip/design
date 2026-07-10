@@ -45,10 +45,18 @@ body[data-theme=dark] {
   --fundo: #222222;
   --rodape: #222222;
 }
+body[data-theme=dark] section:nth-child(even) {
+  background-color: #000000;
+}
+body[data-theme=dark] section:nth-child(even) h3 {
+  color: #eeeeee;
+}
+body[data-theme=dark] section:nth-child(even) h4 {
+  color: #CCCCCC;
+}
 body[data-theme=dark] #home {
   background-image: url(../img/ban-dark.jpg);
 }
-body[data-theme=dark] #sobre,
 body[data-theme=dark] #contatos {
   background-color: #000000;
 }
@@ -115,7 +123,8 @@ body[data-theme=dark] h4 {
   color: #CCCCCC;
 }
 body[data-theme=dark] .tag {
-  background-color: #CCCCCC;
+  color: #CCCCCC;
+  background-color: #000000;
 }
 body[data-theme=dark] .temas {
   color: #000000;
@@ -277,6 +286,11 @@ h2 {
 
 h3 {
   font-size: 3.125rem;
+}
+@media (max-width: 767.98px) {
+  h3 {
+    font-size: 2.5rem;
+  }
 }
 
 h4 {
@@ -700,12 +714,8 @@ figure:hover {
 .empresas {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-}
-@media (max-width: 767.98px) {
-  .empresas {
-    justify-content: center;
-  }
 }
 .empresas a {
   margin-top: 20px;
@@ -713,6 +723,11 @@ figure:hover {
 }
 .empresas a:first-child {
   margin-left: 10px;
+}
+@media (max-width: 767.98px) {
+  .empresas a {
+    margin: 10px;
+  }
 }
 .empresas img {
   max-height: 42px;
@@ -727,16 +742,16 @@ figure:hover {
 .tags {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
-
 .tag {
   font-size: 0.875rem;
   color: #000000;
   padding: 3px 10px;
   margin: 5px;
   border-radius: 7px;
-  background-color: #ffffff;
+  background-color: #CCCCCC;
 }
 
 .foto-parallax {
@@ -775,9 +790,16 @@ figure:hover {
   border-radius: 100%;
 }
 
-#sobre {
+section:nth-child(even) {
   background-color: #CCCCCC;
 }
+section:nth-child(even) h3 {
+  color: #000000;
+}
+section:nth-child(even) h4 {
+  color: #222222;
+}
+
 @media (max-width: 767.98px) {
   #sobre .sobremim {
     flex-direction: column-reverse;

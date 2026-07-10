@@ -40,12 +40,25 @@ body {
         --fundo: #222222;
         --rodape: #222222;
 
+        section {
+            &:nth-child(even) {
+                background-color: $escuro;
+
+                h3 {
+                    color: $cinza-claro;
+                }
+
+                h4 {
+                    color: $cinza-medio;
+                }
+            }
+        }
+
 
         #home {
             background-image: url(../img/ban-dark.jpg);
         }
 
-        #sobre,
         #contatos {
             background-color: $escuro;
         }
@@ -134,7 +147,8 @@ body {
         }
 
         .tag {
-            background-color: $cinza-medio;
+            color: $cinza-medio;
+            background-color: $escuro;
         }
 
         .temas {
@@ -317,6 +331,10 @@ h2 {
 
 h3 {
     font-size: $s50;
+
+    @include media(sm-abaixo) {
+        font-size: $s40;
+    }
 }
 
 h4 {
@@ -750,11 +768,10 @@ figure {
 .empresas {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
 
-    @include media(sm-abaixo) {
-        justify-content: center;
-    }
+    @include media(sm-abaixo) {}
 
     a {
         margin-top: 20px;
@@ -762,6 +779,10 @@ figure {
 
         &:first-child {
             margin-left: 10px;
+        }
+
+        @include media(sm-abaixo) {
+            margin: 10px;
         }
     }
 
@@ -778,7 +799,10 @@ figure {
 .tags {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
+
+    @include media(sm-abaixo) {}
 }
 
 .tag {
@@ -787,7 +811,7 @@ figure {
     padding: 3px 10px;
     margin: 5px;
     border-radius: 7px;
-    background-color: $claro;
+    background-color: $cinza-medio;
 }
 
 .foto-parallax {
@@ -823,9 +847,22 @@ figure {
     border-radius: 100%;
 }
 
-#sobre {
-    background-color: $cinza-medio;
+section {
 
+    &:nth-child(even) {
+        background-color: $cinza-medio;
+
+        h3 {
+            color: $escuro;
+        }
+
+        h4 {
+            color: $cinza-escuro;
+        }
+    }
+}
+
+#sobre {
     .sobremim {
         @include media(sm-abaixo) {
             flex-direction: column-reverse;
@@ -834,7 +871,6 @@ figure {
 }
 
 #contatos {
-
     color: $cinza-medio;
     background-color: $cinza-escuro;
 
