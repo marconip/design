@@ -62,22 +62,22 @@ a {
 
     &:nth-child(odd) {
         .flutuar {
-            animation: float 4s ease-in-out infinite;
+            animation: float 3s ease-in-out infinite;
         }
     }
 
     &:nth-child(even) {
         .flutuar {
-            animation: float-vert 5s ease-in-out infinite;
+            animation: float-vert 3s ease-in-out infinite;
         }
     }
 
     .flutuar {
+        max-width: 110px;
         position: absolute;
         top: 80px;
         right: -10px;
-        max-width: 110px;
-
+        z-index: 1;
 
         @include media(md-acima) {
             max-width: none;
@@ -86,6 +86,7 @@ a {
 
     .imagem {
         width: 100%;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
     }
 
     .botao {
@@ -115,34 +116,34 @@ a {
 @keyframes float {
     0% {
         transform: translatex(0px);
-        filter: drop-shadow(0px 0px 0px #222);
+        filter: drop-shadow(0px 0px 0px #000);
     }
 
     50% {
-        transform: translatex(-15px);
-        filter: drop-shadow(15px 0px 5px rgba(77, 77, 77, 0.4));
+        transform: translatex(-20px);
+        filter: drop-shadow(15px 0px 5px rgba(33, 33, 33, 0.4));
     }
 
     100% {
         transform: translatex(0px);
-        filter: drop-shadow(0px 0px 0px #222);
+        filter: drop-shadow(0px 0px 0px #000);
     }
 }
 
 @keyframes float-vert {
     0% {
         transform: translatey(0px);
-        filter: drop-shadow(0px 0px 0px #222);
+        filter: drop-shadow(0px 0px 0px #000);
     }
 
     50% {
-        transform: translatey(-15px);
-        filter: drop-shadow(0px 15px 5px rgba(77, 77, 77, 0.4));
+        transform: translatey(-20px);
+        filter: drop-shadow(0px 15px 5px rgba(33, 33, 33, 0.4));
     }
 
     100% {
         transform: translatey(0px);
-        filter: drop-shadow(0px 0px 0px #222);
+        filter: drop-shadow(0px 0px 0px #000);
     }
 }
 

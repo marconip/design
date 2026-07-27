@@ -21,10 +21,10 @@ body {
   background-color: #99adce;
   width: 100%;
   /* background-image: url(../barberariaerico/logo.jpg);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: auto;
-    padding-top: 350px; */
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: auto;
+  padding-top: 350px; */
 }
 
 .logo {
@@ -36,12 +36,10 @@ body {
 p {
   color: #c85101;
 }
-
 p a {
   text-decoration: none;
   color: #c85101;
 }
-
 p a:hover {
   text-decoration: underline;
 }
@@ -50,7 +48,6 @@ a {
   text-decoration: none;
   color: #fff;
 }
-
 a:hover {
   text-decoration: underline;
 }
@@ -62,7 +59,6 @@ a:hover {
   padding-left: 20px;
   padding-right: 20px;
 }
-
 @media (min-width: 768px) {
   .corpo {
     max-width: 580px;
@@ -73,32 +69,28 @@ a:hover {
   position: relative;
   margin-bottom: 20px;
 }
-
 .secao:nth-child(odd) .flutuar {
-  animation: float 4s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
 }
-
 .secao:nth-child(even) .flutuar {
-  animation: float-vert 5s ease-in-out infinite;
+  animation: float-vert 3s ease-in-out infinite;
 }
-
 .secao .flutuar {
+  max-width: 110px;
   position: absolute;
   top: 80px;
   right: -10px;
-  max-width: 110px;
+  z-index: 1;
 }
-
 @media (min-width: 768px) {
   .secao .flutuar {
     max-width: none;
   }
 }
-
 .secao .imagem {
   width: 100%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
 }
-
 .secao .botao {
   max-width: 360px;
 }
@@ -109,17 +101,14 @@ a:hover {
   align-items: flex-start;
   margin-bottom: 40px;
 }
-
 .secao-dupla .botao-secao {
   width: 180px;
 }
-
 @media (min-width: 768px) {
   .secao-dupla .botao-secao {
     width: inherit;
   }
 }
-
 .secao-dupla .botao-secao img {
   width: 100%;
 }
@@ -127,49 +116,44 @@ a:hover {
 @keyframes float {
   0% {
     transform: translatex(0px);
-    filter: drop-shadow(0px 0px 0px #222);
+    filter: drop-shadow(0px 0px 0px #000);
   }
   50% {
-    transform: translatex(-15px);
-    filter: drop-shadow(15px 0px 5px rgba(77, 77, 77, 0.4));
+    transform: translatex(-20px);
+    filter: drop-shadow(15px 0px 5px rgba(33, 33, 33, 0.4));
   }
   100% {
     transform: translatex(0px);
-    filter: drop-shadow(0px 0px 0px #222);
+    filter: drop-shadow(0px 0px 0px #000);
   }
 }
-
 @keyframes float-vert {
   0% {
     transform: translatey(0px);
-    filter: drop-shadow(0px 0px 0px #222);
+    filter: drop-shadow(0px 0px 0px #000);
   }
   50% {
-    transform: translatey(-15px);
-    filter: drop-shadow(0px 15px 5px rgba(77, 77, 77, 0.4));
+    transform: translatey(-20px);
+    filter: drop-shadow(0px 15px 5px rgba(33, 33, 33, 0.4));
   }
   100% {
     transform: translatey(0px);
-    filter: drop-shadow(0px 0px 0px #222);
+    filter: drop-shadow(0px 0px 0px #000);
   }
 }
-
 footer {
   font-size: 0.9rem;
   font-weight: 300;
   padding: 10px 0px 0px 0px;
   background-color: #353e65;
 }
-
 footer p {
   margin-bottom: 10px;
 }
-
 footer a {
   color: #fff;
 }
-
 footer .linha-vermelha {
   padding: 10px;
   background-color: #c62626;
-}
+}/*# sourceMappingURL=barbeariaerico.css.map */
