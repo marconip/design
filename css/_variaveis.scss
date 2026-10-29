@@ -1,45 +1,21 @@
-﻿//Cores
-$alerta: #FFC107 !default;
-$perigo: #DC3545 !default;
-$sucesso: #198754 !default;
-
-$escuro: #000000;
-$cinza-escuro: #222222 !default;
-$cinza-medio: #CCCCCC !default;
-$cinza-claro: #eeeeee !default;
-$claro: #ffffff;
-
-
-//Responsive breakpoints
-//xxs
-$minicelular-acima: 425px;
+﻿//Responsive breakpoints
 $minicelular-abaixo: 424.98px;
+$minicelular-acima: 425px;
 
-//xs
-$celular-acima: 576px;
 $celular-abaixo: 575.98px;
+$celular-acima: 576px;
 
-//sm md
-$mobile-acima: 768px;
 $mobile-abaixo: 767.98px;
+$mobile-acima: 768px;
 
-//md
-$tablet-acima: 992px;
 $tablet-abaixo: 991.98px;
+$tablet-acima: 992px;
 
-//lg
-$desktop-acima: 1200px;
 $desktop-abaixo: 1199.98px;
+$desktop-acima: 1200px;
 
-//xl xxl
-$grandedesktop-acima: 1400px;
 $grandedesktop-abaixo: 1399.98px;
-
-//ul
-$ultradesktop-acima: 1700px;
-
-//xul
-$extraultradesktop-acima: 1900px;
+$grandedesktop-acima: 1400px;
 
 
 //Tamanho px em rem

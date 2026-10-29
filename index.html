@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
     <!-- Google Tag Manager -->
@@ -25,9 +25,9 @@
 
     <meta charset="UTF-8">
     <meta name="description"
-        content="Marconi Design é um especialista em soluções inteligentes no digital, criação de sites, landing page e blog, atualizações e manutenções em WordPress.">
+        content="Marconi Design é um especialista em criação e manutenção de sites, landing page e blog, atualizações e manutenções em WordPress, soluções inteligentes no digital">
     <meta name="keywords"
-        content="criação, site, landingpage, freelancer, webdesign, design, wordpress, frontend, uxui">
+        content="criação, site, landingpage, freelancer, webdesign, design, wordpress, frontend, ux-ui">
     <meta name="author" content="Marconi Design">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marconi Design - Seu Freelancer Web</title>
@@ -42,33 +42,14 @@
     <link href="./css/style.min.css" rel="stylesheet">
 </head>
 
-<!-- TEMAS: default ou dark -->
-
-<body data-theme="" data-lang="">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVGMQ4W5" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <div class="idiomas">
-        <a href="javascript:void(0)" onclick="switchLang('pt')">
-            <img src="./img/flag-brazil.png" alt="pt">
-        </a>
-        <a href="javascript:void(0)" onclick="switchLang('en')">
-            <img src="./img/flag-usa.png" alt="en">
-        </a>
-        <div class="idiomas-animado">
-            <img src="./img/flag-brazil.png" alt="portugues">
-            <small class="lang-pt">Idioma</small>
-            <small class="lang-en">Language</small>
-            <img src="./img/flag-usa.png" alt="ingles">
-        </div>
-    </div>
-
+<body>
+    <!-- <div class="topo">
+        Idioma - Tema
+    </div> -->
     <nav class="navbar fixed-top navbar-expand-md">
         <div class="container-xxl">
-            <a href="#home">
-                <img src="./img/marconidesign.svg" alt="Marconi Design" class="logo">
+            <a href="/">
+                <img src="./img/logo-marconidesign.png" alt="Marconi Design" class="logo-navegacao">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
                 aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,582 +57,333 @@
             </button>
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link lang-pt" href="#servicos">Serviços</a>
-                        <a class="nav-link lang-en" href="#servicos">Services</a>
+                        <a class="nav-link" data-ancora="servicos" href="#servicos">Serviços</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link lang-pt" href="#sobre">Sobre</a>
-                        <a class="nav-link lang-en" href="#sobre">About me</a>
+                        <a class="nav-link" data-ancora="portfolio" href="#portfolio">Portfólio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link lang-pt" href="#portfolio">Portfólio</a>
-                        <a class="nav-link lang-en" href="#portfolio">Portfolio</a>
+                        <a class="nav-link" data-ancora="quemsou" href="#quemsou">Quem Sou</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link lang-pt" href="#contatos">Contatos</a>
-                        <a class="nav-link lang-en" href="#contatos">Contacts</a>
+                        <a class="nav-link" data-ancora="depoimentos" href="#depoimentos">Depoimentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-ancora="contatos" href="#contatos">Contatos</a>
+                    </li>
+                    <li>
+                        <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Ol%C3%A1,%20vim%20do%20seu%20site%20gostaria%20de%20solicitar%20seus%20serviços."
+                            target="_blank" class="btn btn-nav">
+                            Contratar Serviço
+                        </a>
                     </li>
                 </ul>
             </div>
-
-            <a href="javascript:void(0)" class="temas" onclick="alternarTema()">
-                <i class="bi bi-circle-half lang-pt" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Trocar Aparência"></i>
-                <i class="bi bi-circle-half lang-en" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Change Appearance"></i>
-            </a>
-
-            <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Olá,%20através%20do%20seu%20site%20estou%20entrando%20em%20contato."
-                target="_blank" role="button" class="btn botao-nav">
-                <span class="lang-pt"><i class="bi bi-whatsapp"></i>&nbsp Orçamento</span>
-                <span class="lang-en"><i class="bi bi-whatsapp"></i>&nbsp Budget</span>
-            </a>
         </div>
     </nav>
 
-    <div class="container-fluid banner" id="home">
+    <div class="container-fluid banner">
         <div class="banner-titulos">
-            <div>
-                <h1 class="lang-pt">Olá! <br />
-                    Sou <b>Marconi</b>, <br />
-                    Design Digital
-                </h1>
-                <h1 class="lang-en">Hello! <br />
-                    I'm <b>Marconi</b>, <br />
-                    a Digital Designer
-                </h1>
-                <h2 class="lang-pt">Seu Freelancer Web</h2>
-                <h2 class="lang-en">Your Freelancer Web</h2>
-                <br />
-                <p class="lang-pt">
-                    <b>Criação de sites, landing page e blog, <br />
-                        atualizações e manutenções em WordPress.</b>
-                </p>
-                <p class="lang-en">
-                    Website creation, landing page and blog development, <br />
-                    updates and maintenance in WordPress.
-                </p>
-            </div>
-            <img src="./img/banner-foto.png" alt="ferfil-banner">
+            <h1 class="titulo-banner">
+                Marconi Design Criação de Sites
+            </h1>
+            <h2>Especialista em Design Digital <br />
+                Front-end e WordPress
+            </h2>
         </div>
+        <figure>
+            <img src="./img/banner.jpg" class="img-fluid img-banner" alt="banner Marconi Design">
+        </figure>
     </div>
 
-    <section class="container-fluid secao" id="servicos">
+    <section class="container-fluid" id="servicos">
         <div class="container-xxl">
             <div class="row">
-                <div class="col-12">
-                    <h2 class="text-center lang-pt">Serviços</h2>
-                    <h2 class="text-center lang-en">Services</h2>
-                    <h3 class="text-center lang-pt">
-                        O que posso fazer por você?
-                    </h3>
-                    <h3 class="text-center lang-en">
-                        What can I do for you?
-                    </h3>
-                    <h4 class="text-center lang-pt">
-                        Transforme sua presença online com soluções em design digital
+                <div class="col-12 text-center mb-3">
+                    <h2>Serviços</h2>
+                    <h3>Tenha uma presença on-line</h3>
+                </div>
+                <div class="col-12 col-lg-3 menu-servicos">
+                    <h4 class="websites text-dark">
+                        <i class="bi bi-globe-americas"></i> Websites
                     </h4>
-                    <h4 class="text-center lang-en">
-                        Transform your online presence with digital design solutions
+                    <h4 class="wordpress text-primary">
+                        <i class="bi bi-wordpress"></i> WordPress
+                    </h4>
+                    <h4 class="agencias text-success">
+                        <i class="bi bi-marker-tip"></i> Marketing
                     </h4>
                 </div>
-
-                <div class="col-12">
-                    <ul class="nav nav-pills" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#" aria-current="page" data-bs-toggle="tab"
-                                data-bs-target="#01-tab-pane">
-                                Websites
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#02-tab-pane">
-                                WordPress
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#03-tab-pane">
-                                <div class="lang-pt">Agências de Marketing e Publicidade</div>
-                                <div class="lang-en">Marketing and Advertising Agencies</div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#04-tab-pane">
-                                <div class="lang-pt">Cartão de Visita Digital</div>
-                                <div class="lang-en">Digital Business Card</div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#05-tab-pane">
-                                <div class="lang-pt">Bio Personalizada</div>
-                                <div class="lang-en">Custom Bio</div>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="01-tab-pane" role="tabpanel"
-                            aria-labelledby="home-tab" tabindex="0">
-                            <div class="modal-secao border rounded p-3 my-4">
-                                <h3 class="mb-3">Websites</h3>
-                                <div class="row lang-pt">
-                                    <div class="col-12 col-lg-4">
-                                        <h5 class="fw-bold"><i class="bi bi-airplane primaria"></i>
-                                            Landing Page
-                                        </h5>
-                                        <p>Ganhe mais clientes com formulários, vídeos ou arquivos em sua página.</p>
-                                    </div>
-                                    <div class="col-12 col-lg-4">
-                                        <h5 class="fw-bold"><i class="bi bi-building primaria"></i>
-                                            Site Institucional
-                                        </h5>
-                                        <p>Divulgue sua empresa online com um site cheio de informações.</p>
-                                    </div>
-                                    <div class="col-12 col-lg-4">
-                                        <h5 class="fw-bold"><i class="bi bi-shop-window primaria"></i>
-                                            Catálogo de Produtos</h5>
-                                        <p>Divulgue produtos ou serviços com imagens, vídeos e textos.</p>
-                                    </div>
-                                    <div class="col-12 col-lg-4">
-                                        <h5 class="fw-bold"><i class="bi bi-globe-americas primaria"></i>
-                                            One Page
-                                        </h5>
-                                        <p>Com uma única página apresente tudo que você deseja.</p>
-                                    </div>
-                                    <div class="col-12 col-lg-4">
-                                        <h5 class="fw-bold"><i class="bi bi-chat-quote primaria"></i>
-                                            Blog
-                                        </h5>
-                                        <p>Crie suas postagens, divulgue suas ideias, faça novos networking.</p>
-                                    </div>
-                                    <div class="col-12 col-lg-4">
-                                        <h5 class="fw-bold"><i class="bi bi-file-earmark-person primaria"></i>
-                                            Website Pessoal ou Currículo Virtual
-                                        </h5>
-                                        <p>Tenha seu próprio site e seu currículo digital e mais.</p>
-                                    </div>
-                                </div>
-                                <div class="row lang-en">
-                                    <div class="col-12 col-lg-4">
-                                        <h5 class="fw-bold"><i class="bi bi-airplane primaria"></i>
-                                            Landing Page
-                                        </h5>
-                                        <p>Attract more customers using forms, videos, or downloadable files on your
-                                            page.</p>
-                                    </div>
-                                    <div class="col-12 col-lg-4">
-                                        <h5 class="fw-bold"><i class="bi bi-building primaria"></i>
-                                            Corporate Website
-                                        </h5>
-                                        <p>Promote your company online with an information-rich website.</p>
-                                    </div>
-                                    <div class="col-12 col-lg-4">
-                                        <h5 class="fw-bold"><i class="bi bi-shop-window primaria"></i>
-                                            Product Catalog
-                                        </h5>
-                                        <p>Showcase products or services using images, videos, and text.</p>
-                                    </div>
-                                    <div class="col-12 col-lg-4">
-                                        <h5 class="fw-bold"><i class="bi bi-globe-americas primaria"></i>
-                                            One-Page Site
-                                        </h5>
-                                        <p>Present everything you want on a single page.</p>
-                                    </div>
-                                    <div class="col-12 col-lg-4">
-                                        <h5 class="fw-bold"><i class="bi bi-chat-quote primaria"></i>
-                                            Blog
-                                        </h5>
-                                        <p>Create posts, share your ideas, and network with others.</p>
-                                    </div>
-                                    <div class="col-12 col-lg-4">
-                                        <h5 class="fw-bold"><i class="bi bi-file-earmark-person primaria"></i>
-                                            Personal Website or Online Resume
-                                        </h5>
-                                        <p>Have your own website, a digital resume, and more.</p>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="col-12 col-lg-9 servicos-conteudos">
+                    <div class="row serv-websites">
+                        <div class="col-12 col-lg-6">
+                            <img src="./img/websites.jpg" alt="Serviço website" class="img-fluid">
                         </div>
-                        <div class="tab-pane fade" id="02-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
-                            tabindex="0">
-                            <div class="modal-secao border rounded p-3 my-4">
-                                <h3 class="mb-3">WordPress</h3>
-                                <div class="row lang-pt">
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">✔</b> Backup de site/blog<br />
-                                            <b class="primaria">✔</b> Inclusão de conteúdo ou itens<br />
-                                            <b class="primaria">✔</b> Criação de páginas ou Postagens<br />
-                                            <b class="primaria">✔</b> Configuração domínio e servidor<br />
-                                            <b class="primaria">✔</b> Desenvolvimento de site em WordPress<br />
-                                            <b class="primaria">✔</b> Edição: conteúdos, imagens, vídeos etc.<br />
-                                            <b class="primaria">✔</b> Atualização de Plugins, Tema e versão do WordPress
-                                        </p>
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">✔</b> Montagem de Site<br />
-                                            <b class="primaria">✔</b> Troca de Domínio<br />
-                                            <b class="primaria">✔</b> Instalação de Plugins<br />
-                                            <b class="primaria">✔</b> Personalização de layouts<br />
-                                            <b class="primaria">✔</b> Mentoria de como usar o WordPress<br />
-                                            <b class="primaria">✔</b> Treinamento da área administrativa<br />
-                                            <b class="primaria">✔</b> Instalação e configuração do WordPress
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row lang-en">
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">✔</b> Website/blog backup<br />
-                                            <b class="primaria">✔</b> Adding content or items<br />
-                                            <b class="primaria">✔</b> Creating pages or posts<br />
-                                            <b class="primaria">✔</b> Domain and server setup<br />
-                                            <b class="primaria">✔</b> WordPress website development<br />
-                                            <b class="primaria">✔</b> Editing: content, images, videos, etc.<br />
-                                            <b class="primaria">✔</b> Updating plugins, themes, and WordPress version
-                                        </p>
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">✔</b> Website setup<br />
-                                            <b class="primaria">✔</b> Domain change<br />
-                                            <b class="primaria">✔</b> Plugin installation<br />
-                                            <b class="primaria">✔</b> Layout customization<br />
-                                            <b class="primaria">✔</b> WordPress usage mentoring<br />
-                                            <b class="primaria">✔</b> Admin area training<br />
-                                            <b class="primaria">✔</b> WordPress installation and configuration
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-12 col-lg-6">
+                            <ul class="text-dark pt-2">
+                                <li>Landing Page</li>
+                                <li>Site Institucional</li>
+                                <li>Catálogo de Produtos</li>
+                                <li>One Page</li>
+                                <li>Blog</li>
+                                <li>Web App</li>
+                                <li>Website Pessoal</li>
+                                <li>Currículo Virtual</li>
+                            </ul>
                         </div>
-                        <div class="tab-pane fade" id="03-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
-                            tabindex="0">
-                            <div class="modal-secao border rounded p-3 my-4">
-                                <h3 class="mb-3 lang-pt">Agências de Marketing e Publicidade</h3>
-                                <h3 class="mb-3 lang-en">Marketing and Advertising Agencies</h3>
-                                <div class="row lang-pt">
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">•</b> Desenvolvimento Front-end<br />
-                                            <b class="primaria">•</b> Protótipo para interface digital<br />
-                                            <b class="primaria">•</b> Atualização e manutenção em sites<br />
-                                            <b class="primaria">•</b> Layouts gráficos para sites/sistemas<br />
-                                            <b class="primaria">•</b> Montagem e serviços gerais em Bootstrap
-                                        </p>
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">•</b> UX e UI Design<br />
-                                            <b class="primaria">•</b> Consultoria em WordPress<br />
-                                            <b class="primaria">•</b> Personalização em WordPress<br />
-                                            <b class="primaria">•</b> Montagem de site em WordPress<br />
-                                            <b class="primaria">•</b> Atualizações em geral no WordPress
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row lang-en">
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">•</b> Front-end development<br />
-                                            <b class="primaria">•</b> Digital interface prototyping<br />
-                                            <b class="primaria">•</b> Website updates and maintenance<br />
-                                            <b class="primaria">•</b> Graphic layouts for websites/systems<br />
-                                            <b class="primaria">•</b> Bootstrap implementation and general services
-                                        </p>
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">•</b> UX and UI design<br />
-                                            <b class="primaria">•</b> WordPress consulting<br />
-                                            <b class="primaria">•</b> WordPress customization<br />
-                                            <b class="primaria">•</b> WordPress site setup<br />
-                                            <b class="primaria">•</b> General WordPress updates
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="row serv-wordpress">
+                        <div class="col-12 col-lg-6">
+                            <img src="./img/wordpress.jpg" alt="Serviço wordpress" class="img-fluid">
                         </div>
-                        <div class="tab-pane fade" id="04-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
-                            tabindex="0">
-                            <div class="modal-secao border rounded p-3 my-4">
-                                <h3 class="mb-3 lang-pt">Cartão de Visita Digital</h3>
-                                <h3 class="mb-3 lang-en">Digital Business Card</h3>
-                                <div class="row lang-pt">
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">✔</b> Abra e-mail com clique<br />
-                                            <b class="primaria">✔</b> Abre WhatsApp com clique<br />
-                                            <b class="primaria">✔</b> Sem impressão, 100% digital<br />
-                                            <b class="primaria">✔</b> Compartilhamento via QR Code
-                                        </p>
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">✔</b> Compartilhamento rápido via WhatsApp<br />
-                                            <b class="primaria">✔</b> Todos os links de suas redes sociais<br />
-                                            <b class="primaria">✔</b> Abre rotas no mapa para seu endereço<br />
-                                            <b class="primaria">✔</b> Links para seus principais produtos ou serviços
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row lang-en">
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">✔</b> Opens email with a click<br />
-                                            <b class="primaria">✔</b> Opens WhatsApp with a click<br />
-                                            <b class="primaria">✔</b> No printing required; 100% digital<br />
-                                            <b class="primaria">✔</b> Share via QR Code
-                                        </p>
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">✔</b> Quick sharing via WhatsApp<br />
-                                            <b class="primaria">✔</b> Links to all your social media<br />
-                                            <b class="primaria">✔</b> Opens map directions to your address<br />
-                                            <b class="primaria">✔</b> Links to your key products or services
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-12 col-lg-6">
+                            <ul class="text-primary pt-2">
+                                <li>Backups</li>
+                                <li>Criação de páginas ou Postagens</li>
+                                <li>Configuração domínio e servidor</li>
+                                <li>Desenvolvimento de site em WordPress</li>
+                                <li>Edição: conteúdos, imagens, vídeos etc.</li>
+                                <li>Atualização de Plugins, Tema e versão</li>
+                                <li>Montagem de Site</li>
+                                <li>Troca de Domínio</li>
+                                <li>Instalação de Plugins</li>
+                                <li>Mentoria de como usar o WordPress</li>
+                                <li>Instalação e configuração do WordPress</li>
+                            </ul>
                         </div>
-                        <div class="tab-pane fade" id="05-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
-                            tabindex="0">
-                            <div class="modal-secao border rounded p-3 my-4">
-                                <h3 class="mb-3 lang-pt">Bio Personalizada</h3>
-                                <h3 class="mb-3 lang-en">Custom Bio</h3>
-                                <div class="row lang-pt">
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">•</b> Converta seguidores em clientes<br />
-                                            <b class="primaria">•</b> Uma árvore de links personalizada<br />
-                                            <b class="primaria">•</b> Todos os seus links em um só lugar
-                                        </p>
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">•</b> Um mini site com imagens e links<br />
-                                            <b class="primaria">•</b> Use no Instagram ou onde desejar<br />
-                                            <b class="primaria">•</b> Divulgue seus produtos ou serviços
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row lang-en">
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">•</b> Convert followers into customers<br />
-                                            <b class="primaria">•</b> A custom link tree<br />
-                                            <b class="primaria">•</b> All your links in one place
-                                        </p>
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                        <p>
-                                            <b class="primaria">•</b> A mini-site with images and links<br />
-                                            <b class="primaria">•</b> Use on Instagram or anywhere you like<br />
-                                            <b class="primaria">•</b> Showcase your products or services
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="row serv-agencias">
+                        <div class="col-12 col-lg-6">
+                            <img src="./img/agencia.jpg" alt="Serviço agencias" class="img-fluid">
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <ul class="text-success pt-2">
+                                <li>Desenvolvimento Front-end</li>
+                                <li>Protótipo para interface digital</li>
+                                <li>Atualização e manutenção em sites</li>
+                                <li>Layouts gráficos para sites/sistemas</li>
+                                <li>Montagem e serviços gerais em Bootstrap</li>
+                                <li>UX e UI Design</li>
+                                <li>Consultoria em WordPress</li>
+                                <li>Personalização em WordPress</li>
+                                <li>Montagem de site em WordPress</li>
+                                <li>Atualizações em geral no WordPress</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="text-center mt-4 botoes">
-                <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Olá,%20através%20do%20seu%20site%20estou%20entrando%20em%20contato."
-                    target="_blank" role="button" class="btn btn-sm-w100">
-                    <span class="lang-pt"><i class="bi bi-whatsapp"></i>&nbsp Contratar serviço</span>
-                    <span class="lang-en"><i class="bi bi-whatsapp"></i>&nbsp Hire service</span>
+                <div class="col-12 my-4">
+                    <p>
+                        Ofereço soluções personalizadas que atendem desde o pequeno empreendedor até grandes empresas,
+                        instituições e pessoas físicas. <br />
+                        Conheça a seguir os meus principais serviços:
+                    </p>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <p class="mb-0 text-dark">
+                        <b>
+                            <i class="bi bi-globe-americas texto-primaria"></i> Desenvolvimento Web
+                        </b>
+                    </p>
+                    <ul>
+                        <li>Criação de Sites</li>
+                        <li>Front-end (HTML, CSS, Javascript)</li>
+                        <li>Desenvolvimento em Bootstrap</li>
+                        <li>WordPress em geral</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <p class="mb-0 text-dark">
+                        <b>
+                            <i class="bi bi-hand-index-fill texto-primaria"></i> Design de Experiência e Interface
+                        </b>
+                    </p>
+                    <ul>
+                        <li>UX e UI Design</li>
+                        <li>Criação de Interfaces Digitais</li>
+                        <li>Protótipos Navegáveis</li>
+                        <li>Design System</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <p class="mb-0 text-dark">
+                        <b>
+                            <i class="bi bi-phone-fill texto-primaria"></i> Produtos Digitais Mobile
+                        </b>
+                    </p>
+                    <ul>
+                        <li>Design para Aplicativos</li>
+                        <li>Web App</li>
+                        <li>Modernização Visual e Navegável</li>
+                        <li>Análise Técnica com Heurísticas</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 tarja">
+                <p>
+                    <i class="bi bi-headset texto-primaria"></i> Atendimento on-line para todo Brasil e mundo.
+                    <i class="bi bi-chat-right-dots texto-primaria"></i>
+                    <i>Online services available throughout Brazil and worldwide.</i>
+                </p>
+                <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Ol%C3%A1,%20vim%20do%20seu%20site%20gostaria%20de%20solicitar%20seus%20serviços."
+                    target="_blank" role="button" class="btn">
+                    Contratar Serviço
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="container-fluid secao" id="portfolio">
+    <section class="container-fluid" id="portfolio">
         <div class="container-xxl">
             <div class="row">
-                <div class="col-12">
-                    <h2 class="text-center lang-pt">Portfólio</h2>
-                    <h2 class="text-center lang-en">Portfolio</h2>
-                    <h3 class="text-center lang-pt">Trabalhos recentes </h3>
-                    <h3 class="text-center lang-en">Recent works </h3>
-                    <h4 class="text-center lang-pt">
-                        Confira alguns projetos que transformaram a presença digital dos meus clientes
-                    </h4>
-                    <h4 class="text-center lang-en">
-                        Check out some of the projects that have transformed my clients' digital presence.
-                    </h4>
+                <div class="col-12 text-center">
+                    <h2>Portfólio</h2>
+                    <h3>Seu projeto também pode estar aqui</h3>
                 </div>
-
-                <div class="portfolio">
-                    <ul class="filter-menu">
-                        <li data-target="all" class="current">
-                            <a href="javascript:void(0)" class="lang-pt">Tudo</a>
-                            <a href="javascript:void(0)" class="lang-en">All</a>
-                        </li>
-                        <li data-target="website">
-                            <a href="javascript:void(0)" class="lang-pt">Sites</a>
-                            <a href="javascript:void(0)" class="lang-en">Websites</a>
-                        </li>
-                        <li data-target="biopersonalizada">
-                            <a href="javascript:void(0)" class="lang-pt">Bio Personalizada</a>
-                            <a href="javascript:void(0)" class="lang-en">Custom Bio</a>
-                        </li>
-                    </ul>
-
-                    <ul class="filter-item">
-                        <li data-item="website">
-                            <div class="legenda">
-                                <h6>Alphatek Portas Automáticas</h6>
-                            </div>
-                            <img src="./img/site-alphatek.jpg" alt="Alphatek Portas Automáticas">
-                        </li>
-                        <li data-item="biopersonalizada">
-                            <div class="legenda">
-                                <h6>Barbearia Érico</h6>
-                            </div>
-                            <img src="./img/bio-erico.jpg" alt="Barbearia Érico">
-                        </li>
-                        <li data-item="website">
-                            <div class="legenda">
-                                <h6>Martelinho de Ouro Lima Car</h6>
-                            </div>
-                            <img src="./img/site-limacar.jpg" alt="Martelinho de Ouro Lima Car">
-                        </li>
-                        <li data-item="biopersonalizada">
-                            <div class="legenda">
-                                <h6>Motion Publicidade</h6>
-                            </div>
-                            <img src="./img/bio-motion.jpg" alt="Motion Publicidade">
-                        </li>
-                        <li data-item="website">
-                            <div class="legenda">
-                                <h6>Motion Publicidade</h6>
-                            </div>
-                            <img src="./img/site-motion.jpg" alt="Motion Publicidade">
-                        </li>
-                        <li data-item="biopersonalizada">
-                            <div class="legenda">
-                                <h6>Lima Car</h6>
-                            </div>
-                            <img src="./img/bios-lima.jpg" alt="Lima Car">
-                        </li>
-                        <li data-item="website">
-                            <div class="legenda">
-                                <h6>Sharlem Store</h6>
-                            </div>
-                            <img src="./img/site-sharlemstore.jpg" alt="Sharlem Store">
-                        </li>
-                        <li data-item="biopersonalizada">
-                            <div class="legenda">
-                                <h6>Marconi Design</h6>
-                            </div>
-                            <img src="./img/bio-marconideseign.jpg" alt="Marconi Design">
-                    </ul>
-                </div>
-
             </div>
-            <div class="text-center mt-4 botoes">
-                <a href="https://www.behance.net/marconipacheco" target="_blank" role="button" class="btn btn-sm-w100">
-                    <span class="lang-pt"><i class="bi bi-image"></i>&nbsp Ver mais Projetos</span>
-                    <span class="lang-en"><i class="bi bi-image"></i>&nbsp See more Projects</span>
-                </a>
-                <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Olá,%20através%20do%20seu%20site%20estou%20entrando%20em%20contato."
-                    target="_blank" role="button" class="btn btn-sm-w100">
-                    <span class="lang-pt"><i class="bi bi-whatsapp"></i>&nbsp Quero fazer um projeto</span>
-                    <span class="lang-en"><i class="bi bi-whatsapp"></i>&nbsp Hire project service</span>
+
+            <div class="portfolio">
+                <ul class="filter-menu">
+                    <li data-target="all" class="current">
+                        <a href="javascript:void(0)" class="lang-pt">Tudo</a>
+                    </li>
+                    <li data-target="website">
+                        <a href="javascript:void(0)" class="lang-pt">Sites</a>
+                    </li>
+                    <li data-target="biopersonalizada">
+                        <a href="javascript:void(0)" class="lang-pt">Bio Personalizada</a>
+                    </li>
+                </ul>
+
+                <ul class="filter-item">
+                    <li data-item="website">
+                        <div class="legenda">
+                            <h6>Alphatek Portas Automáticas</h6>
+                        </div>
+                        <img src="./img/site-alphatek.jpg" alt="Alphatek Portas Automáticas">
+                    </li>
+                    <li data-item="biopersonalizada">
+                        <div class="legenda">
+                            <h6>Barbearia Érico</h6>
+                        </div>
+                        <img src="./img/bio-erico.jpg" alt="Barbearia Érico">
+                    </li>
+                    <li data-item="website">
+                        <div class="legenda">
+                            <h6>Martelinho de Ouro Lima Car</h6>
+                        </div>
+                        <img src="./img/site-limacar.jpg" alt="Martelinho de Ouro Lima Car">
+                    </li>
+                    <li data-item="biopersonalizada">
+                        <div class="legenda">
+                            <h6>Motion Publicidade</h6>
+                        </div>
+                        <img src="./img/bio-motion.jpg" alt="Motion Publicidade">
+                    </li>
+                    <li data-item="website">
+                        <div class="legenda">
+                            <h6>Motion Publicidade</h6>
+                        </div>
+                        <img src="./img/site-motion.jpg" alt="Motion Publicidade">
+                    </li>
+                    <li data-item="biopersonalizada">
+                        <div class="legenda">
+                            <h6>Lima Car</h6>
+                        </div>
+                        <img src="./img/bios-lima.jpg" alt="Lima Car">
+                    </li>
+                    <li data-item="website">
+                        <div class="legenda">
+                            <h6>Sharlem Store</h6>
+                        </div>
+                        <img src="./img/site-sharlemstore.jpg" alt="Sharlem Store">
+                    </li>
+                    <li data-item="website">
+                        <div class="legenda">
+                            <h6>Studio Ilza Beleza e Estética</h6>
+                        </div>
+                        <img src="./img/site-studioilza.jpg" alt="Studio Ilza">
+                </ul>
+            </div>
+
+            <div class="col-12 text-center">
+                <p>
+                    <i class="bi bi-calendar-check"></i> Há 18 anos trabalhando com Design Digital
+                </p>
+            </div>
+            <div class="col-12 text-center">
+                <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Ol%C3%A1,%20vim%20do%20seu%20site%20gostaria%20de%20fazer%20um%20orçamento."
+                    target="_blank" role="button" class="btn mt-4">
+                    Quero fazer um orçamento
                 </a>
             </div>
-        </div>
     </section>
 
-    <section class="container-fluid secao" id="sobre">
+    <section class="container-fluid" id="quemsou">
         <div class="container-xxl">
-            <div class="row sobremim">
-                <div class="col-12 col-lg-5 text-center">
-                    <div class="foto-parallax"></div>
-                    <div class="redes text-center">
-                        <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Olá,%20através%20do%20seu%20site%20estou%20entrando%20em%20contato."
-                            target="_blank">
-                            <img src="./img/i-whatsapp.svg" alt="redes sociais">
-                            <p class="lang-pt">Atendimento</p>
-                            <p class="lang-en">Support</p>
-                        </a>
-                        <a href="https://www.linkedin.com/in/marconipacheco/" target="_blank">
-                            <img src="./img/i-linkedin.svg" alt="redes sociais">
-                            <p>Linkedin</p>
-                        </a>
-                        <a href="https://www.behance.net/marconipacheco" target="_blank">
-                            <img src="./img/i-behance.svg" alt="redes sociais">
-                            <p class="lang-pt">Portfólio</p>
-                            <p class="lang-en">Portfolio</p>
-                        </a>
-                        <a href="https://instagram.com/marconiarts" target="_blank">
-                            <img src="./img/i-instagram.svg" alt="redes sociais">
-                            <p>Instagram</p>
-                        </a>
-                        <a href="https://www.artstation.com/marconiap" target="_blank">
-                            <img src="./img/i-artstation.svg" alt="redes sociais">
-                            <p>Hobby</p>
-                        </a>
-                    </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2>Quem Sou</h2>
+                    <h3>Apaixonado por tecnologia e Design</h3>
                 </div>
-                <div class="col-12 col-lg-7">
-                    <h2 class="lang-pt">Sobre Mim</h2>
-                    <h2 class="lang-en">About Me</h2>
-                    <h3 class="mb-3 lang-pt">
-                        Apaixonado em Interação <br />
-                        Humano-Computador
-                    </h3>
-                    <h3 class="mb-3 lang-en">
-                        Passionate about <br />
-                        Human-Computer Interaction
-                    </h3>
-                    <h4 class="primaria mb-2 lang-pt">
-                        <b>Há 18 anos, desenvolvendo experiências digitais.</b>
-                    </h4>
-                    <h4 class="primaria mb-2 lang-en">
-                        <b>For 18 years, developing digital experiences.</b>
-                    </h4>
-                    <p class="lang-pt">
-                        Minha trajetória é marcada pela união entre a visão estratégica do <b>Design UX/UI</b> e a
-                        precisão técnica do <b>Desenvolvimento Front-end</b>. Ter atuado em setores como: Agências de
-                        marketing e publicidade, empresas de tecnologia e informação, sistemas bancário e de ensino,
-                        deram-me experiência necessária para fazer um bom design.
-
-                        <br /><br />
+                <div class="col-12 col-lg-4">
+                    <img src="./img/perfil.jpg" alt="foto marconi" class="img-fluid foto-perfil">
+                </div>
+                <div class="col-12 col-lg-8 my-3">
+                    <p>
+                        Minha trajetória começa <b>há 18 anos</b>, marcada pela união entre o <b>design gráfico e o
+                            desenvolvimento em códigos</b>.
+                        Com estudos e atuação em setores como: agências de marketing,
+                        empresas de tecnologia, sistemas bancário e de ensino, que deram-me
+                        experiências e técnicas para que eu seja um designer realmente profissional.
+                        <br />
                         Minha atuação é desde o primeiro contato com o cliente até a entrega final, garantindo que a
-                        essência do projeto não se perca no caminho. Meu
-                        foco é criar interfaces que não apenas encantem visualmente, mas que tragam resultados reais
-                        para o seu negócio.
-                        <br /><br />
-                        Sou pós-graduação em Design de Produtos Digitais UX-UI e graduado com Bacharel em Design
-                        Digital. Veja mais do meu histórico profissional no
-                        <a href="https://www.linkedin.com/in/marconipacheco/" target="_blank">Linkedin</a>.
+                        essência do projeto não se perca no caminho. Meu foco é criar interfaces que tragam
+                        resultados reais para o seu negócio.
+                        <br />
+                        <b>Horário de atendimento:</b> <span class="open-close"></span> (sem atendimento nos feriados).
+                        <br />
+                        <b>Formação</b>: Sou pós-graduação em Design de Produtos Digitais UX-UI e graduado com Bacharel
+                        em Design Digital. Veja mais do meu histórico profissional no
+                        <a href="https://www.linkedin.com/in/marconipacheco/" target="_blank">
+                            Linkedin.
+                        </a>
                     </p>
-                    <p class="lang-en">
-                        My career path is marked by the union between the strategic vision of <b>UX/UI Design</b> and
-                        the
-                        technical precision of <b>Front-end Development</b>. Having worked in sectors such as marketing
-                        and
-                        advertising agencies, technology and information companies, banking and education systems, has
-                        given me the necessary experience to create good design.
-                        <br /><br />
-                        My involvement extends from the initial client contact to the final delivery, ensuring that the
-                        essence of the project is not lost along the way. My focus is on creating interfaces that not
-                        only visually delight but also deliver real results for your business.
-                        <br /><br />
-                        I hold a postgraduate degree in Digital Product Design UX-UI and a Bachelor's degree in Digital
-                        Design. See more of my professional history at
-                        <a href="https://www.linkedin.com/in/marconipacheco/" target="_blank">Linkedin</a>.
-                    </p>
+
+                    <h4>Acompanhe minhas redes sociais</h4>
+                    <div class="redes">
+                        <a href="https://www.instagram.com/marconidesignsite" target="_blank" data-bs-toggle="tooltip"
+                            data-bs-title="Instagram">
+                            <i class="bi bi-instagram text-danger fs-1"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/marconipacheco/" target="_blank" data-bs-toggle="tooltip"
+                            data-bs-title="Linkedin">
+                            <i class="bi bi-linkedin text-primary fs-1"></i>
+                        </a>
+
+                        <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Ol%C3%A1,%20vim%20do%20seu%20site%20gostaria%20de%20solicitar%20seus%20servi%C3%A7os."
+                            target="_blank" data-bs-toggle="tooltip" data-bs-title="WhatsApp">
+                            <i class="bi bi-whatsapp text-success fs-1"></i>
+                        </a>
+
+                        <a href="https://www.behance.net/marconipacheco" target="_blank" data-bs-toggle="tooltip"
+                            data-bs-title="Portfólio">
+                            <i class="bi bi-behance text-secondary fs-1"></i>
+                        </a>
+
+                        <a href="https://www.artstation.com/marconiap" target="_blank" data-bs-toggle="tooltip"
+                            data-bs-title="Hobby">
+                            <img src="./img/artstation.svg" alt="hobby artstation">
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <h3 class="mt-5 mb-3 text-center lang-pt">Habilidades</h3>
-                    <h3 class="mt-5 text-center lang-en">Skills</h3>
+                <div class="col-12 hr"></div>
+                <div class="col-12 text-center">
+                    <h4>Habilidades e Conhecimentos</h4>
                     <div class="tags">
                         <div class="tag">UX/UI Design</div>
                         <div class="tag">Web Design</div>
@@ -661,14 +393,10 @@
                         <div class="tag">Design System</div>
                         <div class="tag">Mobile</div>
                         <div class="tag">Web App</div>
-                        <div class="tag lang-pt">Aplicativos</div>
-                        <div class="tag lang-en">Apps</div>
-                        <div class="tag lang-pt">Vitrine de Produtos</div>
-                        <div class="tag lang-en">Product showcase</div>
-                        <div class="tag lang-pt">Loja Virtual</div>
-                        <div class="tag lang-en">Online Store</div>
-                        <div class="tag lang-pt">Protótipos</div>
-                        <div class="tag lang-en">Prototypes</div>
+                        <div class="tag">Aplicativos</div>
+                        <div class="tag">Vitrine de Produtos</div>
+                        <div class="tag">Loja Virtual</div>
+                        <div class="tag">Protótipos</div>
                         <div class="tag">Wireframe</div>
                         <div class="tag">Bootstrap</div>
                         <div class="tag">HTML</div>
@@ -682,11 +410,70 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <section class="container-fluid" id="depoimentos">
+        <div class="container-xxl">
             <div class="row">
-                <div class="col-12">
-                    <h3 class="mt-5 mb-3 text-center lang-pt">Colaborações em Empresas</h3>
-                    <h3 class="mt-5 mb-3 text-center lang-en">Collaborations in Companies</h3>
+                <div class="col-12 text-center">
+                    <h2>Depoimentos e Avaliações</h2>
+                    <h3>O que meus clientes estão dizendo</h3>
+                    <i class="bi bi-star-fill texto-primaria fs-2"></i> <i class="bi bi-star-fill texto-primaria fs-2"></i>
+                    <i class="bi bi-star-fill texto-primaria fs-2"></i> <i class="bi bi-star-fill texto-primaria fs-2"></i>
+                    <i class="bi bi-star-fill texto-primaria fs-2"></i>
+                    <div class="depoimentos">
+                        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <blockquote cite="https://martelinhodeourolimacar.com.br/">
+                                        <p>"Esse é fera, sabe o que faz, e entende do assunto, eu recomendo com certeza"
+                                        </p>
+                                    </blockquote>
+                                    <figcaption>— <cite>Lima Limão (Martelinho de Ouro Lima Car)</cite></figcaption>
+                                </div>
+                                <div class="carousel-item">
+                                    <blockquote cite="https://alphatekportas.com.br/">
+                                        <p>"Muito bom site no ar já. Muito bom trabalho"</p>
+                                    </blockquote>
+                                    <figcaption>— <cite>Pedro Rodriguez (Alphatek Portas)</cite></figcaption>
+                                </div>
+                                <div class="carousel-item">
+                                    <blockquote cite="https://marconidesign.com.br/bio/barberariaerico/">
+                                        <p>"Muito bom, recomendo muito! Designer ficou excelente."</p>
+                                    </blockquote>
+                                    <figcaption>— <cite>Erico Pena (Barbearia Erico)</cite></figcaption>
+                                </div>
+                                <div class="carousel-item">
+                                    <blockquote cite="https://sharlemstore.com.br/">
+                                        <p>"Meu primeiro site e ja foi com excelência. Atencioso, rápido e detalista. Eu
+                                            recomendo."</p>
+                                    </blockquote>
+                                    <figcaption>— <cite>Patrícia Bezerra (Sharlem Store)</cite></figcaption>
+                                </div>
+                                <div class="carousel-item">
+                                    <blockquote cite="https://santosebezerraadvogados.com.br/">
+                                        <p>"Excelente profissional, atencioso e detalhista."</p>
+                                    </blockquote>
+                                    <figcaption>— <cite>Jefferson (S&B Advogados)</cite></figcaption>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                <i class="bi bi-chevron-left text-dark fs-3"></i>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                <i class="bi bi-chevron-right text-dark fs-3"></i>
+                                <span class="visually-hidden text-danger">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 text-center mt-4">
+                    <h4>Colaborações e Parcerias</h4>
                     <div class="empresas">
                         <a href="https://newmd.com.br/" target="_blank">
                             <img src="./img/empresa-newmd.png" alt="empresa">
@@ -715,81 +502,83 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
-    <section class="container-fluid secao" id="contatos">
+    <section class="container-fluid" id="contatos">
         <div class="container-xxl">
+            <div class="row contatos">
+                <div class="col-12 col-lg-8 col-xl-7">
+                    <h2>Contatos</h2>
+                    <h3 class="mb-3">
+                        Apareça e cresça no digital
+                    </h3>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-12 col-lg-6">
-                    <h2 class="lang-pt">Contatos</h2>
-                    <h2 class="lang-en">Contacts</h2>
-                    <h3 class="mb-5 lang-pt">
-                        Você tem uma idéia de um projeto incrível?
-                    </h3>
-                    <h3 class="mb-5 lang-en">
-                        Do you have an idea for an amazing project?
-                    </h3>
-                    <p class="w-75 lang-pt">
-                        Entre em contato comigo através de qualquer um dos meios abaixo ou formulário ao lado.
+                <div class="col-12 col-lg-5 col-xl-6">
+                    <p>
+                        <b>Pronto para destacar seus serviços?</b>
+                        <br />
+                        Vamos conversar e descobrir a melhor forma de alavancar seus negócios no mundo
+                        da internet. Me chama no WhatsApp.
                     </p>
-                    <p class="w-75 lang-en">
-                        Contact me through any of the methods below or the form on the side.
+                    <address>
+                        <p>
+                            <b>Endereço Marconi Design:</b><br />
+                            São José dos Pinhais - Paraná - Brasil
+                        </p>
+                    </address>
+                    <p>
+                        <b>Horário de atendimento:</b> <br />
+                        <span class="open-close"></span> <br />
+                        <small>- Sem atendimento nos feriados.</small>
                     </p>
-                    <p class="w-75 lang-pt">
-                        Responderei o mais rápido possível!
-                    </p>
-                    <p class="w-75 lang-en">
-                        I will respond as soon as possible!
-                    </p>
-                    <p class="oscontatos">
-                        <a href="tel:41995501711">
-                            <i class="bi bi-phone-vibrate-fill fs-3"></i>&nbsp(41) 99550 1711
-                        </a>
-                        <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Olá,%20através%20do%20seu%20site%20estou%20entrando%20em%20contato."
-                            target="_blank">
-                            <i class="bi bi-whatsapp fs-4"></i>&nbsp
-                            <span class="lang-pt">Atendimento via Whatsapp</span>
-                            <span class="lang-en">Contact me from WhatsApp (+55 Brazil)</span>
-                        </a>
-                        <a href="mailto:marconiap82@gmail.com">
-                            <i class="bi bi-envelope-fill fs-4"></i>&nbsp marconiap82@gmail.com
-                        </a>
+                    <p>
+                        De Segunda a Sexta das 8h as 18h <br />
+                        Sábados das 8h as 13h
                     </p>
                 </div>
-                <div class="col-12 col-lg-6 mt-5">
-                    <form action="https://formsubmit.co/5956ef8dde41df2625176d1dc03d827e" method="POST">
-                        <!-- <form method="post" action="send-email.php" class="formulario"> -->
-                        <div class="row">
-                            <div class="col-12 col-lg-6 mb-3">
-                                <label for="name" class="form-label lang-pt">Nome <small>
-                                        (Primeiro e último)</small></label>
-                                <label for="name" class="form-label lang-en">Name <small>
-                                        (First and last)</small></label>
-                                <input type="text" name="nome" id="name" class="form-control nome" required>
-                            </div>
-                            <div class="col-12 col-lg-6 mb-3">
-                                <label for="telefone" class="form-label lang-pt">Telefone
-                                    <small>(WhatsApp)</small></label>
-                                <label for="telefone" class="form-label lang-en">Telephone
-                                    <small>(WhatsApp)</small></label>
-                                <input type="text" name="telefone" inputmode="numeric" class="form-control tel"
-                                    maxlength="15" placeholder="Apenas números com DDD" required>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label lang-pt">Em que posso ajudar?</label>
-                            <label for="message" class="form-label lang-en">How can I help you?</label>
-                            <textarea name="messagem" id="message" class="form-control" required></textarea>
-                        </div>
-                        <input type="hidden" name="_next" value="https://marconidesign.com.br/sent.html">
-                        <input type="hidden" name="_subject" value="Email do Site MD">
-                        <button type="submit" class="btn btn-sm-w100 lang-pt">
-                            <i class="bi bi-send"></i>&nbsp Enviar Mensagem
-                        </button>
-                        <button type="submit" class="btn btn-sm-w100 lang-en">
-                            <i class="bi bi-send"></i>&nbsp Send Message
-                        </button>
-                    </form>
+                <div class="col-12 col-lg-7 col-xl-6">
+                    <div class="botoes-compartilhar">
+                        <h4>Minhas Redes Sociais</h4>
+                        <a href="https://www.instagram.com/marconidesignsite" target="_blank" class="btn-compartilhar">
+                            <i class="bi bi-instagram text-danger"></i>
+                            <span>
+                                <p class="text-danger">Instagram</p>
+                                <p class="text-danger">marconidesignsite</p>
+                            </span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/marconipacheco/" target="_blank" class="btn-compartilhar">
+                            <i class="bi bi-linkedin text-primary"></i>
+                            <span>
+                                <p class="text-primary">Linkedin</p>
+                                <p class="text-primary">marconipacheco</p>
+                            </span>
+                        </a>
+                        <a href="https://www.behance.net/marconipacheco" target="_blank" class="btn-compartilhar">
+                            <i class="bi bi-behance text-secondary"></i>
+                            <span>
+                                <p class="text-secondary">Portfólio</p>
+                                <p class="text-secondary">Behance</p>
+                            </span>
+                        </a>
+                        <a href="https://www.artstation.com/marconiap" target="_blank" class="btn-compartilhar">
+                            <img src="./img/artstation.svg" alt="artstation">
+                            <span>
+                                <p class="text-dark">Hobby</p>
+                                <p class="text-dark">ArtStation</p>
+                            </span>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Ol%C3%A1,%20atrav%C3%A9s%20do%20seu%20site%20estou%20entrando%20em%20contato."
+                            target="_blank" class="btn-compartilhar w-100">
+                            <i class="bi bi-whatsapp text-success"></i>
+                            <span>
+                                <p class="text-success">WhatsApp</p>
+                                <p class="text-success">41 995501711 Orçamentos - Mensagens - Contratar</p>
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -797,203 +586,83 @@
 
     <footer class="container-fluid p-0">
         <div class="container-xxl footer">
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-8">
-                    <p class="lang-pt">
-                        © <span class="dataano"></span> Marconi Design - Seu Freelancer Web
-                    </p>
-                    <p class="lang-en">
-                        © <span class="dataano"></span> Marconi Design - Your Freelancer Web
-                    </p>
-                    <small class="lang-pt">
-                        "A bênção do Senhor é que enriquece; e não traz consigo dores." Provérbios 10:22
-                    </small>
-                    <small class="lang-en">
-                        "The blessing of the Lord makes a person rich, and he adds no sorrow with it." Proverbs 10:22
-                    </small>
+            <div class="row">
+                <div class="col-12 col-lg-3">
+                    <img src="./img/logomarca-marconidesign.png" alt="marca Marconi Design" class="img-fluid">
                 </div>
-                <div class="col-12 col-lg-4">
-                    <div class="redes">
-                        <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Olá,%20através%20do%20seu%20site%20estou%20entrando%20em%20contato."
-                            target="_blank" data-bs-toggle="tooltip" data-bs-title="Atendimento">
-                            <img src="./img/i-whatsapp.svg" alt="redes sociais">
-                        </a>
-                        <a href="https://www.linkedin.com/in/marconipacheco/" target="_blank" data-bs-toggle="tooltip"
-                            data-bs-title="Linkedin">
-                            <img src="./img/i-linkedin.svg" alt="redes sociais">
-                        </a>
-                        <a href="https://www.behance.net/marconipacheco" target="_blank" data-bs-toggle="tooltip"
-                            data-bs-title="Portfólio">
-                            <img src="./img/i-behance.svg" alt="redes sociais">
-                        </a>
-                        <a href="https://instagram.com/marconiarts" target="_blank" data-bs-toggle="tooltip"
-                            data-bs-title="Instagram">
-                            <img src="./img/i-instagram.svg" alt="redes sociais">
-                        </a>
-                        <a href="https://www.artstation.com/marconiap" target="_blank" data-bs-toggle="tooltip"
-                            data-bs-title="Hobby">
-                            <img src="./img/i-artstation.svg" alt="redes sociais">
-                        </a>
+                <div class="col-12 col-lg-3">
+                    <h5><i class="bi bi-person-plus-fill texto-primaria"></i> Serviços</h5>
+                    <ul>
+                        <li>Cartão de Visita Digital</li>
+                        <li>Página de Links (Bio)</li>
+                        <li>Servidor & Domínio</li>
+                        <li>Criação de Logotipo</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <h5><i class="bi bi-headset texto-primaria"></i> Atendimento</h5>
+                    <p>
+                        Atendimento remoto para todo Brasil e mundo.
+                    </p>
+                    <p>
+                        <i class="bi bi-chat-right-dots"></i>
+                        <i>Remote support available throughout Brazil and worldwide.</i>
+                    </p>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <h5><i class="bi bi-share-fill texto-primaria"></i> Clique e Compartilhe</h5>
+                    <div class="copiar-enviar">
+                        <span>
+                            <i class="bi bi-globe-americas"></i> Meu Site Marconi Design
+                            <small>https://marconidesign.com.br/</small>
+                        </span>
+
+                        <span>
+                            <i class="bi bi-person-vcard"></i> Meu Cartão Digital
+                            <small>https://marconidesign.com.br/cartao/</small>
+                        </span>
+
+                        <span>
+                            <i class="bi bi-whatsapp"></i> Meu WhatsApp
+                            <small>Este é WhatsApp de Marconi Design: 41 99550 1711</small>
+                        </span>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="rodape">
+            <div class="container-xxl">
+                <p>
+                    © 2026 Marconi Design - Seu Freelancer Web
+                </p>
+                <p>"A bênção do Senhor é que enriquece; e não traz consigo dores." Provérbios 10:22</p>
             </div>
         </div>
     </footer>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title">
-                        <i class="bi bi-feather"></i>&nbsp Todos os Serviços
-                    </h2>
-                    <button type="button" class="btn-close fs-6" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="modal-secao border rounded p-3 my-4">
-                        <h3 class="mb-3">Em Sites</h3>
-                        <div class="row">
-                            <div class="col-12 col-lg-4">
-                                <h5 class="primaria"><i class="bi bi-airplane"></i> Landing Page</h5>
-                                <p>Ganhe mais clientes com formulários, vídeos ou arquivos em sua página.</p>
-                            </div>
-                            <div class="col-12 col-lg-4">
-                                <h5 class="primaria"><i class="bi bi-building"></i> Site Institucional</h5>
-                                <p>Divulgue sua empresa online com um site cheio de informações.</p>
-                            </div>
-                            <div class="col-12 col-lg-4">
-                                <h5 class="primaria"><i class="bi bi-shop-window"></i> Catálogo de Produtos</h5>
-                                <p>Divulgue produtos ou serviços com imagens, vídeos e textos.</p>
-                            </div>
-                            <div class="col-12 col-lg-4">
-                                <h5 class="primaria"><i class="bi bi-globe-americas"></i> One Page</h5>
-                                <p>Com uma única página apresente tudo que você deseja.</p>
-                            </div>
-                            <div class="col-12 col-lg-4">
-                                <h5 class="primaria"><i class="bi bi-chat-quote"></i> Blog</h5>
-                                <p>Crie suas postagens, divulgue suas ideias, faça novos networking.</p>
-                            </div>
-                            <div class="col-12 col-lg-4">
-                                <h5 class="primaria"><i class="bi bi-file-earmark-person"></i> Site Pessoal/Currículo
-                                    Virtual</h5>
-                                <p>Tenha seu próprio site e seu currículo digital e mais.</p>
-                            </div>
-                        </div>
-                    </div>
+    <i class="bi bi-arrow-up-square-fill subir"></i>
 
-                    <div class="modal-secao rounded p-3 my-4">
-                        <h3 class="mb-3">Em WordPress</h3>
-                        <div class="row">
-                            <div class="col-12 col-lg-6">
-                                <p>
-                                    <b class="primaria">✔</b> Backup de site/blog<br />
-                                    <b class="primaria">✔</b> Inclusão de conteúdo ou itens<br />
-                                    <b class="primaria">✔</b> Criação de páginas ou Postagens<br />
-                                    <b class="primaria">✔</b> Configuração domínio e servidor<br />
-                                    <b class="primaria">✔</b> Desenvolvimento de site em WordPress<br />
-                                    <b class="primaria">✔</b> Edição: conteúdos, imagens, vídeos etc.<br />
-                                    <b class="primaria">✔</b> Atualização de Plugins, Tema e versão do WordPress
-                                </p>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <p>
-                                    <b class="primaria">✔</b> Montagem de Site<br />
-                                    <b class="primaria">✔</b> Troca de Domínio<br />
-                                    <b class="primaria">✔</b> Instalação de Plugins<br />
-                                    <b class="primaria">✔</b> Personalização de layouts<br />
-                                    <b class="primaria">✔</b> Mentoria de como usar o WordPress<br />
-                                    <b class="primaria">✔</b> Treinamento da área administrativa<br />
-                                    <b class="primaria">✔</b> Instalação e configuração do WordPress
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+    <div class="whats-flutuante">
+        <div class="whatsapp-pulse"></div>
+        <a href="https://api.whatsapp.com/send?phone=5541995501711&text=Ol%C3%A1,%20atrav%C3%A9s%20do%20seu%20site%20estou%20entrando%20em%20contato."
+            id="whatsapp-link" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-whatsapp text-success"></i>
+        </a>
+    </div>
 
-                    <div class="modal-secao border rounded p-3 my-4">
-                        <h3 class="mb-3">Para Agências de Marketing e Publicidade</h3>
-                        <div class="row">
-                            <div class="col-12 col-lg-6">
-                                <p>
-                                    <b class="primaria">•</b> Desenvolvimento Front-end<br />
-                                    <b class="primaria">•</b> Protótipo para interface digital<br />
-                                    <b class="primaria">•</b> Atualização e manutenção em sites<br />
-                                    <b class="primaria">•</b> Layouts gráficos para sites/sistemas<br />
-                                    <b class="primaria">•</b> Montagem e serviços gerais em Bootstrap
-                                </p>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <p>
-                                    <b class="primaria">•</b> UX e UI Design<br />
-                                    <b class="primaria">•</b> Consultoria em WordPress<br />
-                                    <b class="primaria">•</b> Personalização em WordPress<br />
-                                    <b class="primaria">•</b> Montagem de site em WordPress<br />
-                                    <b class="primaria">•</b> Atualizações em geral no WordPress
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal-secao rounded p-3 my-4">
-                        <h3 class="mb-3">Cartão de Visita Digital</h3>
-                        <div class="row">
-                            <div class="col-12 col-lg-6">
-                                <p>
-                                    <b class="primaria">✔</b> Abre WhatsApp<br />
-                                    <b class="primaria">✔</b> Abra e-mail com clique<br />
-                                    <b class="primaria">✔</b> Sem impressão, 100% digital<br />
-                                    <b class="primaria">✔</b> Compartilhamento via QR Code
-                                </p>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <p>
-                                    <b class="primaria">✔</b> Compartilhamento rápido via WhatsApp<br />
-                                    <b class="primaria">✔</b> Todos os links de suas redes sociais<br />
-                                    <b class="primaria">✔</b> Abre rotas no mapa para seu endereço<br />
-                                    <b class="primaria">✔</b> Links para seus principais produtos ou serviços
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal-secao border rounded p-3 my-4">
-                        <h3 class="mb-3">Bio Personalizada</h3>
-                        <div class="row">
-                            <div class="col-12 col-lg-6">
-                                <p>
-                                    <b class="primaria">•</b> Converta seguidores em clientes<br />
-                                    <b class="primaria">•</b> Uma árvore de links personalizada<br />
-                                    <b class="primaria">•</b> Todos os seus links em um só lugar
-                                </p>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <p>
-                                    <b class="primaria">•</b> Um mini site com imagens e links<br />
-                                    <b class="primaria">•</b> Use no Instagram ou onde desejar<br />
-                                    <b class="primaria">•</b> Divulgue seus produtos ou serviços
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <a href="javascript:void(0)" data-bs-dismiss="modal">Fechar</a>
-                    <a href="
-                        https://api.whatsapp.com/send?phone=5541995501711&text=Olá,%20através%20do%20seu%20site%20estou%20entrando%20em%20contato."
-                        target="_blank" type="button" class="btn ms-4">
-                        <i class="bi bi-whatsapp"></i>&nbsp Solicitar Serviço
-                    </a>
-                </div>
-            </div>
-        </div>
+    <div id="cookieBanner" class="cookie-container hidden">
+        <p class="cookie-text">
+            Usamos cookies para melhorar sua experiência de navegação e analisar o tráfego do site. Ao continuar,
+            você concorda com o uso deles.
+        </p>
+        <button id="cookieBtn" class="cookie-btn">Entendi e fechar</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
 
     <script src="./owl-carousel/jquery.min.js"></script>
@@ -1003,6 +672,5 @@
 
     <script src="./js/geral.js"></script>
 </body>
-<!-- http://127.0.0.1:5500/index.html -->
 
 </html>

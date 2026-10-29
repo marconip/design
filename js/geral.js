@@ -4,102 +4,238 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 });
 
-//IDIOMA
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Identifica o idioma (checa o cache primeiro, depois o navegador)
-    const savedLang = localStorage.getItem('user_lang');
-    const browserLang = navigator.language || navigator.userLanguage;
 
-    // 2. Define o formato simplificado (ex: 'pt-BR' vira 'pt', 'en-US' vira 'en')
-    const formattedBrowserLang = browserLang.split('-')[0];
-
-    // 3. Define o idioma final (usa o cache ou o do navegador)
-    const finalLang = savedLang || formattedBrowserLang;
-
-    // 4. Troca automaticamente ao carregar a página
-    switchLang(finalLang);
-
-    // 5. Opcional: Ouve cliques em botões de troca manual que tenham o atributo 'data-btn-lang'
-    document.querySelectorAll('[data-btn-lang]').forEach(button => {
-        button.addEventListener('click', () => {
-            const selectedLang = button.getAttribute('data-btn-lang');
-            switchLang(selectedLang);
-        });
-    });
-    //console.log(savedLang + " - " + browserLang)
-});
-
-// Função para aplicar o idioma no HTML e salvar no cache
-function switchLang(lang) {
-    document.body.setAttribute('data-lang', lang);
-    localStorage.setItem('user_lang', lang);
+//MENU ADICIONA CLASSE NO MENU CLICADO
+var menuLink = document.querySelectorAll(".nav-link");
+var urlAncora = window.location.hash.substring(1);
+function linkAction() {
+    menuLink.forEach(n => n.classList.remove('active'))
+    this.classList.add('active')
+    //fecha menu mobile
+    document.querySelector(".navbar-collapse").classList.remove("show")
 }
+menuLink.forEach(n => n.addEventListener('click', linkAction))
 
 
-//RODAPE DATA ANO
-const anoAtual = new Date().getFullYear();
-document.querySelector(".dataano").innerHTML = anoAtual;
-
-
-//VALIDAÇÃO DE FORMULÁRIO
-let formNome = document.querySelector('input.nome')
-let formTel = document.querySelector('input.tel')
-let textArea = document.querySelector('textarea')
-
-formNome.addEventListener('focusout', () => {
-    if (formNome.value !== "") {
-        formNome.classList.add("preenchido");
-    }
-});
-formTel.addEventListener('focusout', () => {
-    if (formTel.value !== "") {
-        formTel.classList.add("preenchido");
-    }
-});
-textArea.addEventListener('focusout', () => {
-    if (textArea.value !== "") {
-        textArea.classList.add("preenchido");
-    }
-});
-
-
-//MASCARA TELEFONE COM JQUERY.MASK
-$('.cpf').mask('000.000.000-00');
-$('.cep').mask('00000-000');
-$('.tel').mask('(00) 00000-0000');
-$('.cel').mask('00 0 0000 0000');
-
-function mascara(t, mask) {
-    var i = t.value.length;
-    var saida = mask.substring(1, 0);
-    var texto = mask.substring(i)
-    if (texto.substring(0, 1) != saida) {
-        t.value += texto.substring(0, 1);
-    }
+//MENU SELECIONA CONFORME ATUAL URL AO CARREGAR PÁGINA
+window.onload = function () {
+    menuLink.forEach(function (linques) {
+        linques.classList.remove("active");
+        if (linques.dataset.ancora == urlAncora) {
+            linques.classList.add("active")
+        }
+    });
 };
 
 
-//NAV TABS PASSAR AUTOMÁTICO
-document.addEventListener("DOMContentLoaded", () => {
-    const tabs = [...document.querySelectorAll('.nav-pills .nav-link')];
-    const content = document.querySelector('.tab-content');
-    const naveg = document.querySelector('.nav-pills');
-    let timer, getIdx = () => tabs.findIndex(t => t.classList.contains('active'));
+//MENU MUDA ATIVO NA ROLAGEM (sem click menu)
+let sections = document.querySelectorAll('section');
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 85;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+        let menulista = document.querySelectorAll('.nav-link[href*=' + id + ']');
+        if (top >= offset && top < offset + height) {
+            menuLink.forEach(n => n.classList.remove('active'));
+            menulista.forEach(n => n.classList.add('active'));
+        };
+        //quando tiver uma área acima da primeira secção
+        if (top <= 300) {
+            menuLink.forEach(n => n.classList.remove('active'))
+        }
+    });
+};
 
-    const start = () => timer = timer || setInterval(() => {
-        let next = (getIdx() + 1) % tabs.length;
-        new bootstrap.Tab(tabs[next]).show();
-    }, 3000);
+
+//MENU MOBILE FIXAR NO TOPO QUANDO SCROLL PARA CIMA
+let prevScrollPos = window.pageYOffset;
+
+window.addEventListener('scroll', function () {
+    //atual posição de rolagem
+    const currentScrollPos = window.pageYOffset;
+
+    if (prevScrollPos > currentScrollPos) {
+        //scrolled up
+        document.querySelector('nav').classList.remove("menu-updown");
+    } else {
+        //scrolled down
+        document.querySelector('nav').classList.add("menu-updown");
+        document.querySelector(".navbar-collapse").classList.remove("show")
+    }
+    //atualizar posição de rolagem anterior
+    prevScrollPos = currentScrollPos;
+});
+
+
+//IR PARA O TOPO, REMOVE DA URL O TITULO DO MENU
+let whats = document.querySelector(".whats-flutuante");
+let botSubir = document.querySelector(".subir");
+
+window.addEventListener("scroll", (event) => {
+    //sumir e aparecer
+    let scroll = this.scrollY;
+    if (scroll >= 1000) {
+        botSubir.classList.add("aparecer");
+        whats.setAttribute("id", "whatsapp-floating-button");
+
+    } else {
+        botSubir.classList.remove("aparecer");
+        whats.removeAttribute("id");
+    }
+});
+botSubir.onclick = function () {
+    window.scrollTo(0, 0);
+    menuLink.forEach(n => n.classList.remove('active'));
+    history.pushState("", document.title, window.location.pathname + window.location.search);
+};
+
+
+//DETECTAR ALTURA DO SCROLL E INSERE A AÇÃO (menu nav cor)
+window.addEventListener("scroll", (event) => {
+    let scroll = this.scrollY;
+    let cartaoLogo = document.querySelector(".cartao-logo");
+    let logoNav = document.querySelector(".logo-navegacao");
+    let fundoNav = document.querySelector("nav");
+
+    if (scroll >= 300) {
+        logoNav.classList.add("aparece-logonav");
+        fundoNav.classList.add("rolagem");
+    } else {
+        logoNav.classList.remove("aparece-logonav");
+        fundoNav.classList.remove("rolagem");
+    }
+    //console.log(scroll) 
+});
+
+
+//HORARIO DE FUNCIONARIO
+function atualizarStatus() {
+    const agora = new Date();
+    const dia = agora.getDay(); // 0 = Domingo, 1 = Segunda, ..., 6 = Sábado
+    const hora = agora.getHours() + agora.getMinutes() / 60;
+
+    const tags = document.querySelectorAll('.open-close');
+
+    // Se não encontrar nenhum elemento, interrompe a função
+    if (tags.length === 0) return;
+
+    let aberto = false;
+    let mensagem = "";
+
+    // Segunda a Sexta: 8h às 18h
+    if (dia >= 1 && dia <= 5) {
+        if (hora >= 8 && hora < 18) {
+            aberto = true;
+            mensagem = `<b style="color: green;">Estou disponível</b> até às 18h`;
+        } else {
+            mensagem = `<b style="color: red;">Hora do descanso</b> volto amanhã às 08h`;
+        }
+    }
+    // Sábado: 8h às 13h
+    else if (dia === 6) {
+        if (hora >= 8 && hora < 13) {
+            aberto = true;
+            mensagem = `<b style="color: green;">Estou disponível</b> - até às 13h`;
+        } else {
+            mensagem = `<b style="color: red;">Hora do descanso</b> volto na segunda às 8h`;
+        }
+    }
+    // Domingo
+    else if (dia === 0) {
+        mensagem = `<b style="color: red;">Dia de descanso</b> volto na segunda às 8h`;
+    }
+
+    // Aplica o conteúdo em cada uma das tags encontradas
+    tags.forEach(tag => {
+        tag.innerHTML = mensagem;
+    });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    atualizarStatus();
+    setInterval(atualizarStatus, 300000); // Atualiza a cada 5 minutos
+});
+
+
+//COPIAR TEXTO
+document.querySelectorAll('.copiar-enviar > span').forEach(span => {
+    span.style.cursor = 'pointer'; // Transforma o cursor em mãozinha ao passar o mouse
+
+    span.addEventListener('click', function () {
+        // Encontra a tag <small> de dentro do span clicado
+        const smallTag = this.querySelector('small');
+
+        if (smallTag) {
+            // Pega o texto e remove espaços em branco extras das pontas (.trim())
+            const textoParaCopiar = smallTag.innerText.trim();
+
+            // Copia o texto para a área de transferência
+            navigator.clipboard.writeText(textoParaCopiar).then(() => {
+                // Feedback visual opcional: altera o tooltip do Bootstrap se quiser
+                console.log('Copiado com sucesso: ' + textoParaCopiar);
+                alert('Copiado: ' + textoParaCopiar); // Você pode remover este alert se preferir
+            }).catch(err => {
+                console.error('Erro ao copiar: ', err);
+            });
+        }
+    });
+});
+
+
+//AVISO COOKIES 
+const cookieBanner = document.getElementById('cookieBanner');
+const cookieBtn = document.getElementById('cookieBtn');
+if (!localStorage.getItem('cookieAceito')) {
+    // Se NÃO existir no "cache", remove a classe 'hidden' para mostrar o banner
+    cookieBanner.classList.remove('hidden');
+}
+// Função ao clicar no botão
+cookieBtn.addEventListener('click', () => {
+    localStorage.setItem('cookieAceito', 'true');
+    cookieBanner.classList.add('hidden');
+});
+
+
+//SERVIÇOS ABAS
+document.addEventListener("DOMContentLoaded", () => {
+    const botoes = document.querySelectorAll(".websites, .wordpress, .agencias");
+    const conteudos = document.querySelectorAll(".servicos-conteudos > div");
+    let indice = 0, timer = null, manual = false;
+
+    function alternar(idx) {
+        conteudos.forEach((c, i) => {
+            c.classList.toggle("ativado", i === idx);
+            c.style.display = i === idx ? "flex" : "none";
+            botoes[i].classList.toggle("botao-ativo", i === idx);
+        });
+        indice = idx;
+    }
+    // Altera a função play para rodar o setInterval apenas se a tela for maior que 1200px
+    const play = () => {
+        if (!timer && !manual && window.innerWidth > 1200) {
+            timer = setInterval(() => alternar((indice + 1) % botoes.length), 3000);
+        }
+    };
 
     const stop = () => { clearInterval(timer); timer = null; };
+    botoes.forEach((b, i) => {
+        b.addEventListener("click", () => { manual = true; stop(); alternar(i); });
+    });
+    [...botoes, ...conteudos].forEach(el => {
+        el.addEventListener("mouseenter", stop);
+        el.addEventListener("mouseleave", () => { manual = false; play(); });
+    });
 
-    start();
-    if (content || naveg) {
-        content.addEventListener('mouseenter', stop);
-        content.addEventListener('mouseleave', start);
-        naveg.addEventListener('mouseenter', stop);
-        naveg.addEventListener('mouseleave', start);
-    }
+    window.addEventListener("resize", () => {
+        if (window.innerWidth <= 1200) {
+            stop();
+        } else {
+            play();
+        }
+    });
+    alternar(0); play();
 });
 
 
@@ -195,170 +331,3 @@ qualquerImg.forEach(f => f.addEventListener('click', function () {
     dir.onclick = () => valor < imgs.length - 1 && mudarImg(1, "anime-entrarDireita");
     esq.onclick = () => valor > 0 && mudarImg(-1, "anime-entrarEsquerda");
 }));
-
-
-//MENU FUNDO REMOVE AO CARREGAR PÁGINA + CARREGAMENTO PÁGINA
-window.onload = function () {
-    if (window.scrollY <= 300) {
-        document.querySelector("nav").classList.add("menu-fundo");
-    }
-
-    //idioma Carrega a preferência ao iniciar
-    const savedLang = localStorage.getItem('user_lang') || 'pt';
-    switchLang(savedLang);
-};
-
-//TEMA COR DARK E DEFAULT
-document.addEventListener("DOMContentLoaded", () => {
-    const body = document.body;
-    const linkTema = document.querySelector(".temas");
-
-    // 1. Identifica o tema (Prioridade: 1º Cache, 2º Padrão 'dark')
-    const temaSalvo = localStorage.getItem("temaSelecionado");
-    const temaInicial = temaSalvo || "dark";
-
-    // Aplica o tema inicial no body
-    body.setAttribute("data-theme", temaInicial);
-
-    // 2. Ouvinte de clique no link <a>
-    if (linkTema) {
-        linkTema.addEventListener("click", (e) => {
-            e.preventDefault(); // Evita qualquer comportamento padrão do link
-
-            // Alterna entre dark e default
-            const temaAtual = body.getAttribute("data-theme");
-            const novoTema = temaAtual === "dark" ? "default" : "dark";
-
-            // Salva e aplica a alteração
-            body.setAttribute("data-theme", novoTema);
-            localStorage.setItem("temaSelecionado", novoTema);
-        });
-    }
-});
-
-
-//MENU NA ROLAGEM MUDA ATIVO (sem click menu)
-let sections = document.querySelectorAll('section');
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 200;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
-
-        if (top >= offset && top < offset + height) {
-            menuLink.forEach(n => n.classList.remove('actives'))
-            document.querySelector('.nav-link[href*=' + id + ']').classList.add('actives');
-        };
-        //quando na primeira secção
-        if (top <= 300) {
-            menuLink.forEach(n => n.classList.remove('actives'));
-            document.querySelector("nav").classList.add("menu-fundo");
-        } else {
-            document.querySelector("nav").classList.remove("menu-fundo");
-        }
-    });
-};
-
-
-//MENU (EXIBE/ESCONDE) FIXAR NO TOPO QUANDO SCROLL PARA CIMA
-let prevScrollPos = window.pageYOffset;
-
-window.addEventListener('scroll', function () {
-    //atual posição de rolagem
-    const currentScrollPos = window.pageYOffset;
-
-    if (prevScrollPos > currentScrollPos) {
-        //scrolled subindo
-        document.querySelector('nav').classList.remove("menu-updown");
-        document.querySelector('nav').classList.add("menu-updown-show");
-
-        //esconde menu quando mouse sai do hover
-        const navegacao = document.querySelector("nav");
-        navegacao.addEventListener("mouseenter", function (event) {
-            document.querySelector("nav").classList.add("menu-updown-show");
-            document.querySelector("nav").classList.remove("menu-updown");
-        })
-        navegacao.addEventListener("mouseleave", function (event) {
-            if (window.scrollY > 300) {
-                document.querySelector("nav").classList.remove("menu-updown-show");
-                document.querySelector("nav").classList.add("menu-updown");
-            }
-        })
-
-    } else {
-        //scrolled baixando
-        document.querySelector('nav').classList.remove("menu-updown-show");
-        document.querySelector('nav').classList.add("menu-updown");
-        document.querySelector(".navbar-collapse").classList.remove("show");
-    }
-    //atualizar posição de rolagem anterior
-    prevScrollPos = currentScrollPos;
-});
-
-
-//MENU CLICADO ADICIONA CLASSE NO MENU 
-var menuLink = document.querySelectorAll(".nav-link");
-
-function linkAction() {
-    menuLink.forEach(n => n.classList.remove('actives'))
-    this.classList.add('actives');
-    //fecha menu mobile
-    document.querySelector(".navbar-collapse").classList.remove("show")
-    //remove url id
-    setTimeout(() => {
-        history.replaceState(null, document.title, window.location.pathname + window.location.search);
-    }, 600);
-}
-menuLink.forEach(n => n.addEventListener('click', linkAction));
-
-//PEGA URL ATUAL E REMOVE .html E ATUALIZA A BARRA DE ENDEREÇO
-if (window.location.href.indexOf(".html") > -1) {
-    const newUrl = window.location.href.replace(".html", "");
-    window.history.replaceState({}, "", newUrl);
-}
-//REMOVE ID HOME AO CLICK NA LOGO
-document.querySelector(".logo").onclick = function () {
-    setTimeout(() => {
-        history.replaceState(null, document.title, window.location.pathname + window.location.search);
-    }, 600);
-}
-
-
-/*OWL CAROUSEL
-$('.owl-carousel').owlCarousel({
-    autoplay: true,
-    autoplayTimeout: 5000,
-    autoplayHoverPause: true,
-    loop: true,
-    nav: true,
-    dots: false,
-    margin: 0,
-    responsiveClass: true,
-    responsive: {
-        0: {
-            items: 1,
-        },
-        768: {
-            items: 3,
-        },
-        1200: {
-            items: 4,
-        }
-    }
-});
-*/
-
-
-///////////MOSTRA LARGURA TELA QUANDO MUDA DE TAMANHO
-/* function logWindowWidth() {
-  const windowWidth = window.innerWidth;
-  console.log('Largura Tela atual: ' + windowWidth + 'px');
-}
-logWindowWidth();
-window.addEventListener('resize', logWindowWidth); 
-
-////////CAMINHO URL COM E SEM ID
-console.log("Current Path:", window.location.pathname);
-console.log("Current Hash/ID Link:", window.location.hash);
-*/

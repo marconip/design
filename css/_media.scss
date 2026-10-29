@@ -36,20 +36,6 @@
             }
         }
 
-        //↑ Dispositivos extra extra large (desktop muito grande com 1400px ou mais)↑
-        @if $media==ul-acima {
-            @media (min-width: $ultradesktop-acima) {
-                @content;
-            }
-        }
-
-        //↑ Dispositivos ultra extra extra large (desktop muito grande com 1400px ou mais)↑
-        @if $media==xul-acima {
-            @media (min-width: $extraultradesktop-acima) {
-                @content;
-            }
-        }
-
         //↓ Dispositivos extra extra small (telefone com 424px ou menos)↓
         @if $media==xxs-abaixo {
             @media (max-width: $minicelular-abaixo) {
