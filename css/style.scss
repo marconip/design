@@ -94,7 +94,7 @@ h3 {
 }
 
 h4 {
-    font-size: $s30;
+    font-size: $s28;
     color: var(--subtitulos);
     margin-bottom: 15px;
 
@@ -107,8 +107,7 @@ h4 {
 h5 {
     font-size: $s17;
     font-weight: 600;
-    color: white;
-
+    
     @include media(sm-abaixo) {
         text-align: center;
         margin-bottom: 30px;
@@ -215,16 +214,16 @@ h5 {
     border-color: var(--rodape);
     border-radius: 10px;
     padding: 5px 10px;
-    background-color: var(--complementar);
+    background-color: white;
 
     @include media(sm-abaixo) {
         min-width: 159px;
         padding: 4px;
     }
-
+ 
     &:hover {
-        border-color: var(--texto);
-        background-color: white;
+        border-color: var(--primaria);
+        background-color: var(--fundo);
     }
 
     i,
@@ -629,7 +628,7 @@ figure {
 
             &::after {
                 content: "\F27B";
-                font-size: $s23;
+                font-size: $s21;
 
                 @include media(lg) {
                     font-size: $s16;
@@ -747,6 +746,7 @@ footer {
     }
 
     h5 {
+        color: white;
         margin-bottom: 15px;
         padding: 8px 0;
         border-bottom: 1px solid var(--primaria);
@@ -895,7 +895,7 @@ footer {
                 }
             }
 
-            h6 {
+            h5 {
                 color: white;
             }
 

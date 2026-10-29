@@ -212,10 +212,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         indice = idx;
     }
-    // Altera a função play para rodar o setInterval apenas se a tela for maior que 1200px
+    // Altera a função play para rodar o setInterval apenas se a tela for maior que 992px
     const play = () => {
-        if (!timer && !manual && window.innerWidth > 1200) {
-            timer = setInterval(() => alternar((indice + 1) % botoes.length), 3000);
+        if (!timer && !manual && window.innerWidth > 992) {
+            timer = setInterval(() => alternar((indice + 1) % botoes.length), 4000);
         }
     };
 

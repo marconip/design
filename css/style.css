@@ -103,7 +103,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1.875rem;
+  font-size: 1.75rem;
   color: var(--subtitulos);
   margin-bottom: 15px;
 }
@@ -117,7 +117,6 @@ h4 {
 h5 {
   font-size: 1.0625rem;
   font-weight: 600;
-  color: white;
 }
 @media (max-width: 767.98px) {
   h5 {
@@ -224,7 +223,7 @@ h5 {
   border-color: var(--rodape);
   border-radius: 10px;
   padding: 5px 10px;
-  background-color: var(--complementar);
+  background-color: white;
 }
 @media (max-width: 767.98px) {
   .btn-compartilhar {
@@ -233,8 +232,8 @@ h5 {
   }
 }
 .btn-compartilhar:hover {
-  border-color: var(--texto);
-  background-color: white;
+  border-color: var(--primaria);
+  background-color: var(--fundo);
 }
 .btn-compartilhar i,
 .btn-compartilhar img {
@@ -637,7 +636,7 @@ figure {
 }
 .menu-servicos h4.botao-ativo::after {
   content: "\f27b";
-  font-size: 1.4375rem;
+  font-size: 1.3125rem;
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .menu-servicos h4.botao-ativo::after {
@@ -752,6 +751,7 @@ footer {
   filter: grayscale(100%);
 }
 .footer h5 {
+  color: white;
   margin-bottom: 15px;
   padding: 8px 0;
   border-bottom: 1px solid var(--primaria);
@@ -885,7 +885,7 @@ footer {
 .portfolio .filter-item li.delete p {
   display: none;
 }
-.portfolio .filter-item li h6 {
+.portfolio .filter-item li h5 {
   color: white;
 }
 .portfolio .filter-item li img {
